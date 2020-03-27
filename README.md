@@ -1,4 +1,6 @@
 # pythonRoboBrowserTest
 robo browser module
 
-https://robobrowser.readthedocs.io/en/latest/
+https://readthedocs.org/projects/robobrowser/downloads/pdf/latest/
+
+pip install Werkzeug==0.9.6 if you get the import error
