@@ -1,0 +1,3011 @@
+[Command: python -u 'C:\Users\Hasin Choudhury\Desktop\pythonRoboBrowserTest\main.py']
+<HTML><HEAD><TITLE></TITLE><LINK id=Menu rel=STYLESHEET type=text/css href="Platform.StyleSheets.WaveMenu.css"><LINK id=Task rel=STYLESHEET type=text/css href="Platform.StyleSheets.WaveTask.css">
+
+<SCRIPT src="Portal.CommonFunctions.CommonFunctions.htm"></SCRIPT>
+
+
+
+<SCRIPT src="Portal.CommonFunctions.ModalFunctions.htm"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.CodePad.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientFormat.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientRender.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientWS.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientMenu.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientSQP.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientXMLTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RadHelp.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RadMsgEdit.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RelatedLinks.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RequestDOM.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WavePopups.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WaveDOLookup.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WaveModal.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WSDecompress.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.Workflow.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.ReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.MSReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.ReportFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.ReportEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.SortTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ADOIncludes.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=JavaScript>
+      currentSearch = "";
+      lastSearch = "";
+      searchNum = 0;
+
+      document.onselectstart = function ()
+                               {
+                                  if (event.srcElement.id != "findText")
+                                  {
+                                    return false;
+                                  }
+                               };
+
+      //the following statement fails for IE6.0 SP1
+      //self.onresize = SetDivHeightValues;
+      self.attachEvent("onresize", SetDivHeightValues);
+
+
+      function onRightClick()
+      {
+        event.cancelBubble = true;
+        onFocus();
+        window.top.HandleOnRightClick(window.event);
+      }
+
+      function onFocus()
+      {
+        event.cancelBubble = true;
+        window.top.ShowPortalHelpToolbar(window.event);
+      }
+
+      function OpenLink( oLink )
+      {
+        return window.top.OpenLink(oLink);
+      }
+
+      function onEnter()
+      {
+        if (event.keyCode == 13)
+        {
+          lastSearch = currentSearch;
+          currentSearch = document.getElementById("findText").value;
+
+          //if text has changed, clear search
+          if (lastSearch != currentSearch) ClearMenuSearch();
+
+          SearchMenu();
+        }
+      }
+      function SearchMenu()
+      {
+        //collect text to search on
+        var strFind = document.getElementById("findText").value;
+        //var re = /[\\\/\(\)\{\}\[\]\^\*\-\$\|\+]/gi; // Strip out control characters
+        //var strSearchSafe = String(strFind).replace(re,"");
+
+        //need to escape any metacharacters found with backslash so regex will work later in the search
+        //instead of stripping them out
+        var strSearchSafe = strFind;
+        strSearchSafe = String(strSearchSafe).replace("[", "\\[");
+        strSearchSafe = String(strSearchSafe).replace("\\", "\\\\");
+        strSearchSafe = String(strSearchSafe).replace("]", "\\]");
+        strSearchSafe = String(strSearchSafe).replace("^", "\\^");
+        strSearchSafe = String(strSearchSafe).replace("$", "\\$");
+        strSearchSafe = String(strSearchSafe).replace("|", "\\|");
+        strSearchSafe = String(strSearchSafe).replace("?", "\\?");
+        strSearchSafe = String(strSearchSafe).replace("*", "\\*");
+        strSearchSafe = String(strSearchSafe).replace("+", "\\+");
+        strSearchSafe = String(strSearchSafe).replace("(", "\\(");
+        strSearchSafe = String(strSearchSafe).replace(")", "\\)");
+
+        lastSearch = currentSearch;
+        currentSearch = strFind;
+
+        //if text has changed, clear search
+        if (lastSearch != currentSearch) ClearMenuSearch();
+        //if (strSearchSafe == "" && strFind != "") //user typed in only control characters
+        //{
+        //  var strNoSearchEntry =window.top.GetPortalMessageText("prtAlertNoSearchEntries");
+        //  alert(strNoSearchEntry);
+        //}
+        //else if (strSearchSafe != "")
+        if (strSearchSafe != "")
+        {
+          searchNum = ClientMenu_SearchMenu(strSearchSafe, searchNum);
+          searchNum++;
+        }
+        else
+        {
+          var strEnterSearch =window.top.GetPortalMessageText("prtAlertEnterSearch");
+          alert(unescape(strEnterSearch));
+          document.getElementById("findText").focus();
+        }
+      }
+
+      function ClearMenuSearch()
+      {
+        searchNum = 0;
+
+        //clear bold menu items
+        ClientMenu_ClearSearchMenu();
+      }
+
+      function ExpandHelp(id)
+      {
+        var oHelp = document.getElementById(id);
+        var oImg = document.getElementById("img_" + id);
+
+        if (oHelp && oImg)
+        {
+          if (oHelp.style.display == "none")
+          {
+            oHelp.style.display = "";
+            oImg.src = "Portal.Images.ToolbarFindShow.gif";
+          }
+          else
+          {
+            oHelp.style.display = "none";
+            oImg.src = "Portal.Images.ToolbarFindHide.gif";
+          }
+        }
+      }
+
+      function ExpandToolbar(id, bExpand)
+      {
+        var oToolbar = document.getElementById("exp_" + id);
+        var oImg = document.getElementById("img_exp_" + id);
+        if (oToolbar && oImg)
+        {
+          //if valid, bExpand value should override toggle
+          if (bExpand == false)
+          {
+            oToolbar.style.display = "none";
+            oImg.src = "Portal.Images.ToolbarMax.gif";
+          }
+          else if (bExpand == true || oToolbar.style.display == "none")
+          {
+            oToolbar.style.display = "";
+            oImg.src = "Portal.Images.ToolbarMin.gif";
+          }
+          else
+          {
+            oToolbar.style.display = "none";
+            oImg.src = "Portal.Images.ToolbarMax.gif";
+          }
+        }
+
+        SetDivHeightValues();
+      }
+
+      function ShowToolbar(id, bShow)
+      {
+        var oToolbar = document.getElementById(id);
+        if (oToolbar)
+        {
+          if (bShow)
+          {
+            oToolbar.style.display = "";
+          }
+          else
+          {
+            oToolbar.style.display = "none";
+          }
+        }
+
+        SetDivHeightValues();
+      }
+
+      function PopulateToolbar(id, content)
+      {
+        var oToolbar = document.getElementById("exp_" + id);
+        if (oToolbar)
+        {
+          oToolbar.innerHTML = unescape(content);
+
+          //TBD - IE 5.5 bug: above innerHTML change clears content in the menu div. Performing
+          //an action on an element within the main menu div fixes the display. We need to perform
+          //this action on a bogus row since the find section may be collapsed by the user.
+          document.getElementById("ieBugFix").src = "Portal.Images.Dot.gif";
+        }
+      }
+
+      function GetToolbarStatus(id, statusType)
+      {
+        var oToolbar;
+        if (statusType == "visible")
+        {
+          oToolbar = document.getElementById(id);
+        }
+        else
+        {
+          oToolbar = document.getElementById("exp_" + id);
+        }
+
+        if (oToolbar)
+        {
+          if (oToolbar.style.display == "none")
+          {
+            return false;
+          }
+          else
+          {
+            return true;
+          }
+        }
+      }
+
+      function PrintContents(id)
+      {
+        OpenInstrModal(id, "print");
+      }
+
+      function DisplayContents(id)
+      {
+        OpenInstrModal(id, "view");
+      }
+
+      function OpenInstrModal(id, type)
+      {
+        var oToolbar = document.getElementById("exp_" + id);
+        var strContents = oToolbar.innerHTML;
+
+        if (strContents == "")
+        {
+          var strMsg=window.top.GetPortalMessageText('prtAlertNoInstr');
+          alert(strMsg);
+        }
+        else
+        {
+          var titleHTML = "<font class=\"InstrTitle\">" + GetActiveTaskTitle() + "</font><p>";
+
+          var sURL = "Portal.InstrMore.htm";
+          var vArgs = new Object();
+
+          var instrHTML = escape(titleHTML + strContents);
+          vArgs.Instr = instrHTML;
+
+          vArgs.actionType = type;
+          vArgs.msgPrint =window.top.GetPortalMessageText('ButtonPrint');
+          vArgs.msgClose =window.top.GetPortalMessageText('ButtonClose');
+
+          var sFeatures = "dialogHeight:400px;dialogWidth:600px;resizable:no;status:no";
+
+          window.showModalDialog(sURL, vArgs, sFeatures);
+        }
+      }
+
+      function GetActiveTaskTitle()
+      {
+        var numRows = exp_tlbrOpenTasks.children[0].children[0].children.length;
+        var title = "";
+
+        for (var rowPos = 0; rowPos < numRows; rowPos++)
+        {
+          var oRow = exp_tlbrOpenTasks.children[0].children[0].children[rowPos];
+          if (oRow.children[1].activeTask == "y")
+          {
+            title = oRow.children[1].title;
+            break;
+          }
+        }
+
+        return title;
+      }
+
+
+      function LoadMenu(bRefresh)
+      {
+        var xmlDoc = new ActiveXObject("MSXML.DOMDocument");
+        if (bRefresh)
+        {
+          xmlDoc.async = false;
+          xmlDoc.load("../../portal/menuframe.asp");
+        }
+        else
+          xmlDoc = __XMLWaveset.XMLDocument;
+
+        var xslDoc = new ActiveXObject("MSXML.DOMDocument");
+        xslDoc = __XMLMenuStyleSheetDataIsland.XMLDocument;
+
+        if (xmlDoc.xml == "")
+        {
+          alert("Menu data could not be parsed.\n\nParse Error: " + xmlDoc.parseError.reason + "\nParse Error Source: " + xmlDoc.parseError.srcText);
+        }
+        else
+        {
+
+          bMenuCollapse = xmlDoc.selectSingleNode("data/autocollapse").getAttribute("value");
+
+          //place menu on page
+          var wsNode = xmlDoc.documentElement.selectSingleNode("ws");
+          var decompressedWSNode = __DecompressWS(wsNode);
+
+          xmlDoc.documentElement.replaceChild(decompressedWSNode, wsNode);
+          //remove empty headers from menu xml
+          xmlDoc = StripEmptyHeaders( xmlDoc );
+          __XMLWaveset.XMLDocument.documentElement = xmlDoc.documentElement.cloneNode(true);
+          xslMenu.innerHTML = xmlDoc.transformNode(xslDoc);
+          //set the global variable g_bMenuLoaded that would be used by Portal.Main.ShowMenu() function
+          window.top.g_bMenuLoaded=true;
+          if (bRefresh)
+          {
+            //remove color class from menu when we refresh the display
+            oMenuDiv = document.getElementById("xslMenu");
+            if (oMenuDiv)
+            {
+              var strClass = String(oMenuDiv.className);
+              var classPos = strClass.search(/MenuColor/gi);
+
+              if (classPos != -1)
+              {
+                var re = new RegExp("MenuColor" + strClass.charAt(classPos+9), "gi")
+                strClass = strClass.replace(re,"")
+              }
+
+              oMenuDiv.className = strClass;
+            }
+          }
+        }
+        window.top.g_xmlMenuDoc=xmlDoc;
+      }
+
+      function StripEmptyHeaders( xmlDoc )
+      {
+        // create return document and copy the input DOM into it
+        var retDoc = new ActiveXObject("MSXML.DOMDocument");
+        retDoc.documentElement = xmlDoc.documentElement.cloneNode(true);
+        var retRecordset = retDoc.documentElement.selectSingleNode("waveset/recordset");
+
+        // scan each row and look for header rows that have no children
+        var recordset = xmlDoc.documentElement.selectSingleNode("waveset/recordset");
+        for ( e = new Enumerator(recordset.selectNodes("x:row[@header_flag='y']")) ; !e.atEnd() ; e.moveNext() )
+        {
+          var headerNode = e.item();
+
+          // check if the header node has any children
+          if ( !NodeHasDescendantItems( xmlDoc.documentElement, headerNode )  )
+          {
+            // delete the header that has no children form the return DOM copy
+            var item_id = headerNode.getAttribute("item_id");
+            var delNode = retRecordset.selectSingleNode("x:row[@item_id='" + item_id + "' and @header_flag='y']");
+            retRecordset.removeChild(delNode);
+          }
+        }
+
+        // return the DOm that has the rows removed
+        return retDoc;
+      }
+
+
+      function NodeHasDescendantItems( docElement, node )
+      {
+        // get an enumerator of all nodes that are children of the current node
+        var item_id = node.getAttribute("item_id");
+        var childNodes = new Enumerator( docElement.selectNodes("waveset/recordset/x:row[@parent_id='" + item_id +"']"));
+
+        // if no children then return false
+        if ( childNodes.atEnd() ) return false;
+
+        // scan each child node
+        for (  ; !childNodes.atEnd() ; childNodes.moveNext() )
+        {
+          var childNode = childNodes.item();
+          // if the node ahs even one child non header item then return true
+          if (childNode.getAttribute("header_flag") == "n" ) return true;
+
+          // recurse on each header row
+          if ( NodeHasDescendantItems( docElement, childNode )) return true;
+        }
+
+        return false;
+      }
+
+      var g_xmlMenuFavDoc;  //save global variable that contains Menu and Favorites information
+
+      function LoadFavorites(bRefresh)
+      {
+        var xmlFavDoc = new ActiveXObject("MSXML.DOMDocument");
+
+        if (bRefresh)
+        {
+          xmlFavDoc.async = false;
+          xmlFavDoc.load("../../portal/menufavorites.asp");
+        }
+        else
+          xmlFavDoc = __XMLFavorites.XMLDocument;
+
+        var xslFavDoc = new ActiveXObject("MSXML.DOMDocument");
+        xslFavDoc = __XMLFavoriteStyleSheetDataIsland.XMLDocument;
+
+        if (xmlFavDoc.xml == "")
+        {
+          alert("Menu favorite data could not be parsed.\n\nParse Error: " + xmlFavDoc.parseError.reason + "\nParse Error Source: " + xmlFavDoc.parseError.srcText);
+        }
+        else
+        {
+          var wsFav = xmlFavDoc.documentElement.selectSingleNode("ws");
+          var decompressedWSNode = __DecompressWS(wsFav);
+
+          xmlFavDoc.documentElement.replaceChild(decompressedWSNode, wsFav);
+          exp_tlbrFavorites.innerHTML = xmlFavDoc.transformNode(xslFavDoc);
+        }
+        window.top.g_xmlMenuFavDoc=xmlFavDoc;
+      }
+
+      function SetTextMessage(id, msg)
+      {
+        var xmlMsgDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlMsgDoc = window.top.__XMLMessages.XMLDocument;
+
+        var oText = document.getElementById(id);
+        if (oText)
+        {
+          var oMsg = xmlMsgDoc.selectSingleNode("data/msg[@name='" + msg + "']");
+
+          //set attributes to allow translation/help edit
+          oText.setAttribute("needhelp", "y");
+          oText.setAttribute("label", msg);
+          oText.setAttribute("value", unescape(oMsg.getAttribute("value")));
+          oText.setAttribute("msg_id", oMsg.getAttribute("id"));
+          oText.setAttribute("desc", unescape(oMsg.getAttribute("desc")));
+          oText.setAttribute("desc_height", oMsg.getAttribute("desc_height"));
+          oText.setAttribute("desc_width", oMsg.getAttribute("desc_width"));
+
+          oText.innerHTML = unescape(oMsg.getAttribute("value"));
+        }
+      }
+
+      //this sets the text for the tooltip shown when you hover on the menu expand/collapse bar
+      //(3 separate table cell IDs)
+      function SetCollapseBarHover(){
+        var msgText=window.top.GetPortalMessageText("pltMenuCollapseBarHover");
+        msgText=unescape(msgText);
+        document.all.menuCollapseTop.title = msgText;
+        document.all.menuCollapseMiddle.title = msgText;
+        document.all.menuCollapseBottom.title = msgText;
+      }
+
+      function SetButtonText()
+      {
+        var xmlMsgDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlMsgDoc = window.top.__XMLMessages.XMLDocument;
+
+        var oButton = document.getElementById("findButton");
+        if (oButton)
+        {
+          var msg = "prtMenuSearchFind";
+          var oMsg = xmlMsgDoc.selectSingleNode("data/msg[@name='" + msg + "']");
+
+          //set attributes to allow translation/help edit
+          oButton.setAttribute("needhelp", "y");
+          oButton.setAttribute("label", msg);
+          oButton.setAttribute("value", unescape(oMsg.getAttribute("value")));
+          oButton.setAttribute("msg_id", oMsg.getAttribute("id"));
+          oButton.setAttribute("desc", unescape(oMsg.getAttribute("desc")));
+          oButton.setAttribute("desc_height", oMsg.getAttribute("desc_height"));
+          oButton.setAttribute("desc_width", oMsg.getAttribute("desc_width"));
+
+          var oButtonText = document.getElementById("findButtonText");
+          if (oButtonText)
+            oButtonText.innerHTML = unescape(oMsg.getAttribute("value"));
+        }
+      }
+
+      function SetToolbarText()
+      {
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var tlbrName = oTlbrs[tlbrPos].getAttribute("name");
+          var tlbrMsg = oTlbrs[tlbrPos].getAttribute("msg");
+
+          SetTextMessage(tlbrName+"Title", tlbrMsg);
+        }
+      }
+
+      function SetDivHeightValues()
+      {
+        ResetToolbarHeight();
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+        var totalHeight = window.top.frames("MenuFrame").document.body.clientHeight;
+
+        //do not attempt to resize toolbars if menu has been hidden
+        if (totalHeight == 0) return;
+
+        var tlbrSpacerHeight = GetTotalSpacerHeight();
+        var tlbrTitleHeight = GetTotalHeaderHeight();
+
+        var numTlbrs = oTlbrs.length;
+        var numCollapsed = GetTotalCollapsedTlbrs();
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var xmlTlbr = oTlbrs[tlbrPos];
+          var toolbarName = xmlTlbr.getAttribute("name");
+          var oTlbrDiv = document.getElementById("exp_" + toolbarName);
+
+          if (!oTlbrDiv)
+          {
+            continue;
+          }
+
+          if (oTlbrDiv.style.display == "none")
+          {
+            oTlbrDiv.style.height = "0px";
+          }
+          else
+          {
+            //var eqlHeight = (totalHeight - tlbrSpacerHeight - tlbrTitleHeight)/(numTlbrs - numCollapsed);
+            //oTlbrDiv.style.height = eqlHeight + "px";
+
+            if (xmlTlbr && oTlbrDiv)
+            {
+              var usableHeight = totalHeight - tlbrSpacerHeight - tlbrTitleHeight;
+              if (usableHeight > 0)
+              {
+                var heightWt = xmlTlbr.getAttribute("height");
+                var totalWt = GetExpandedTlbrWt();
+
+                oTlbrDiv.style.height = (heightWt/totalWt) * usableHeight;
+              }
+            }
+
+          }
+        }
+      }
+
+      function ResetToolbarHeight()
+      {
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var toolbarName = oTlbrs[tlbrPos].getAttribute("name");
+          var oTlbrDiv = document.getElementById("exp_" + toolbarName);
+          if (oTlbrDiv)
+          {
+            oTlbrDiv.style.height = "0px";
+          }
+        }
+      }
+
+      function GetExpandedTlbrWt()
+      {
+        var totalWt = 0;
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oXMLTlbr = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oXMLTlbr.length; tlbrPos++)
+        {
+          var tlbrXML = oXMLTlbr[tlbrPos];
+          var tlbrName = tlbrXML.getAttribute("name");
+          var oTlbr = document.getElementById("exp_" + tlbrName);
+
+          if (oTlbr && oTlbr.style.display == "")
+          {
+            totalWt += Number(tlbrXML.getAttribute("height"));
+          }
+        }
+
+        return totalWt;
+      }
+
+      function GetTotalCollapsedTlbrs()
+      {
+        var numCollapsed = 0;
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var tlbrName = oTlbrs[tlbrPos].getAttribute("name");
+          var oTlbrDiv = document.getElementById("exp_" + tlbrName);
+
+          if (oTlbrDiv && oTlbrDiv.style.display == "none")
+          {
+            numCollapsed++;
+          }
+        }
+
+        return numCollapsed;
+      }
+
+      function GetTotalSpacerHeight()
+      {
+        var oSpacers = document.getElementsByName("tlbrSpacer");
+        var spacerHeight = 0;
+
+        for (var spacerPos = 0; spacerPos < oSpacers.length; spacerPos++)
+        {
+          //only include the spacer height in the total it is contained in a visible element
+          oParent = oSpacers[spacerPos].parentElement;
+          if (oParent && oParent.style.display != "none")
+          {
+            spacerHeight += oSpacers[spacerPos].offsetHeight;
+          }
+        }
+
+        return spacerHeight;
+      }
+
+      function GetTotalHeaderHeight()
+      {
+        var oHeaders = document.getElementsByName("TlbrHeader");
+        var headerHeight = 0;
+
+        for (var headerPos = 0; headerPos < oHeaders.length; headerPos++)
+        {
+          //only include the header height in the total it is contained in a visible element
+          oParent = oHeaders[headerPos].parentElement;
+          if (oParent && oParent.style.display != "none")
+          {
+            headerHeight += oHeaders[headerPos].offsetHeight;
+          }
+        }
+
+        return headerHeight;
+      }
+
+      function CreateSearchRow(id)
+      {
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbr = xmlTlbrDoc.selectSingleNode("//data/tlbr[@name='" + id + "']");
+        var bExpand = (oTlbr.getAttribute("expand") == "y");
+
+        var sRow = "<tr id=\"" + id + "\" style=\"width:100%";
+        if (!bExpand) sRow += ";display:none";
+        sRow += "\">";
+        sRow += "  <td id=\"findCol\" align=\"right\">";
+        sRow += "    <table class=\"ToolbarSolid\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" height=\"100%\">";
+        sRow += "      <tr><td><img src=\"Portal.Images.Dot.gif\" width=\"4px\"></td>";
+        sRow += "      <td width=\"100%\">";
+        sRow += "        <div><input class=\"MenuSearchTextBox\" type=\"text\" style=\"width:100%\" id=\"findText\" size=\"100\" tabindex=\"1\" onkeyup=\"onEnter();\"></div>";
+        sRow += "      </td>";
+        sRow += "      <td><img src=\"Portal.Images.Dot.gif\" width=\"4px\"></td>";
+        sRow += "      <td id=\"findButton\" tabindex=\"2\" nowrap onkeyup=\"onEnter();\" onclick=\"SearchMenu()\" oncontextmenu=\"onRightClick();return false;\" onfocus=\"onFocus()\" onMouseOver=\"document.getElementById('findButtonText').className='MenuSearchButtonTextHighlight'\" onMouseOut=\"document.getElementById('findButtonText').className='MenuSearchButtonText'\">";
+        sRow += "        <div class=\"MenuSearchButton\" align=\"center\">";
+        sRow += "          <table cellspacing=\"0\" cellpadding=\"0\"><tr>";
+        sRow += "            <td>&nbsp;</td>";
+        sRow += "            <td><font id=\"findButtonText\" class=\"MenuSearchButtonText\"></font></td>";
+        sRow += "            <td>&nbsp;</td>";
+        sRow += "          </tr></table>";
+        sRow += "        </div>";
+        sRow += "      </td>";
+        sRow += "      <td><img src=\"Portal.Images.Dot.gif\" width=\"4px\"></td></tr>";
+        sRow += "    </table>";
+        sRow += "  </td>";
+        sRow += "</tr>";
+        sRow += "<tr><td class=\"ToolbarSolid\"><img src=\"Portal.Images.Dot.gif\" class=\"MenuSearchPadding\" WIDTH=\"2\" HEIGHT=\"2\"></td></tr>";
+
+        return sRow;
+       }
+
+      function CreateToolbars()
+      {
+        var sDiv = "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+        sDiv += "<tr><td><div><img src=\"Portal.Images.Dot.gif\" class=\"MenuToolbarLeftBorder\" WIDTH=\"2\" HEIGHT=\"2\"></div></td>";
+        sDiv += "<td width=\"100%\">";
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var tlbrName = oTlbrs[tlbrPos].getAttribute("name");
+          var bExpand = (oTlbrs[tlbrPos].getAttribute("expand") == "y");
+          var bVisible = (oTlbrs[tlbrPos].getAttribute("visible") == "y");
+
+          var oChildTlbr = xmlTlbrDoc.selectSingleNode("//data/tlbr[@parent='" + tlbrName + "']");
+
+          sDiv += "<div id=\"" + tlbrName + "\" ";
+          if (!bVisible) sDiv += "style=\"display:none\" ";
+          sDiv += ">";
+
+          sDiv += "   <div id=\"TlbrHeader\">";
+          sDiv += "   <table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "     <tr><td>";
+          sDiv += "       <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "          <tr><td><img src=\"Portal.Images.ToolbarLtCurve.gif\" WIDTH=\"5\" HEIGHT=\"24\"></td></tr>";
+          sDiv += "       </table>";
+          sDiv += "     </td>";
+          sDiv += "     <td width=\"100%\" height=\"100%\">";
+          sDiv += "       <table class=\"Toolbar\" height=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "         <tr>";
+          sDiv += "           <td nowrap width=\"100%\"><font id=\"" + tlbrName + "Title\" oncontextmenu=\"onRightClick();return false;\" class=\"TaskTitle\"></font></td>";
+          sDiv += "           <td width=\"100%\"></td>";
+
+          if (tlbrName == "tlbrInstr")
+          {
+            sDiv += "<td><img src=\"Portal.Images.ToolbarPrint.gif\" class=\"MenuImage\" onclick=\"PrintContents('" + tlbrName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+            sDiv += "<td><img src=\"Portal.Images.ToolbarMore.gif\" class=\"MenuImage\" onclick=\"DisplayContents('" + tlbrName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+          }
+          else if (tlbrName == "tlbrMenu")
+          {
+            if (oChildTlbr && oChildTlbr.getAttribute("visible") == "y")
+            {
+              var tlbrChildName = oChildTlbr.getAttribute("name");
+              sDiv += "<td><img ";
+              if (oChildTlbr.getAttribute("expand") == "y")
+              {
+                sDiv += "src=\"Portal.Images.ToolbarFindShow.gif\"";
+              }
+              else
+              {
+                sDiv += "src=\"Portal.Images.ToolbarFindHide.gif\"";
+              }
+              sDiv += " class=\"MenuImage\" id=\"img_" + tlbrChildName + "\" onclick=\"ExpandHelp('" + tlbrChildName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+            }
+          }
+
+          sDiv += "           <td><img src=\"";
+
+          if (bExpand) sDiv += "Portal.Images.ToolbarMin.gif";
+          else sDiv += "Portal.Images.ToolbarMax.gif";
+
+          sDiv += "\" class=\"MenuImage\" id=\"img_exp_" + tlbrName + "\" onclick=\"ExpandToolbar('" + tlbrName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+          sDiv += "         </tr>";
+          sDiv += "       </table>";
+          sDiv += "     </td>";
+          sDiv += "     <td>";
+          sDiv += "       <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "         <tr><td><img src=\"Portal.Images.ToolbarRtCurve.gif\" WIDTH=\"5\" HEIGHT=\"24\"></td></tr>";
+          sDiv += "       </table>";
+          sDiv += "     </td>";
+          sDiv += "   </tr>";
+          sDiv += " </table>";
+          sDiv += " </div>";
+          sDiv += " <div id=\"exp_" + tlbrName + "\"";
+
+          if (tlbrName == "tlbrInstr" || tlbrName == "tlbrHelp") sDiv += "class=\"MenuInstrFrame MenuInstructions\" ";
+          else if (tlbrName == "tlbrMenu") sDiv += "class=\"MenuOuterFrame\" ";
+          else sDiv += "class=\"TaskFrame\" ";
+
+          if (bExpand) sDiv += "style=\"width:100%\">";
+          else sDiv += "style=\"width:100%;display:none\">";
+
+          if (tlbrName == "tlbrOpenTasks")
+          {
+            sDiv += "<table id=\"OpenTasksTable\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\"></table>";
+          }
+          else if (tlbrName == "tlbrMenu")
+          {
+            sDiv += "<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" height=\"100%\">";
+            sDiv += "<tr height=\"1px\"><td><img id=\"ieBugFix\" src=\"Portal.Images.Dot.gif\" height=\"1px\"></td></tr>";
+
+            if (oChildTlbr && oChildTlbr.getAttribute("visible") == "y")
+            {
+              sDiv += CreateSearchRow(oChildTlbr.getAttribute("name"));
+            }
+
+            sDiv += "<tr height=\"100%\">";
+            sDiv += "  <td height=\"100%\">";
+            sDiv += "    <div id=\"xslMenu\" class=\"MenuFrame\" height=\"100%\" style=\"height:100%\">";
+            sDiv += "    </div>";
+            sDiv += "    <div id=\"menuTrace\" style=\"background-color: pink;color: black;\"></div>";
+            sDiv += "  </td>";
+            sDiv += "</tr>  ";
+            sDiv += "</table>";
+          }
+
+          sDiv += " </div>";
+          sDiv += " <div id=\"TlbrSpacer\"><img src=\"Portal.Images.Dot.gif\" class=\"MenuToolbarSpacing\" WIDTH=\"2\" HEIGHT=\"2\"></div>";
+          sDiv += "</div>";
+        }
+
+        sDiv += "   </td><td>";
+        sDiv += "     <div><img src=\"Portal.Images.Dot.gif\" class=\"MenuToolbarRightBorder\" WIDTH=\"2\" HEIGHT=\"2\"></div>";
+        sDiv += "   </td>";
+        sDiv += "</tr></table>";
+
+        document.getElementById("TopDiv").innerHTML = sDiv;
+      }
+
+    </SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR><!--default to hide the menu-->
+
+<TD id=menuContainer vAlign=top rowSpan=3>
+
+<SCRIPT language=javascript>
+      bMenuCollapse = true;
+
+      function UserHasAutoCollapseOn()
+      {
+        return bMenuCollapse;
+      }
+
+      function SetAutoCollapse(bCollapse)
+      {
+        bMenuCollapse = bCollapse;
+      }
+
+    </SCRIPT>
+
+<xml id=__XMLWaveset src="../../portal/menuframe.asp"></xml><xml id=__XMLFavorites src="../../portal/menufavorites.asp"></xml>
+
+<SCRIPT id=__XMLMenuStyleSheetDataIsland language=xml src="Portal.Menu.xsl"></SCRIPT>
+
+
+
+<SCRIPT id=__XMLFavoriteStyleSheetDataIsland language=xml src="Portal.MenuFavorites.xsl"></SCRIPT>
+
+
+
+<SCRIPT for=window event=onload>
+
+    CreateToolbars();
+    //hide instructions toolbar if no translations exist
+    if (window.top.HideInstructions() == "true")
+    {
+      ShowToolbar("tlbrInstr", false)
+    }
+
+    if (window.top.frames.length > 0)
+    {
+      var scrollWidth = 20;
+
+      //set width of xslMenu div so scrollbars are applied appropriately
+      var menuFrameWidth=window.top.frames("menuframe").frameElement.clientWidth;
+      //if initially form render hides the left menu frame, menuFrameWidth would be only 10px
+      if(menuFrameWidth>scrollWidth)
+      {
+        exp_tlbrMenu.style.width = menuFrameWidth - scrollWidth;
+        xslMenu.style.width = menuFrameWidth - 26;
+        exp_tlbrOpenTasks.style.width = menuFrameWidth - scrollWidth;
+        exp_tlbrFavorites.style.width = menuFrameWidth - scrollWidth;
+      }
+    }
+
+    LoadMenu(false);
+    LoadFavorites(false);
+
+    SetDivHeightValues();
+
+    SetButtonText();
+    SetToolbarText();
+    SetCollapseBarHover();
+
+    //display menu frame when rendering complete
+    document.getElementById("TopDiv").style.visibility = "visible";
+
+    //if the frame manager window has finished loading, ok to launch default page
+    if (window.top.FrameManager)
+    {
+      window.top.LaunchDefaultPage();
+    }
+    else
+    {
+      window.top.ReqQueue = new window.top.RequestQueue();
+      window.top.ReqQueue.Push("window.top.LaunchDefaultPage()");
+    }
+    //set focus to find, ignore any error
+    try
+    {
+      document.all.findText.focus();
+    }
+    catch (e)
+    {
+    }
+
+  </SCRIPT>
+
+
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarTopBorder src="Portal.Images.Dot.gif" width=2 height=2></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarTopImagePadding src="Portal.Images.Dot.gif" width=2 height=2></DIV>
+
+<DIV id=TopDiv class=MenuMainDiv style="VISIBILITY: visible" align=center>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<DIV><IMG class=MenuToolbarLeftBorder src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></TD>
+
+<TD width="100%">
+
+<DIV id=tlbrFavorites>
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrFavoritesTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtMenuFavorites" needhelp="y" value="Favorites" msg_id="24494" desc="null" desc_height="null" desc_width="null">Favorites</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrFavorites')" id=img_exp_tlbrFavorites class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMin.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrFavorites class=TaskFrame style="HEIGHT: 197px; WIDTH: 200px">
+
+<DIV id=DIV_1018703_0 class=MenuDisplay parent_id="0" item_id="1018703">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Hourly Sales Activity Report" class="&#13;&#10;              MenuItem &#13;&#10;            " parent_id="0" node_id="1018703" modal_flag="n" applet_name="" moniker="ReportGraphDefs.FS.QSR.HourSalesActivity.Form" command_reference="" feature_id="1919" item_type="p">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_Report.gif"> </TD>
+
+<TD id=Node_1018703_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Hourly Sales Activity Report" msg_id="" node_id="1018703">Hourly Sales Activity Report </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=DIV_1018704_0 class=MenuDisplay parent_id="0" item_id="1018704">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Product Mix (Sales Mix) Report" class="&#13;&#10;              MenuItem &#13;&#10;            " parent_id="0" node_id="1018704" modal_flag="n" applet_name="" moniker="ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated" command_reference="" feature_id="1893" item_type="p">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_Report.gif"> </TD>
+
+<TD id=Node_1018704_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Product Mix (Sales Mix) Report" msg_id="" node_id="1018704">Product Mix (Sales Mix) Report </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=DIV_1018701_0 class=MenuDisplay parent_id="0" item_id="1018701">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Loss Prevention Report" class="&#13;&#10;              MenuItem &#13;&#10;            " parent_id="0" node_id="1018701" modal_flag="n" applet_name="" moniker="ReportGraphDefs.Financial.BULossPrevention.Form.BULossPreventionForm" command_reference="" feature_id="2074" item_type="p">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_Report.gif"> </TD>
+
+<TD id=Node_1018701_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Loss Prevention Report" msg_id="" node_id="1018701">Loss Prevention Report </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=DIV_0_0 class=MenuDisplay parent_id="0" item_id="0">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Organize Favorites" class="&#13;&#10;              MenuItem &#13;&#10;            " parent_id="0" node_id="0" modal_flag="n" applet_name="Favorites" moniker="portal.information.favorites.browse" command_reference="" feature_id="0" item_type="a">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_WaveForm.gif"> </TD>
+
+<TD id=Node_0_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Organize Favorites" msg_id="" node_id="0">Organize Favorites </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrMenu>
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrMenuTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtMenuToolbar" needhelp="y" value="Menu" msg_id="53027" desc="null" desc_height="100" desc_width="300">Menu</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandHelp('tlbrMenuSearch')" id=img_tlbrMenuSearch class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarFindHide.gif" width=19 height=19></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrMenu')" id=img_exp_tlbrMenu class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMin.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrMenu class=MenuOuterFrame style="HEIGHT: 394px; WIDTH: 200px">
+
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR height=1>
+
+<TD><IMG id=ieBugFix src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" height=1></TD></TR>
+
+<TR id=tlbrMenuSearch style="WIDTH: 100%; DISPLAY: none">
+
+<TD id=findCol align=right>
+
+<TABLE class=ToolbarSolid height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=4></TD>
+
+<TD width="100%">
+
+<DIV><INPUT tabIndex=1 onkeyup=onEnter(); id=findText class=MenuSearchTextBox style="WIDTH: 100%" size=100></DIV></TD>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=4></TD>
+
+<TD onclick=SearchMenu() tabIndex=2 onmouseover="document.getElementById('findButtonText').className='MenuSearchButtonTextHighlight'" onkeyup=onEnter(); onfocus=onFocus() onmouseout="document.getElementById('findButtonText').className='MenuSearchButtonText'" id=findButton oncontextmenu="onRightClick();return false;" noWrap label="prtMenuSearchFind" needhelp="y" value="Find" msg_id="25182" desc="Enter a search string in the text box and select find to locate the string in the menu." desc_height="50" desc_width="250">
+
+<DIV class=MenuSearchButton align=center>
+
+<TABLE cellSpacing=0 cellPadding=0>
+
+<TBODY>
+
+<TR>
+
+<TD>&nbsp;</TD>
+
+<TD><FONT id=findButtonText class=MenuSearchButtonText>Find</FONT></TD>
+
+<TD>&nbsp;</TD></TR></TBODY></TABLE></DIV></TD>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=4></TD></TR></TBODY></TABLE></TD></TR>
+
+<TR>
+
+<TD class=ToolbarSolid><IMG class=MenuSearchPadding src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></TD></TR>
+
+<TR height="100%">
+
+<TD height="100%">
+
+<DIV id=xslMenu class=MenuFrame style="HEIGHT: 100%; WIDTH: 194px" height="100%">
+
+<DIV id=DIV_1004555_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004555" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004555_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004555_ title="Information Center" class=MenuHeader parent_id="" hier_level="1" node_id="1004555">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004555_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004555_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Information Center" msg_id="" node_id="1004555">Information Center </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004555_ style="DISPLAY: none">placeholder_content_1004555_ </DIV></DIV>
+
+<DIV id=DIV_1004552_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004552" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004552_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004552_ title="Key Reports" class=MenuHeader parent_id="" hier_level="1" node_id="1004552">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004552_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004552_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Key Reports" msg_id="" node_id="1004552">Key Reports </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004552_ style="DISPLAY: none">placeholder_content_1004552_ </DIV></DIV>
+
+<DIV id=DIV_1004572_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004572" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004572_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004572_ title="Workforce Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004572">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004572_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004572_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Workforce Management" msg_id="" node_id="1004572">Workforce Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004572_ style="DISPLAY: none">placeholder_content_1004572_ </DIV></DIV>
+
+<DIV id=DIV_1004560_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004560" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004560_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004560_ title="Operations Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004560">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004560_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004560_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Operations Management" msg_id="" node_id="1004560">Operations Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004560_ style="DISPLAY: none">placeholder_content_1004560_ </DIV></DIV>
+
+<DIV id=DIV_1004565_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004565" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004565_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004565_ title="Inventory Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004565">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004565_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004565_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Inventory Management" msg_id="" node_id="1004565">Inventory Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004565_ style="DISPLAY: none">placeholder_content_1004565_ </DIV></DIV>
+
+<DIV id=DIV_1004550_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004550" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004550_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004550_ title="POS Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004550">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004550_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004550_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="POS Management" msg_id="" node_id="1004550">POS Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004550_ style="DISPLAY: none">placeholder_content_1004550_ </DIV></DIV></DIV>
+
+<DIV id=menuTrace style="COLOR: black; BACKGROUND-COLOR: pink"></DIV></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrOpenTasks style="DISPLAY: none">
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrOpenTasksTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtTitleOpenTasks" needhelp="y" value="Open Tasks" msg_id="25222" desc="Listing of tasks currently open in the system.  You may select a task to view the open frame." desc_height="65" desc_width="200">Open Tasks</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrOpenTasks')" id=img_exp_tlbrOpenTasks class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMin.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrOpenTasks class=TaskFrame style="WIDTH: 200px">
+
+<TABLE id=OpenTasksTable cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR id=ROWdefault.asp?FormMoniker=portal.system.Dashboard.detail style="VERTICAL-ALIGN: top" top_parent="undefined">
+
+<TD id=IMGdefault.asp?FormMoniker=portal.system.Dashboard.detail style="WIDTH: 13px; BORDER-BOTTOM: medium none"><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.RightArrow.gif"></TD>
+
+<TD id=TABdefault.asp?FormMoniker=portal.system.Dashboard.detail title="BOS AM Dashboard" class=TaskItemSelected style="HEIGHT: 16px; BORDER-BOTTOM: medium none" menu_node_id="undefined" page_tag="default.asp?FormMoniker=portal.system.Dashboard.detail" page_name="BOS AM Dashboard" tab_level="0" activeTask="y" nowrap="true">&nbsp;BOS AM Dashboard&nbsp;</TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrHelp style="DISPLAY: none">
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrHelpTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtHelpToolbar" needhelp="y" value="Help" msg_id="53026" desc="null" desc_height="100" desc_width="300">Help</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrHelp')" id=img_exp_tlbrHelp class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMax.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrHelp class="MenuInstrFrame MenuInstructions" style="WIDTH: 100%; DISPLAY: none"></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrInstr style="DISPLAY: none">
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrInstrTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtInstrToolbar" needhelp="y" value="Instructions" msg_id="53028" desc="Contains the instructions for the currently open task." desc_height="50" desc_width="200">Instructions</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="PrintContents('tlbrInstr')" class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarPrint.gif" width=19 height=19></TD>
+
+<TD><IMG onclick="DisplayContents('tlbrInstr')" class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMore.gif" width=19 height=19></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrInstr')" id=img_exp_tlbrInstr class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMax.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrInstr class="MenuInstrFrame MenuInstructions" style="WIDTH: 100%; DISPLAY: none"></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV></TD>
+
+<TD>
+
+<DIV><IMG class=MenuToolbarRightBorder src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></TD></TR></TBODY></TABLE></DIV></TD><!-- button bar for opening/closing menu, default to collapse menu bar -->
+
+<TD onclick=window.top.ShowMenu(!window.top.bMenuVisible); id=menuCollapseTop title="Click to Hide/Show Menu" style="CURSOR: hand" height="33%" vAlign=top width=6><IMG id=closeMenuButton1 vspace=20 src="Portal.Images.barCloseMenu.gif"> <IMG id=openMenuButton1 style="DISPLAY: none" vspace=20 src="Portal.Images.barOpenMenu.gif"> </TD></TR>
+
+<TR>
+
+<TD onclick=window.top.ShowMenu(!window.top.bMenuVisible); id=menuCollapseMiddle title="Click to Hide/Show Menu" style="CURSOR: hand" height="33%" vAlign=middle width=6><IMG id=closeMenuButton2 vspace=20 src="Portal.Images.barCloseMenu.gif"> <IMG id=openMenuButton2 style="DISPLAY: none" vspace=20 src="Portal.Images.barOpenMenu.gif"> </TD></TR>
+
+<TR>
+
+<TD onclick=window.top.ShowMenu(!window.top.bMenuVisible); id=menuCollapseBottom title="Click to Hide/Show Menu" style="CURSOR: hand" vAlign=bottom width=6><IMG id=closeMenuButton3 vspace=20 src="Portal.Images.barCloseMenu.gif"> <IMG id=openMenuButton3 style="DISPLAY: none" vspace=20 src="Portal.Images.barOpenMenu.gif"> </TD></TR></TBODY></TABLE></BODY></HTML>
+<HTML><HEAD><TITLE></TITLE><LINK id=Menu rel=STYLESHEET type=text/css href="Platform.StyleSheets.WaveMenu.css"><LINK id=Task rel=STYLESHEET type=text/css href="Platform.StyleSheets.WaveTask.css">
+
+<SCRIPT src="Portal.CommonFunctions.CommonFunctions.htm"></SCRIPT>
+
+
+
+<SCRIPT src="Portal.CommonFunctions.ModalFunctions.htm"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.CodePad.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientFormat.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientRender.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientWS.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientMenu.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientSQP.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.ClientXMLTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RadHelp.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RadMsgEdit.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RelatedLinks.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.RequestDOM.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WavePopups.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WaveDOLookup.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WaveModal.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.WSDecompress.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ClientFunctions.Workflow.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.ReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.MSReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.ReportFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.ReportEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Reports.ClientFunctions.SortTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="Platform.ADOIncludes.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=JavaScript>
+      currentSearch = "";
+      lastSearch = "";
+      searchNum = 0;
+
+      document.onselectstart = function ()
+                               {
+                                  if (event.srcElement.id != "findText")
+                                  {
+                                    return false;
+                                  }
+                               };
+
+      //the following statement fails for IE6.0 SP1
+      //self.onresize = SetDivHeightValues;
+      self.attachEvent("onresize", SetDivHeightValues);
+
+
+      function onRightClick()
+      {
+        event.cancelBubble = true;
+        onFocus();
+        window.top.HandleOnRightClick(window.event);
+      }
+
+      function onFocus()
+      {
+        event.cancelBubble = true;
+        window.top.ShowPortalHelpToolbar(window.event);
+      }
+
+      function OpenLink( oLink )
+      {
+        return window.top.OpenLink(oLink);
+      }
+
+      function onEnter()
+      {
+        if (event.keyCode == 13)
+        {
+          lastSearch = currentSearch;
+          currentSearch = document.getElementById("findText").value;
+
+          //if text has changed, clear search
+          if (lastSearch != currentSearch) ClearMenuSearch();
+
+          SearchMenu();
+        }
+      }
+      function SearchMenu()
+      {
+        //collect text to search on
+        var strFind = document.getElementById("findText").value;
+        //var re = /[\\\/\(\)\{\}\[\]\^\*\-\$\|\+]/gi; // Strip out control characters
+        //var strSearchSafe = String(strFind).replace(re,"");
+
+        //need to escape any metacharacters found with backslash so regex will work later in the search
+        //instead of stripping them out
+        var strSearchSafe = strFind;
+        strSearchSafe = String(strSearchSafe).replace("[", "\\[");
+        strSearchSafe = String(strSearchSafe).replace("\\", "\\\\");
+        strSearchSafe = String(strSearchSafe).replace("]", "\\]");
+        strSearchSafe = String(strSearchSafe).replace("^", "\\^");
+        strSearchSafe = String(strSearchSafe).replace("$", "\\$");
+        strSearchSafe = String(strSearchSafe).replace("|", "\\|");
+        strSearchSafe = String(strSearchSafe).replace("?", "\\?");
+        strSearchSafe = String(strSearchSafe).replace("*", "\\*");
+        strSearchSafe = String(strSearchSafe).replace("+", "\\+");
+        strSearchSafe = String(strSearchSafe).replace("(", "\\(");
+        strSearchSafe = String(strSearchSafe).replace(")", "\\)");
+
+        lastSearch = currentSearch;
+        currentSearch = strFind;
+
+        //if text has changed, clear search
+        if (lastSearch != currentSearch) ClearMenuSearch();
+        //if (strSearchSafe == "" && strFind != "") //user typed in only control characters
+        //{
+        //  var strNoSearchEntry =window.top.GetPortalMessageText("prtAlertNoSearchEntries");
+        //  alert(strNoSearchEntry);
+        //}
+        //else if (strSearchSafe != "")
+        if (strSearchSafe != "")
+        {
+          searchNum = ClientMenu_SearchMenu(strSearchSafe, searchNum);
+          searchNum++;
+        }
+        else
+        {
+          var strEnterSearch =window.top.GetPortalMessageText("prtAlertEnterSearch");
+          alert(unescape(strEnterSearch));
+          document.getElementById("findText").focus();
+        }
+      }
+
+      function ClearMenuSearch()
+      {
+        searchNum = 0;
+
+        //clear bold menu items
+        ClientMenu_ClearSearchMenu();
+      }
+
+      function ExpandHelp(id)
+      {
+        var oHelp = document.getElementById(id);
+        var oImg = document.getElementById("img_" + id);
+
+        if (oHelp && oImg)
+        {
+          if (oHelp.style.display == "none")
+          {
+            oHelp.style.display = "";
+            oImg.src = "Portal.Images.ToolbarFindShow.gif";
+          }
+          else
+          {
+            oHelp.style.display = "none";
+            oImg.src = "Portal.Images.ToolbarFindHide.gif";
+          }
+        }
+      }
+
+      function ExpandToolbar(id, bExpand)
+      {
+        var oToolbar = document.getElementById("exp_" + id);
+        var oImg = document.getElementById("img_exp_" + id);
+        if (oToolbar && oImg)
+        {
+          //if valid, bExpand value should override toggle
+          if (bExpand == false)
+          {
+            oToolbar.style.display = "none";
+            oImg.src = "Portal.Images.ToolbarMax.gif";
+          }
+          else if (bExpand == true || oToolbar.style.display == "none")
+          {
+            oToolbar.style.display = "";
+            oImg.src = "Portal.Images.ToolbarMin.gif";
+          }
+          else
+          {
+            oToolbar.style.display = "none";
+            oImg.src = "Portal.Images.ToolbarMax.gif";
+          }
+        }
+
+        SetDivHeightValues();
+      }
+
+      function ShowToolbar(id, bShow)
+      {
+        var oToolbar = document.getElementById(id);
+        if (oToolbar)
+        {
+          if (bShow)
+          {
+            oToolbar.style.display = "";
+          }
+          else
+          {
+            oToolbar.style.display = "none";
+          }
+        }
+
+        SetDivHeightValues();
+      }
+
+      function PopulateToolbar(id, content)
+      {
+        var oToolbar = document.getElementById("exp_" + id);
+        if (oToolbar)
+        {
+          oToolbar.innerHTML = unescape(content);
+
+          //TBD - IE 5.5 bug: above innerHTML change clears content in the menu div. Performing
+          //an action on an element within the main menu div fixes the display. We need to perform
+          //this action on a bogus row since the find section may be collapsed by the user.
+          document.getElementById("ieBugFix").src = "Portal.Images.Dot.gif";
+        }
+      }
+
+      function GetToolbarStatus(id, statusType)
+      {
+        var oToolbar;
+        if (statusType == "visible")
+        {
+          oToolbar = document.getElementById(id);
+        }
+        else
+        {
+          oToolbar = document.getElementById("exp_" + id);
+        }
+
+        if (oToolbar)
+        {
+          if (oToolbar.style.display == "none")
+          {
+            return false;
+          }
+          else
+          {
+            return true;
+          }
+        }
+      }
+
+      function PrintContents(id)
+      {
+        OpenInstrModal(id, "print");
+      }
+
+      function DisplayContents(id)
+      {
+        OpenInstrModal(id, "view");
+      }
+
+      function OpenInstrModal(id, type)
+      {
+        var oToolbar = document.getElementById("exp_" + id);
+        var strContents = oToolbar.innerHTML;
+
+        if (strContents == "")
+        {
+          var strMsg=window.top.GetPortalMessageText('prtAlertNoInstr');
+          alert(strMsg);
+        }
+        else
+        {
+          var titleHTML = "<font class=\"InstrTitle\">" + GetActiveTaskTitle() + "</font><p>";
+
+          var sURL = "Portal.InstrMore.htm";
+          var vArgs = new Object();
+
+          var instrHTML = escape(titleHTML + strContents);
+          vArgs.Instr = instrHTML;
+
+          vArgs.actionType = type;
+          vArgs.msgPrint =window.top.GetPortalMessageText('ButtonPrint');
+          vArgs.msgClose =window.top.GetPortalMessageText('ButtonClose');
+
+          var sFeatures = "dialogHeight:400px;dialogWidth:600px;resizable:no;status:no";
+
+          window.showModalDialog(sURL, vArgs, sFeatures);
+        }
+      }
+
+      function GetActiveTaskTitle()
+      {
+        var numRows = exp_tlbrOpenTasks.children[0].children[0].children.length;
+        var title = "";
+
+        for (var rowPos = 0; rowPos < numRows; rowPos++)
+        {
+          var oRow = exp_tlbrOpenTasks.children[0].children[0].children[rowPos];
+          if (oRow.children[1].activeTask == "y")
+          {
+            title = oRow.children[1].title;
+            break;
+          }
+        }
+
+        return title;
+      }
+
+
+      function LoadMenu(bRefresh)
+      {
+        var xmlDoc = new ActiveXObject("MSXML.DOMDocument");
+        if (bRefresh)
+        {
+          xmlDoc.async = false;
+          xmlDoc.load("../../portal/menuframe.asp");
+        }
+        else
+          xmlDoc = __XMLWaveset.XMLDocument;
+
+        var xslDoc = new ActiveXObject("MSXML.DOMDocument");
+        xslDoc = __XMLMenuStyleSheetDataIsland.XMLDocument;
+
+        if (xmlDoc.xml == "")
+        {
+          alert("Menu data could not be parsed.\n\nParse Error: " + xmlDoc.parseError.reason + "\nParse Error Source: " + xmlDoc.parseError.srcText);
+        }
+        else
+        {
+
+          bMenuCollapse = xmlDoc.selectSingleNode("data/autocollapse").getAttribute("value");
+
+          //place menu on page
+          var wsNode = xmlDoc.documentElement.selectSingleNode("ws");
+          var decompressedWSNode = __DecompressWS(wsNode);
+
+          xmlDoc.documentElement.replaceChild(decompressedWSNode, wsNode);
+          //remove empty headers from menu xml
+          xmlDoc = StripEmptyHeaders( xmlDoc );
+          __XMLWaveset.XMLDocument.documentElement = xmlDoc.documentElement.cloneNode(true);
+          xslMenu.innerHTML = xmlDoc.transformNode(xslDoc);
+          //set the global variable g_bMenuLoaded that would be used by Portal.Main.ShowMenu() function
+          window.top.g_bMenuLoaded=true;
+          if (bRefresh)
+          {
+            //remove color class from menu when we refresh the display
+            oMenuDiv = document.getElementById("xslMenu");
+            if (oMenuDiv)
+            {
+              var strClass = String(oMenuDiv.className);
+              var classPos = strClass.search(/MenuColor/gi);
+
+              if (classPos != -1)
+              {
+                var re = new RegExp("MenuColor" + strClass.charAt(classPos+9), "gi")
+                strClass = strClass.replace(re,"")
+              }
+
+              oMenuDiv.className = strClass;
+            }
+          }
+        }
+        window.top.g_xmlMenuDoc=xmlDoc;
+      }
+
+      function StripEmptyHeaders( xmlDoc )
+      {
+        // create return document and copy the input DOM into it
+        var retDoc = new ActiveXObject("MSXML.DOMDocument");
+        retDoc.documentElement = xmlDoc.documentElement.cloneNode(true);
+        var retRecordset = retDoc.documentElement.selectSingleNode("waveset/recordset");
+
+        // scan each row and look for header rows that have no children
+        var recordset = xmlDoc.documentElement.selectSingleNode("waveset/recordset");
+        for ( e = new Enumerator(recordset.selectNodes("x:row[@header_flag='y']")) ; !e.atEnd() ; e.moveNext() )
+        {
+          var headerNode = e.item();
+
+          // check if the header node has any children
+          if ( !NodeHasDescendantItems( xmlDoc.documentElement, headerNode )  )
+          {
+            // delete the header that has no children form the return DOM copy
+            var item_id = headerNode.getAttribute("item_id");
+            var delNode = retRecordset.selectSingleNode("x:row[@item_id='" + item_id + "' and @header_flag='y']");
+            retRecordset.removeChild(delNode);
+          }
+        }
+
+        // return the DOm that has the rows removed
+        return retDoc;
+      }
+
+
+      function NodeHasDescendantItems( docElement, node )
+      {
+        // get an enumerator of all nodes that are children of the current node
+        var item_id = node.getAttribute("item_id");
+        var childNodes = new Enumerator( docElement.selectNodes("waveset/recordset/x:row[@parent_id='" + item_id +"']"));
+
+        // if no children then return false
+        if ( childNodes.atEnd() ) return false;
+
+        // scan each child node
+        for (  ; !childNodes.atEnd() ; childNodes.moveNext() )
+        {
+          var childNode = childNodes.item();
+          // if the node ahs even one child non header item then return true
+          if (childNode.getAttribute("header_flag") == "n" ) return true;
+
+          // recurse on each header row
+          if ( NodeHasDescendantItems( docElement, childNode )) return true;
+        }
+
+        return false;
+      }
+
+      var g_xmlMenuFavDoc;  //save global variable that contains Menu and Favorites information
+
+      function LoadFavorites(bRefresh)
+      {
+        var xmlFavDoc = new ActiveXObject("MSXML.DOMDocument");
+
+        if (bRefresh)
+        {
+          xmlFavDoc.async = false;
+          xmlFavDoc.load("../../portal/menufavorites.asp");
+        }
+        else
+          xmlFavDoc = __XMLFavorites.XMLDocument;
+
+        var xslFavDoc = new ActiveXObject("MSXML.DOMDocument");
+        xslFavDoc = __XMLFavoriteStyleSheetDataIsland.XMLDocument;
+
+        if (xmlFavDoc.xml == "")
+        {
+          alert("Menu favorite data could not be parsed.\n\nParse Error: " + xmlFavDoc.parseError.reason + "\nParse Error Source: " + xmlFavDoc.parseError.srcText);
+        }
+        else
+        {
+          var wsFav = xmlFavDoc.documentElement.selectSingleNode("ws");
+          var decompressedWSNode = __DecompressWS(wsFav);
+
+          xmlFavDoc.documentElement.replaceChild(decompressedWSNode, wsFav);
+          exp_tlbrFavorites.innerHTML = xmlFavDoc.transformNode(xslFavDoc);
+        }
+        window.top.g_xmlMenuFavDoc=xmlFavDoc;
+      }
+
+      function SetTextMessage(id, msg)
+      {
+        var xmlMsgDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlMsgDoc = window.top.__XMLMessages.XMLDocument;
+
+        var oText = document.getElementById(id);
+        if (oText)
+        {
+          var oMsg = xmlMsgDoc.selectSingleNode("data/msg[@name='" + msg + "']");
+
+          //set attributes to allow translation/help edit
+          oText.setAttribute("needhelp", "y");
+          oText.setAttribute("label", msg);
+          oText.setAttribute("value", unescape(oMsg.getAttribute("value")));
+          oText.setAttribute("msg_id", oMsg.getAttribute("id"));
+          oText.setAttribute("desc", unescape(oMsg.getAttribute("desc")));
+          oText.setAttribute("desc_height", oMsg.getAttribute("desc_height"));
+          oText.setAttribute("desc_width", oMsg.getAttribute("desc_width"));
+
+          oText.innerHTML = unescape(oMsg.getAttribute("value"));
+        }
+      }
+
+      //this sets the text for the tooltip shown when you hover on the menu expand/collapse bar
+      //(3 separate table cell IDs)
+      function SetCollapseBarHover(){
+        var msgText=window.top.GetPortalMessageText("pltMenuCollapseBarHover");
+        msgText=unescape(msgText);
+        document.all.menuCollapseTop.title = msgText;
+        document.all.menuCollapseMiddle.title = msgText;
+        document.all.menuCollapseBottom.title = msgText;
+      }
+
+      function SetButtonText()
+      {
+        var xmlMsgDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlMsgDoc = window.top.__XMLMessages.XMLDocument;
+
+        var oButton = document.getElementById("findButton");
+        if (oButton)
+        {
+          var msg = "prtMenuSearchFind";
+          var oMsg = xmlMsgDoc.selectSingleNode("data/msg[@name='" + msg + "']");
+
+          //set attributes to allow translation/help edit
+          oButton.setAttribute("needhelp", "y");
+          oButton.setAttribute("label", msg);
+          oButton.setAttribute("value", unescape(oMsg.getAttribute("value")));
+          oButton.setAttribute("msg_id", oMsg.getAttribute("id"));
+          oButton.setAttribute("desc", unescape(oMsg.getAttribute("desc")));
+          oButton.setAttribute("desc_height", oMsg.getAttribute("desc_height"));
+          oButton.setAttribute("desc_width", oMsg.getAttribute("desc_width"));
+
+          var oButtonText = document.getElementById("findButtonText");
+          if (oButtonText)
+            oButtonText.innerHTML = unescape(oMsg.getAttribute("value"));
+        }
+      }
+
+      function SetToolbarText()
+      {
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var tlbrName = oTlbrs[tlbrPos].getAttribute("name");
+          var tlbrMsg = oTlbrs[tlbrPos].getAttribute("msg");
+
+          SetTextMessage(tlbrName+"Title", tlbrMsg);
+        }
+      }
+
+      function SetDivHeightValues()
+      {
+        ResetToolbarHeight();
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+        var totalHeight = window.top.frames("MenuFrame").document.body.clientHeight;
+
+        //do not attempt to resize toolbars if menu has been hidden
+        if (totalHeight == 0) return;
+
+        var tlbrSpacerHeight = GetTotalSpacerHeight();
+        var tlbrTitleHeight = GetTotalHeaderHeight();
+
+        var numTlbrs = oTlbrs.length;
+        var numCollapsed = GetTotalCollapsedTlbrs();
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var xmlTlbr = oTlbrs[tlbrPos];
+          var toolbarName = xmlTlbr.getAttribute("name");
+          var oTlbrDiv = document.getElementById("exp_" + toolbarName);
+
+          if (!oTlbrDiv)
+          {
+            continue;
+          }
+
+          if (oTlbrDiv.style.display == "none")
+          {
+            oTlbrDiv.style.height = "0px";
+          }
+          else
+          {
+            //var eqlHeight = (totalHeight - tlbrSpacerHeight - tlbrTitleHeight)/(numTlbrs - numCollapsed);
+            //oTlbrDiv.style.height = eqlHeight + "px";
+
+            if (xmlTlbr && oTlbrDiv)
+            {
+              var usableHeight = totalHeight - tlbrSpacerHeight - tlbrTitleHeight;
+              if (usableHeight > 0)
+              {
+                var heightWt = xmlTlbr.getAttribute("height");
+                var totalWt = GetExpandedTlbrWt();
+
+                oTlbrDiv.style.height = (heightWt/totalWt) * usableHeight;
+              }
+            }
+
+          }
+        }
+      }
+
+      function ResetToolbarHeight()
+      {
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var toolbarName = oTlbrs[tlbrPos].getAttribute("name");
+          var oTlbrDiv = document.getElementById("exp_" + toolbarName);
+          if (oTlbrDiv)
+          {
+            oTlbrDiv.style.height = "0px";
+          }
+        }
+      }
+
+      function GetExpandedTlbrWt()
+      {
+        var totalWt = 0;
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oXMLTlbr = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oXMLTlbr.length; tlbrPos++)
+        {
+          var tlbrXML = oXMLTlbr[tlbrPos];
+          var tlbrName = tlbrXML.getAttribute("name");
+          var oTlbr = document.getElementById("exp_" + tlbrName);
+
+          if (oTlbr && oTlbr.style.display == "")
+          {
+            totalWt += Number(tlbrXML.getAttribute("height"));
+          }
+        }
+
+        return totalWt;
+      }
+
+      function GetTotalCollapsedTlbrs()
+      {
+        var numCollapsed = 0;
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[@visible='y' and not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var tlbrName = oTlbrs[tlbrPos].getAttribute("name");
+          var oTlbrDiv = document.getElementById("exp_" + tlbrName);
+
+          if (oTlbrDiv && oTlbrDiv.style.display == "none")
+          {
+            numCollapsed++;
+          }
+        }
+
+        return numCollapsed;
+      }
+
+      function GetTotalSpacerHeight()
+      {
+        var oSpacers = document.getElementsByName("tlbrSpacer");
+        var spacerHeight = 0;
+
+        for (var spacerPos = 0; spacerPos < oSpacers.length; spacerPos++)
+        {
+          //only include the spacer height in the total it is contained in a visible element
+          oParent = oSpacers[spacerPos].parentElement;
+          if (oParent && oParent.style.display != "none")
+          {
+            spacerHeight += oSpacers[spacerPos].offsetHeight;
+          }
+        }
+
+        return spacerHeight;
+      }
+
+      function GetTotalHeaderHeight()
+      {
+        var oHeaders = document.getElementsByName("TlbrHeader");
+        var headerHeight = 0;
+
+        for (var headerPos = 0; headerPos < oHeaders.length; headerPos++)
+        {
+          //only include the header height in the total it is contained in a visible element
+          oParent = oHeaders[headerPos].parentElement;
+          if (oParent && oParent.style.display != "none")
+          {
+            headerHeight += oHeaders[headerPos].offsetHeight;
+          }
+        }
+
+        return headerHeight;
+      }
+
+      function CreateSearchRow(id)
+      {
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbr = xmlTlbrDoc.selectSingleNode("//data/tlbr[@name='" + id + "']");
+        var bExpand = (oTlbr.getAttribute("expand") == "y");
+
+        var sRow = "<tr id=\"" + id + "\" style=\"width:100%";
+        if (!bExpand) sRow += ";display:none";
+        sRow += "\">";
+        sRow += "  <td id=\"findCol\" align=\"right\">";
+        sRow += "    <table class=\"ToolbarSolid\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" height=\"100%\">";
+        sRow += "      <tr><td><img src=\"Portal.Images.Dot.gif\" width=\"4px\"></td>";
+        sRow += "      <td width=\"100%\">";
+        sRow += "        <div><input class=\"MenuSearchTextBox\" type=\"text\" style=\"width:100%\" id=\"findText\" size=\"100\" tabindex=\"1\" onkeyup=\"onEnter();\"></div>";
+        sRow += "      </td>";
+        sRow += "      <td><img src=\"Portal.Images.Dot.gif\" width=\"4px\"></td>";
+        sRow += "      <td id=\"findButton\" tabindex=\"2\" nowrap onkeyup=\"onEnter();\" onclick=\"SearchMenu()\" oncontextmenu=\"onRightClick();return false;\" onfocus=\"onFocus()\" onMouseOver=\"document.getElementById('findButtonText').className='MenuSearchButtonTextHighlight'\" onMouseOut=\"document.getElementById('findButtonText').className='MenuSearchButtonText'\">";
+        sRow += "        <div class=\"MenuSearchButton\" align=\"center\">";
+        sRow += "          <table cellspacing=\"0\" cellpadding=\"0\"><tr>";
+        sRow += "            <td>&nbsp;</td>";
+        sRow += "            <td><font id=\"findButtonText\" class=\"MenuSearchButtonText\"></font></td>";
+        sRow += "            <td>&nbsp;</td>";
+        sRow += "          </tr></table>";
+        sRow += "        </div>";
+        sRow += "      </td>";
+        sRow += "      <td><img src=\"Portal.Images.Dot.gif\" width=\"4px\"></td></tr>";
+        sRow += "    </table>";
+        sRow += "  </td>";
+        sRow += "</tr>";
+        sRow += "<tr><td class=\"ToolbarSolid\"><img src=\"Portal.Images.Dot.gif\" class=\"MenuSearchPadding\" WIDTH=\"2\" HEIGHT=\"2\"></td></tr>";
+
+        return sRow;
+       }
+
+      function CreateToolbars()
+      {
+        var sDiv = "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+        sDiv += "<tr><td><div><img src=\"Portal.Images.Dot.gif\" class=\"MenuToolbarLeftBorder\" WIDTH=\"2\" HEIGHT=\"2\"></div></td>";
+        sDiv += "<td width=\"100%\">";
+
+        var xmlTlbrDoc = new ActiveXObject("MSXML.DOMDocument");
+        xmlTlbrDoc = window.top.__XMLToolbars.XMLDocument;
+
+        var oTlbrs = xmlTlbrDoc.selectNodes("//data/tlbr[not(@parent)]");
+
+        for (var tlbrPos = 0; tlbrPos < oTlbrs.length; tlbrPos++)
+        {
+          var tlbrName = oTlbrs[tlbrPos].getAttribute("name");
+          var bExpand = (oTlbrs[tlbrPos].getAttribute("expand") == "y");
+          var bVisible = (oTlbrs[tlbrPos].getAttribute("visible") == "y");
+
+          var oChildTlbr = xmlTlbrDoc.selectSingleNode("//data/tlbr[@parent='" + tlbrName + "']");
+
+          sDiv += "<div id=\"" + tlbrName + "\" ";
+          if (!bVisible) sDiv += "style=\"display:none\" ";
+          sDiv += ">";
+
+          sDiv += "   <div id=\"TlbrHeader\">";
+          sDiv += "   <table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "     <tr><td>";
+          sDiv += "       <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "          <tr><td><img src=\"Portal.Images.ToolbarLtCurve.gif\" WIDTH=\"5\" HEIGHT=\"24\"></td></tr>";
+          sDiv += "       </table>";
+          sDiv += "     </td>";
+          sDiv += "     <td width=\"100%\" height=\"100%\">";
+          sDiv += "       <table class=\"Toolbar\" height=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "         <tr>";
+          sDiv += "           <td nowrap width=\"100%\"><font id=\"" + tlbrName + "Title\" oncontextmenu=\"onRightClick();return false;\" class=\"TaskTitle\"></font></td>";
+          sDiv += "           <td width=\"100%\"></td>";
+
+          if (tlbrName == "tlbrInstr")
+          {
+            sDiv += "<td><img src=\"Portal.Images.ToolbarPrint.gif\" class=\"MenuImage\" onclick=\"PrintContents('" + tlbrName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+            sDiv += "<td><img src=\"Portal.Images.ToolbarMore.gif\" class=\"MenuImage\" onclick=\"DisplayContents('" + tlbrName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+          }
+          else if (tlbrName == "tlbrMenu")
+          {
+            if (oChildTlbr && oChildTlbr.getAttribute("visible") == "y")
+            {
+              var tlbrChildName = oChildTlbr.getAttribute("name");
+              sDiv += "<td><img ";
+              if (oChildTlbr.getAttribute("expand") == "y")
+              {
+                sDiv += "src=\"Portal.Images.ToolbarFindShow.gif\"";
+              }
+              else
+              {
+                sDiv += "src=\"Portal.Images.ToolbarFindHide.gif\"";
+              }
+              sDiv += " class=\"MenuImage\" id=\"img_" + tlbrChildName + "\" onclick=\"ExpandHelp('" + tlbrChildName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+            }
+          }
+
+          sDiv += "           <td><img src=\"";
+
+          if (bExpand) sDiv += "Portal.Images.ToolbarMin.gif";
+          else sDiv += "Portal.Images.ToolbarMax.gif";
+
+          sDiv += "\" class=\"MenuImage\" id=\"img_exp_" + tlbrName + "\" onclick=\"ExpandToolbar('" + tlbrName + "')\" WIDTH=\"19\" HEIGHT=\"19\"></td>";
+          sDiv += "         </tr>";
+          sDiv += "       </table>";
+          sDiv += "     </td>";
+          sDiv += "     <td>";
+          sDiv += "       <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+          sDiv += "         <tr><td><img src=\"Portal.Images.ToolbarRtCurve.gif\" WIDTH=\"5\" HEIGHT=\"24\"></td></tr>";
+          sDiv += "       </table>";
+          sDiv += "     </td>";
+          sDiv += "   </tr>";
+          sDiv += " </table>";
+          sDiv += " </div>";
+          sDiv += " <div id=\"exp_" + tlbrName + "\"";
+
+          if (tlbrName == "tlbrInstr" || tlbrName == "tlbrHelp") sDiv += "class=\"MenuInstrFrame MenuInstructions\" ";
+          else if (tlbrName == "tlbrMenu") sDiv += "class=\"MenuOuterFrame\" ";
+          else sDiv += "class=\"TaskFrame\" ";
+
+          if (bExpand) sDiv += "style=\"width:100%\">";
+          else sDiv += "style=\"width:100%;display:none\">";
+
+          if (tlbrName == "tlbrOpenTasks")
+          {
+            sDiv += "<table id=\"OpenTasksTable\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\"></table>";
+          }
+          else if (tlbrName == "tlbrMenu")
+          {
+            sDiv += "<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" height=\"100%\">";
+            sDiv += "<tr height=\"1px\"><td><img id=\"ieBugFix\" src=\"Portal.Images.Dot.gif\" height=\"1px\"></td></tr>";
+
+            if (oChildTlbr && oChildTlbr.getAttribute("visible") == "y")
+            {
+              sDiv += CreateSearchRow(oChildTlbr.getAttribute("name"));
+            }
+
+            sDiv += "<tr height=\"100%\">";
+            sDiv += "  <td height=\"100%\">";
+            sDiv += "    <div id=\"xslMenu\" class=\"MenuFrame\" height=\"100%\" style=\"height:100%\">";
+            sDiv += "    </div>";
+            sDiv += "    <div id=\"menuTrace\" style=\"background-color: pink;color: black;\"></div>";
+            sDiv += "  </td>";
+            sDiv += "</tr>  ";
+            sDiv += "</table>";
+          }
+
+          sDiv += " </div>";
+          sDiv += " <div id=\"TlbrSpacer\"><img src=\"Portal.Images.Dot.gif\" class=\"MenuToolbarSpacing\" WIDTH=\"2\" HEIGHT=\"2\"></div>";
+          sDiv += "</div>";
+        }
+
+        sDiv += "   </td><td>";
+        sDiv += "     <div><img src=\"Portal.Images.Dot.gif\" class=\"MenuToolbarRightBorder\" WIDTH=\"2\" HEIGHT=\"2\"></div>";
+        sDiv += "   </td>";
+        sDiv += "</tr></table>";
+
+        document.getElementById("TopDiv").innerHTML = sDiv;
+      }
+
+    </SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR><!--default to hide the menu-->
+
+<TD id=menuContainer vAlign=top rowSpan=3>
+
+<SCRIPT language=javascript>
+      bMenuCollapse = true;
+
+      function UserHasAutoCollapseOn()
+      {
+        return bMenuCollapse;
+      }
+
+      function SetAutoCollapse(bCollapse)
+      {
+        bMenuCollapse = bCollapse;
+      }
+
+    </SCRIPT>
+
+<xml id=__XMLWaveset src="../../portal/menuframe.asp"></xml><xml id=__XMLFavorites src="../../portal/menufavorites.asp"></xml>
+
+<SCRIPT id=__XMLMenuStyleSheetDataIsland language=xml src="Portal.Menu.xsl"></SCRIPT>
+
+
+
+<SCRIPT id=__XMLFavoriteStyleSheetDataIsland language=xml src="Portal.MenuFavorites.xsl"></SCRIPT>
+
+
+
+<SCRIPT for=window event=onload>
+
+    CreateToolbars();
+    //hide instructions toolbar if no translations exist
+    if (window.top.HideInstructions() == "true")
+    {
+      ShowToolbar("tlbrInstr", false)
+    }
+
+    if (window.top.frames.length > 0)
+    {
+      var scrollWidth = 20;
+
+      //set width of xslMenu div so scrollbars are applied appropriately
+      var menuFrameWidth=window.top.frames("menuframe").frameElement.clientWidth;
+      //if initially form render hides the left menu frame, menuFrameWidth would be only 10px
+      if(menuFrameWidth>scrollWidth)
+      {
+        exp_tlbrMenu.style.width = menuFrameWidth - scrollWidth;
+        xslMenu.style.width = menuFrameWidth - 26;
+        exp_tlbrOpenTasks.style.width = menuFrameWidth - scrollWidth;
+        exp_tlbrFavorites.style.width = menuFrameWidth - scrollWidth;
+      }
+    }
+
+    LoadMenu(false);
+    LoadFavorites(false);
+
+    SetDivHeightValues();
+
+    SetButtonText();
+    SetToolbarText();
+    SetCollapseBarHover();
+
+    //display menu frame when rendering complete
+    document.getElementById("TopDiv").style.visibility = "visible";
+
+    //if the frame manager window has finished loading, ok to launch default page
+    if (window.top.FrameManager)
+    {
+      window.top.LaunchDefaultPage();
+    }
+    else
+    {
+      window.top.ReqQueue = new window.top.RequestQueue();
+      window.top.ReqQueue.Push("window.top.LaunchDefaultPage()");
+    }
+    //set focus to find, ignore any error
+    try
+    {
+      document.all.findText.focus();
+    }
+    catch (e)
+    {
+    }
+
+  </SCRIPT>
+
+
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarTopBorder src="Portal.Images.Dot.gif" width=2 height=2></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarTopImagePadding src="Portal.Images.Dot.gif" width=2 height=2></DIV>
+
+<DIV id=TopDiv class=MenuMainDiv style="VISIBILITY: visible" align=center>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<DIV><IMG class=MenuToolbarLeftBorder src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></TD>
+
+<TD width="100%">
+
+<DIV id=tlbrFavorites>
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrFavoritesTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtMenuFavorites" needhelp="y" value="Favorites" msg_id="24494" desc="null" desc_height="null" desc_width="null">Favorites</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrFavorites')" id=img_exp_tlbrFavorites class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMin.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrFavorites class=TaskFrame style="HEIGHT: 197px; WIDTH: 200px">
+
+<DIV id=DIV_1018703_0 class=MenuDisplay parent_id="0" item_id="1018703">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Hourly Sales Activity Report" class=MenuItem parent_id="0" node_id="1018703" modal_flag="n" applet_name="" moniker="ReportGraphDefs.FS.QSR.HourSalesActivity.Form" command_reference="" feature_id="1919" item_type="p">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_Report.gif"> </TD>
+
+<TD id=Node_1018703_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Hourly Sales Activity Report" msg_id="" node_id="1018703">Hourly Sales Activity Report </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=DIV_1018704_0 class=MenuDisplay parent_id="0" item_id="1018704">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Product Mix (Sales Mix) Report" class=MenuItemHighlight parent_id="0" node_id="1018704" modal_flag="n" applet_name="" moniker="ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated" command_reference="" feature_id="1893" item_type="p">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_Report.gif"> </TD>
+
+<TD id=Node_1018704_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Product Mix (Sales Mix) Report" msg_id="" node_id="1018704">Product Mix (Sales Mix) Report </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=DIV_1018701_0 class=MenuDisplay parent_id="0" item_id="1018701">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Loss Prevention Report" class="&#13;&#10;              MenuItem &#13;&#10;            " parent_id="0" node_id="1018701" modal_flag="n" applet_name="" moniker="ReportGraphDefs.Financial.BULossPrevention.Form.BULossPreventionForm" command_reference="" feature_id="2074" item_type="p">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_Report.gif"> </TD>
+
+<TD id=Node_1018701_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Loss Prevention Report" msg_id="" node_id="1018701">Loss Prevention Report </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=DIV_0_0 class=MenuDisplay parent_id="0" item_id="0">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;              OpenLink(this) &#13;&#10;            " onmouseover="&#13;&#10;              this.className='MenuItemHighlight' &#13;&#10;            " onmouseout="&#13;&#10;              this.className='MenuItem' &#13;&#10;            " title="Organize Favorites" class="&#13;&#10;              MenuItem &#13;&#10;            " parent_id="0" node_id="0" modal_flag="n" applet_name="Favorites" moniker="portal.information.favorites.browse" command_reference="" feature_id="0" item_type="a">
+
+<TD class=MenuImageDisplay><IMG class="&#13;&#10;                  MenuImage &#13;&#10;                " src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Item_WaveForm.gif"> </TD>
+
+<TD id=Node_0_0 oncontextmenu="&#13;&#10;                onRightClick();return false; &#13;&#10;              " noWrap label="Organize Favorites" msg_id="" node_id="0">Organize Favorites </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE></DIV></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrMenu>
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrMenuTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtMenuToolbar" needhelp="y" value="Menu" msg_id="53027" desc="null" desc_height="100" desc_width="300">Menu</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandHelp('tlbrMenuSearch')" id=img_tlbrMenuSearch class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarFindHide.gif" width=19 height=19></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrMenu')" id=img_exp_tlbrMenu class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMin.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrMenu class=MenuOuterFrame style="HEIGHT: 394px; WIDTH: 200px">
+
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR height=1>
+
+<TD><IMG id=ieBugFix src="Portal.Images.Dot.gif" height=1></TD></TR>
+
+<TR id=tlbrMenuSearch style="WIDTH: 100%; DISPLAY: none">
+
+<TD id=findCol align=right>
+
+<TABLE class=ToolbarSolid height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=4></TD>
+
+<TD width="100%">
+
+<DIV><INPUT tabIndex=1 onkeyup=onEnter(); id=findText class=MenuSearchTextBox style="WIDTH: 100%" size=100></DIV></TD>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=4></TD>
+
+<TD onclick=SearchMenu() tabIndex=2 onmouseover="document.getElementById('findButtonText').className='MenuSearchButtonTextHighlight'" onkeyup=onEnter(); onfocus=onFocus() onmouseout="document.getElementById('findButtonText').className='MenuSearchButtonText'" id=findButton oncontextmenu="onRightClick();return false;" noWrap label="prtMenuSearchFind" needhelp="y" value="Find" msg_id="25182" desc="Enter a search string in the text box and select find to locate the string in the menu." desc_height="50" desc_width="250">
+
+<DIV class=MenuSearchButton align=center>
+
+<TABLE cellSpacing=0 cellPadding=0>
+
+<TBODY>
+
+<TR>
+
+<TD>&nbsp;</TD>
+
+<TD><FONT id=findButtonText class=MenuSearchButtonText>Find</FONT></TD>
+
+<TD>&nbsp;</TD></TR></TBODY></TABLE></DIV></TD>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=4></TD></TR></TBODY></TABLE></TD></TR>
+
+<TR>
+
+<TD class=ToolbarSolid><IMG class=MenuSearchPadding src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></TD></TR>
+
+<TR height="100%">
+
+<TD height="100%">
+
+<DIV id=xslMenu class=MenuFrame style="HEIGHT: 100%; WIDTH: 194px" height="100%">
+
+<DIV id=DIV_1004555_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004555" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004555_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004555_ title="Information Center" class=MenuHeader parent_id="" hier_level="1" node_id="1004555">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004555_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004555_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Information Center" msg_id="" node_id="1004555">Information Center </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004555_ style="DISPLAY: none">placeholder_content_1004555_ </DIV></DIV>
+
+<DIV id=DIV_1004552_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004552" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004552_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004552_ title="Key Reports" class=MenuHeader parent_id="" hier_level="1" node_id="1004552">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004552_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004552_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Key Reports" msg_id="" node_id="1004552">Key Reports </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004552_ style="DISPLAY: none">placeholder_content_1004552_ </DIV></DIV>
+
+<DIV id=DIV_1004572_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004572" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004572_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004572_ title="Workforce Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004572">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004572_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004572_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Workforce Management" msg_id="" node_id="1004572">Workforce Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004572_ style="DISPLAY: none">placeholder_content_1004572_ </DIV></DIV>
+
+<DIV id=DIV_1004560_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004560" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004560_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004560_ title="Operations Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004560">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004560_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004560_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Operations Management" msg_id="" node_id="1004560">Operations Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004560_ style="DISPLAY: none">placeholder_content_1004560_ </DIV></DIV>
+
+<DIV id=DIV_1004565_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004565" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004565_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004565_ title="Inventory Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004565">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004565_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004565_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="Inventory Management" msg_id="" node_id="1004565">Inventory Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004565_ style="DISPLAY: none">placeholder_content_1004565_ </DIV></DIV>
+
+<DIV id=DIV_1004550_ class=MenuDisplay header_flag="y" parent_id="" item_id="1004550" hier_level="1">
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR onclick="&#13;&#10;                  ClientMenu_MenuTopHeaderClick('Node_1004550_', false);ClientMenu_Expand(this, false) &#13;&#10;                " onmouseover="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeaderHighlight') &#13;&#10;                " onmouseout="&#13;&#10;                  ClientMenu_HeaderRollOver(id, 'MenuHeader') &#13;&#10;                " id=Header_1004550_ title="POS Management" class=MenuHeader parent_id="" hier_level="1" node_id="1004550">
+
+<TD class=MenuImageDisplay><IMG id=IMG_1004550_ class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.MenuPlus.gif"> </TD>
+
+<TD id=Node_1004550_ oncontextmenu="&#13;&#10;                    onRightClick();return false; &#13;&#10;                  " noWrap label="POS Management" msg_id="" node_id="1004550">POS Management </TD>
+
+<TD width="100%"></TD></TR></TBODY></TABLE>
+
+<DIV id=placeholder_1004550_ style="DISPLAY: none">placeholder_content_1004550_ </DIV></DIV></DIV>
+
+<DIV id=menuTrace style="COLOR: black; BACKGROUND-COLOR: pink"></DIV></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrOpenTasks style="DISPLAY: none">
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrOpenTasksTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtTitleOpenTasks" needhelp="y" value="Open Tasks" msg_id="25222" desc="Listing of tasks currently open in the system.  You may select a task to view the open frame." desc_height="65" desc_width="200">Open Tasks</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrOpenTasks')" id=img_exp_tlbrOpenTasks class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMin.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrOpenTasks class=TaskFrame style="WIDTH: 200px">
+
+<TABLE id=OpenTasksTable cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR id=ROWdefault.asp?FormMoniker=portal.system.Dashboard.detail style="VERTICAL-ALIGN: top" top_parent="undefined">
+
+<TD id=IMGdefault.asp?FormMoniker=portal.system.Dashboard.detail style="WIDTH: 13px; BORDER-BOTTOM: #d0dbf7 1px inset"><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif"></TD>
+
+<TD id=TABdefault.asp?FormMoniker=portal.system.Dashboard.detail title="BOS AM Dashboard" class=TaskItem style="HEIGHT: 16px; BORDER-BOTTOM: #d0dbf7 1px inset" menu_node_id="undefined" page_tag="default.asp?FormMoniker=portal.system.Dashboard.detail" page_name="BOS AM Dashboard" tab_level="0" activeTask="n" nowrap="true">&nbsp;BOS AM Dashboard&nbsp;</TD></TR>
+
+<TR id=ROWdefault.asp?FormMoniker=ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated style="VERTICAL-ALIGN: top" top_parent="Node_1018704_0">
+
+<TD id=IMGdefault.asp?FormMoniker=ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated style="WIDTH: 13px; BORDER-BOTTOM: medium none"><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.RightArrow.gif"></TD>
+
+<TD id=TABdefault.asp?FormMoniker=ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated title="Product Mix (Sales Mix) Report" class=TaskItemSelected style="HEIGHT: 16px; BORDER-BOTTOM: medium none" menu_node_id="Node_1018704_0" page_tag="default.asp?FormMoniker=ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated" page_name="Product Mix (Sales Mix) Report" tab_level="0" activeTask="y" nowrap="true">&nbsp;Product Mix (Sales Mix) Report&nbsp;</TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrHelp style="DISPLAY: none" defaultUsed="Y">
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrHelpTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtHelpToolbar" needhelp="y" value="Help" msg_id="53026" desc="null" desc_height="100" desc_width="300">Help</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrHelp')" id=img_exp_tlbrHelp class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMax.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrHelp class="MenuInstrFrame MenuInstructions" style="WIDTH: 100%; DISPLAY: none"><U>Tip</U>: You can right-click on any field, column, or grid header to display its help text.</DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV>
+
+<DIV id=tlbrInstr style="DISPLAY: none">
+
+<DIV id=TlbrHeader>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarLtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD>
+
+<TD height="100%" width="100%">
+
+<TABLE class=Toolbar height="100%" cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD width="100%" noWrap><FONT id=tlbrInstrTitle class=TaskTitle oncontextmenu="onRightClick();return false;" label="prtInstrToolbar" needhelp="y" value="Instructions" msg_id="53028" desc="Contains the instructions for the currently open task." desc_height="50" desc_width="200">Instructions</FONT></TD>
+
+<TD width="100%"></TD>
+
+<TD><IMG onclick="PrintContents('tlbrInstr')" class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarPrint.gif" width=19 height=19></TD>
+
+<TD><IMG onclick="DisplayContents('tlbrInstr')" class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMore.gif" width=19 height=19></TD>
+
+<TD><IMG onclick="ExpandToolbar('tlbrInstr')" id=img_exp_tlbrInstr class=MenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarMax.gif" width=19 height=19></TD></TR></TBODY></TABLE></TD>
+
+<TD>
+
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+
+<TBODY>
+
+<TR>
+
+<TD><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.ToolbarRtCurve.gif" width=5 height=24></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+
+<DIV id=exp_tlbrInstr class="MenuInstrFrame MenuInstructions" style="WIDTH: 100%; DISPLAY: none"></DIV>
+
+<DIV id=TlbrSpacer><IMG class=MenuToolbarSpacing src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></DIV></TD>
+
+<TD>
+
+<DIV><IMG class=MenuToolbarRightBorder src="https://adqsr.radiantenterprise.com/bin/orf.dll/Portal.Images.Dot.gif" width=2 height=2></DIV></TD></TR></TBODY></TABLE></DIV></TD><!-- button bar for opening/closing menu, default to collapse menu bar -->
+
+<TD onclick=window.top.ShowMenu(!window.top.bMenuVisible); id=menuCollapseTop title="Click to Hide/Show Menu" style="CURSOR: hand" height="33%" vAlign=top width=6><IMG id=closeMenuButton1 vspace=20 src="Portal.Images.barCloseMenu.gif"> <IMG id=openMenuButton1 style="DISPLAY: none" vspace=20 src="Portal.Images.barOpenMenu.gif"> </TD></TR>
+
+<TR>
+
+<TD onclick=window.top.ShowMenu(!window.top.bMenuVisible); id=menuCollapseMiddle title="Click to Hide/Show Menu" style="CURSOR: hand" height="33%" vAlign=middle width=6><IMG id=closeMenuButton2 vspace=20 src="Portal.Images.barCloseMenu.gif"> <IMG id=openMenuButton2 style="DISPLAY: none" vspace=20 src="Portal.Images.barOpenMenu.gif"> </TD></TR>
+
+<TR>
+
+<TD onclick=window.top.ShowMenu(!window.top.bMenuVisible); id=menuCollapseBottom title="Click to Hide/Show Menu" style="CURSOR: hand" vAlign=bottom width=6><IMG id=closeMenuButton3 vspace=20 src="Portal.Images.barCloseMenu.gif"> <IMG id=openMenuButton3 style="DISPLAY: none" vspace=20 src="Portal.Images.barOpenMenu.gif"> </TD></TR></TBODY></TABLE></BODY></HTML>
