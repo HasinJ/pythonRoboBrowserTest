@@ -29,17 +29,41 @@ continueBtn.send_keys(Keys.ENTER)
 frame = wait.until(EC.presence_of_element_located((By.ID, "MenuFrame")))
 driver.switch_to.frame(frame)
 
-wait = WebDriverWait(driver,60)
-#keyReports = driver.find_element_by_id('Node_1004552_')Node_1004555_ Node_1018704_0
+wait = WebDriverWait(driver,30)
+#keyReports = driver.find_element_by_id('Node_1004552_')Node_1004555_ Node_1018704_0 347884
 #keyReports.send_keys(Keys.ENTER)
 
+
+productMixReport = wait.until(EC.presence_of_element_located((By.ID, "Node_1018703_0")))
+
+ActionChains(driver).move_to_element(productMixReport).click(productMixReport).perform()
+
+driver.switch_to.default_content()
+
+wait = WebDriverWait(driver,30)
+frame = wait.until(EC.presence_of_element_located((By.ID, "fraContent")))
+driver.switch_to.frame(frame)
+
+wait = WebDriverWait(driver,30)
+frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2")))
+driver.switch_to.frame(frame)
+
+orgUnit = wait.until(EC.presence_of_element_located((By.ID, "__selOrgUnit")))
+orgUnit.clear()
+time.sleep(1)
+orgUnit.send_keys('Business Unit')
+time.sleep(1)
+orgUnit.send_keys(Keys.ENTER)
+time.sleep(1)
+orgUnit.send_keys(Keys.DOWN)
+time.sleep(1)
+orgUnit.send_keys(Keys.ENTER)
+time.sleep(1)
+
+time.sleep(5)
 print(driver.page_source)
 
-keyReports = wait.until(EC.presence_of_element_located((By.ID, "Node_1018703_0")))
 
-ActionChains(driver).move_to_element(keyReports).click(keyReports).perform()
-
-print(driver.page_source)
 
 
 
