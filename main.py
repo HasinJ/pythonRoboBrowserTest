@@ -30,12 +30,7 @@ frame = wait.until(EC.presence_of_element_located((By.ID, "MenuFrame")))
 driver.switch_to.frame(frame)
 
 wait = WebDriverWait(driver,30)
-#keyReports = driver.find_element_by_id('Node_1004552_')Node_1004555_ Node_1018704_0 347884
-#keyReports.send_keys(Keys.ENTER)
-
-
 productMixReport = wait.until(EC.presence_of_element_located((By.ID, "Node_1018703_0")))
-
 ActionChains(driver).move_to_element(productMixReport).click(productMixReport).perform()
 
 driver.switch_to.default_content()
@@ -119,34 +114,3 @@ submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__Aut
 submit.send_keys(Keys.ENTER)
 
 print(driver.page_source)
-#WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@class='btn btn-primary' and @id='YesBtn']")))
-
-
-#submit = driver.find_element_by_id('wrLHSalesMixCon__AutoRunReport')
-#ActionChains(driver).move_to_element(submit).click(submit).perform()
-#time.sleep(1)
-
-#print(driver.window_handles)
-#actions = ActionChains(driver)
-#actions.send_keys(Keys.TAB).perform()
-#time.sleep(1)
-
-#wait = WebDriverWait(driver,30)
-#time.sleep(5)
-#print(driver.page_source)
-#frame = wait.until(EC.presence_of_element_located((By.ID, "renderFrame")))
-#driver.switch_to.frame(frame)
-#actions.send_keys(Keys.ENTER).perform()
-#time.sleep(1)
-#actions.move_to_element(submit).click(submit).perform()
-
-
-time.sleep(5)
-print(driver.page_source)
-
-
-
-
-
-
-#window.top.ShowMenu(!window.top.bMenuVisible);
