@@ -1,0 +1,1149 @@
+[Command: python -u 'C:\Users\Hasin Choudhury\Desktop\pythonRoboBrowserTest\main.py']
+2
+60e5932e-14fd-4a2f-a697-f6ca16ac3ab2
+<HTML xmlns:v = "urn:schemas-microsoft-com:vml"><HEAD>
+
+<META content=IE=EmulateIE9 http-equiv=X-UA-Compatible><!-- client timer header  -->
+
+<SCRIPT language=javascript>
+
+  <!--
+
+    var __startTime = new Date();
+
+    var __lastTime = __startTime;
+
+
+
+    function BeforeUnload()
+
+    {
+
+      if (typeof(HandleOnBeforeUnload)=="function")
+
+      {
+
+        HandleOnBeforeUnload();
+
+      }
+
+    }
+
+  //-->
+
+  </SCRIPT>
+
+
+
+<STYLE>
+
+     v\:* {behavior: url(#default#VML);}
+
+     .storeuserData {behavior:url(#default#userData);}
+
+  </STYLE>
+
+<!-- body bgcolor added to prevent page color flashing during load--></HEAD>
+
+<BODY onclick=HandleOnBodyClick() onselectstart="window.event.cancelBubble = true;" onhelp=OpenHelpWindow() onload=RenderFormMain() bottomMargin=0 onbeforeunload=BeforeUnload() bgColor=#f1f1f1 leftMargin=0 topMargin=0 rightMargin=0><!-- This list of script files should be kept in sync with the list in clientmodal.htm -->
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.CodePad.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientFormat.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientRender.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientWS.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientMenu.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientSQP.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientXMLTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RadHelp.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RadMsgEdit.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RelatedLinks.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RequestDOM.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WavePopups.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WaveDOLookup.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WaveModal.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WSDecompress.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.Workflow.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.MSReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.SortTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ADOIncludes.no_ws"></SCRIPT>
+
+<!-- This list of stylesheets should be kept in sync with the list in clientmodal.htm --><LINK id=PEStyleSheet rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.newstyle.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.RadCal.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveMenu.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.PEStyle.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveDetailCalendar.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveFieldGrid.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveCalendar.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTabbedPanel.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveReports.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveSelect.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveLookup.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTree.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTable.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WavePopup.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveHelp.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveGraph.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveXMLTree.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveContainer.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.Overrides.css">
+
+<SCRIPT id=__XMLEchoStyleSheetDataIsland language=xml src="bin/orf.dll/Platform.PE.XMLEcho.xsl"></SCRIPT>
+
+
+
+<SCRIPT id=__XMLEchoColoredStyleSheetDataIsland language=xml src="bin/orf.dll/Platform.PE.XMLColoredEcho.xsl"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.Form.Common.DatesDialog.htm"></SCRIPT>
+
+<INPUT id=__WaveFormLocation type=hidden value=Reports.Form.Common.DatesDialog.xml><INPUT id=__WaveCompressionTag type=hidden value=on>
+
+<SCRIPT id=__PEExtendedDOMDataIsland language=xml src="bin/orf.dll/Reports.Form.Common.DatesDialog.1.cff"></SCRIPT>
+
+<xml id=__PERecordsetDataIsland><wavesets><ws id="wsStartWeeks" a="N" t="none"><fs><f n="start_date" d="200" l="0" g="00"/><f n="description" d="200" l="0" g="00"/><f n="end_date" d="200" l="0" g="00"/></fs>
+
+		<rs b="0" c="5" p="0" e="0" n="0" s="-1" d="0"><r c1="03/1/2020" c2="3/1/20 - 3/7/20" c3="03/7/2020"/>
+
+			<r c1="03/8/2020" c2="3/8/20 - 3/14/20" c3="03/14/2020"/>
+
+			<r c1="03/15/2020" c2="3/15/20 - 3/21/20" c3="03/21/2020"/>
+
+			<r c1="03/22/2020" c2="3/22/20 - 3/28/20" c3="03/28/2020"/>
+
+			<r c1="03/29/2020" c2="3/29/20 - 4/4/20" c3="04/4/2020"/>
+
+		</rs></ws><ws id="wsEndWeeks" a="N" t="none"><fs><f n="start_date" d="200" l="0" g="00"/><f n="description" d="200" l="0" g="00"/><f n="end_date" d="200" l="0" g="00"/></fs>
+
+		<rs b="0" c="5" p="0" e="0" n="0" s="-1" d="0"><r c1="03/1/2020" c2="3/1/20 - 3/7/20" c3="03/7/2020"/>
+
+			<r c1="03/8/2020" c2="3/8/20 - 3/14/20" c3="03/14/2020"/>
+
+			<r c1="03/15/2020" c2="3/15/20 - 3/21/20" c3="03/21/2020"/>
+
+			<r c1="03/22/2020" c2="3/22/20 - 3/28/20" c3="03/28/2020"/>
+
+			<r c1="03/29/2020" c2="3/29/20 - 4/4/20" c3="04/4/2020"/>
+
+		</rs></ws><ws id="wsYears" a="N" t="none"><fs><f n="year_id" d="3" l="0" g="00"/><f n="year" d="200" l="0" g="00"/></fs>
+
+		<rs b="0" c="9" p="0" e="0" n="0" s="-1" d="0"><r c1="2016" c2="2016"/>
+
+			<r c1="2017" c2="2017"/>
+
+			<r c1="2018" c2="2018"/>
+
+			<r c1="2019" c2="2019"/>
+
+			<r c1="2020" c2="2020"/>
+
+			<r c1="2021" c2="2021"/>
+
+			<r c1="2022" c2="2022"/>
+
+			<r c1="2023" c2="2023"/>
+
+			<r c1="2024" c2="2024"/>
+
+		</rs></ws><ws id="wsStartPeriods" a="N" t="none"><fs><f n="start_timestamp" d="135" l="8" g="01"/><f n="name" d="202" l="50" g="01"/><f n="end_timestamp" d="135" l="8" g="01"/><f n="year_id" d="3" l="4" g="01"/></fs>
+
+		<rs b="0" c="12" p="0" e="11" n="0" s="-1" d="0"><r c1="12/22/2019" c2="1/2020" c3="1/18/2020" c4="2020"/>
+
+			<r c1="1/19/2020" c2="2/2020" c3="2/15/2020" c4="2020"/>
+
+			<r c1="2/16/2020" c2="3/2020" c3="3/21/2020" c4="2020"/>
+
+			<r c1="3/22/2020" c2="4/2020" c3="4/18/2020" c4="2020"/>
+
+			<r c1="4/19/2020" c2="5/2020" c3="5/16/2020" c4="2020"/>
+
+			<r c1="5/17/2020" c2="6/2020" c3="6/20/2020" c4="2020"/>
+
+			<r c1="6/21/2020" c2="7/2020" c3="7/18/2020" c4="2020"/>
+
+			<r c1="7/19/2020" c2="8/2020" c3="8/15/2020" c4="2020"/>
+
+			<r c1="8/16/2020" c2="9/2020" c3="9/19/2020" c4="2020"/>
+
+			<r c1="9/20/2020" c2="10/2020" c3="10/17/2020" c4="2020"/>
+
+			<r c1="10/18/2020" c2="11/2020" c3="11/14/2020" c4="2020"/>
+
+			<r c1="11/15/2020" c2="12/2020" c3="12/19/2020" c4="2020"/>
+
+		</rs></ws><ws id="wsEndPeriods" a="N" t="none"><fs><f n="start_timestamp" d="135" l="8" g="01"/><f n="name" d="202" l="50" g="01"/><f n="end_timestamp" d="135" l="8" g="01"/><f n="year_id" d="3" l="4" g="01"/></fs>
+
+		<rs b="0" c="12" p="0" e="11" n="0" s="-1" d="0"><r c1="12/22/2019" c2="1/2020" c3="1/18/2020" c4="2020"/>
+
+			<r c1="1/19/2020" c2="2/2020" c3="2/15/2020" c4="2020"/>
+
+			<r c1="2/16/2020" c2="3/2020" c3="3/21/2020" c4="2020"/>
+
+			<r c1="3/22/2020" c2="4/2020" c3="4/18/2020" c4="2020"/>
+
+			<r c1="4/19/2020" c2="5/2020" c3="5/16/2020" c4="2020"/>
+
+			<r c1="5/17/2020" c2="6/2020" c3="6/20/2020" c4="2020"/>
+
+			<r c1="6/21/2020" c2="7/2020" c3="7/18/2020" c4="2020"/>
+
+			<r c1="7/19/2020" c2="8/2020" c3="8/15/2020" c4="2020"/>
+
+			<r c1="8/16/2020" c2="9/2020" c3="9/19/2020" c4="2020"/>
+
+			<r c1="9/20/2020" c2="10/2020" c3="10/17/2020" c4="2020"/>
+
+			<r c1="10/18/2020" c2="11/2020" c3="11/14/2020" c4="2020"/>
+
+			<r c1="11/15/2020" c2="12/2020" c3="12/19/2020" c4="2020"/>
+
+		</rs></ws></wavesets>
+
+</xml><xml id=__PERoleOverrideXMLIsland><overrides/>
+
+</xml><xml id=__PEContextDataIsland><Context formmoniker="Reports.Form.Common.DatesDialog" current_hier_id="1006050" current_hier_level="1000101" current_hier_iddisplay="6050 - C Plus Management" current_hier="1006050" current_hierdisplay="6050 - C Plus Management (Franchise) - C Plus Management" user_prefer_report_format="h" logged_in_hier_id="1006050" logged_in_hier_level="1000101" __current_language_id="1" pdfserverplatform=".net" _bodogwavesetpagenum="0" _bodogwavesetpagesize="-1" first_day_of_week="0" cbostartweek="03/1/2020" cbostartweekdisplay="3/1/20 - 3/7/20" cboendweek="03/29/2020" cboendweekdisplay="3/29/20 - 4/4/20"/></xml><xml id=__PERequestDOMDataIsland><RequestDOM nextTicket="0">
+
+	<CurrentPage ModeName="undefined" FormMoniker="Reports.Form.Common.DatesDialog"/>
+
+	<FormChanges/>
+
+</RequestDOM></xml>
+
+<SCRIPT language=javascript>
+
+    var INIT_TIMEOUT_DELAY=1;
+
+    var INIT_TIMEOUT_LOOP=5;
+
+    var g_indx=0;
+
+
+
+    function RenderFormMain()
+
+    {
+
+      //if gzip is used, the browser MAY fire the onLoad event before unzip the data, so give
+
+      //a timeout period to ensure (hopefully) the file is decompressed first
+
+      if (typeof(RenderForm)=="undefined")
+
+      {
+
+        while(g_indx<INIT_TIMEOUT_LOOP)
+
+        {
+
+          g_indx++;
+
+          window.setTimeout("RenderFormMain()", INIT_TIMEOUT_DELAY);
+
+        }
+
+        //check for whether debug or release version first
+
+        var alertMsg="Platform functions have failed to render. ";
+
+        var sUrl="bin/orf.dll/Platform.ClientFunctions.ClientRender.no_ws";
+
+        alert(alertMsg);
+
+        //open other window to browse the file
+
+        window.open(sUrl);
+
+        document.body.onbeforeunload = null;
+
+        document.body.onclick = null;
+
+      }
+
+      else
+
+        RenderForm();
+
+    }
+
+
+
+
+
+    function BeforeUnload()
+
+    {
+
+      if (typeof(HandleOnBeforeUnload)=="function")
+
+      {
+
+        HandleOnBeforeUnload();
+
+      }
+
+    }
+
+
+
+  </SCRIPT>
+
+ <SPAN id=FormPlaceHolder>
+
+<FORM onreset=HandleOnFormReset(this); id=theForm class=formDefault onsubmit=__HandleOnSubmit() style="HEIGHT: 100%; WIDTH: 100%; MARGIN: 0px" method=post action=Default.asp><INPUT tabIndex=-1 id=theRequestDOM type=hidden name=theRequestDOM>
+
+<DIV onclick=HandleBodyOnClick() tabIndex=-1 onmouseover=HandleBodyOnMouseOver() onmouseout=HandleBodyOnMouseOut() id=_main_form_div onkeydown=HandleBodyOnKeyDown(); style="HEIGHT: 100%; WIDTH: 100%" oncontextmenu=HandleBodyOnContextMenu(); onmousewheel=HandleBodyOnMouseWheel();><IMG id=formTitleIconImg src="https://adqsr.radiantenterprise.com/branding/form.gif" align=left>
+
+<TABLE class=topBar cellSpacing=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR onmousedown=Handle_TopBar_MouseDown();>
+
+<TD id=topBarTitle class=topBarTitleLeft oncontextmenu=HandleOnContextMenu(); height=22 noWrap label=""></TD>
+
+<TD class=topBarTitleLeft oncontextmenu=HandleOnContextMenu(); width=90><BUTTON onclick=HandleInstructionButtonClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=__main_help_button class=imgButton style="WIDTH: 100%" label="Platform_Help" needHelp="true"><IMG border=0 src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.helpButton.gif" align=absMiddle> Instructions</BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveActionBar(Expert Mode) ............-->
+
+<DIV class=actBarExpert style="HEIGHT: 20px" oncontextmenu=HandleOnContextMenu(); align=right componentType="WaveActionBar"><!--........... WaveAction ( waSaveClose ) ............-->
+
+<TABLE style="DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onclick=HandleOnClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=waSaveClose class=buttonField onkeydown=HandleButtonOnKeyPress(this); oncontextmenu=HandleOnContextMenu(); type=button value="Save &amp; Close" componentType="WaveAction" label="ButtonSaveClose" needHelp="y" dispWait="N" actionType="UserDefined" halign="center" notInGrid=""> </INPUT></TD></TR></TBODY></TABLE><!--........... WaveAction ( waCancel ) ............-->
+
+<TABLE style="DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onclick=HandleOnClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=waCancel class=buttonField onkeydown=HandleButtonOnKeyPress(this); oncontextmenu=HandleOnContextMenu(); type=button value=Cancel componentType="WaveAction" label="ButtonCancel" needHelp="y" dispWait="N" actionType="UserDefined" halign="center" notInGrid=""> </INPUT></TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlTimePeriod ) ............-->
+
+<DIV id=pnlTimePeriod class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><SPAN class=panelTitle>Time Period </SPAN><BR><!--........... WavePanel( pnlTimeType ) ............-->
+
+<DIV id=pnlTimeType class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left componentType="WavePanel"><!--........... WaveSelect( cboTimePeriod ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="LabelDisplayBy" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=cboTimePeriod_label class="fieldLabel&#13;&#10;                       requiredFieldLabel" style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="LabelDisplayBy">Display By </SPAN></TD>
+
+<TD><INPUT onchange=HandleSelectOnChange(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboTimePeriod class="inputField " onkeydown=HandleSelectOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=Day componentType="WaveSelect" notInGrid="" valueGroup="Time Period Type" key="d"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleSelectOnClick(this) tabIndex=-1 id=cboTimePeriod_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.SelectArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlDayStartSelect ) ............-->
+
+<DIV id=pnlDayStartSelect class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveDateEdit( calStartDay ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="Start Date" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=calStartDay_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="Start Date">Start Date</SPAN></TD>
+
+<TD><INPUT onchange=DateEditOnChange(this);HandleOnChange(this); onkeypress=DateEditOnKeyPress(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=calStartDay class="inputField " style="WIDTH: 100%" value=03/28/2020 componentType="WaveDateEdit" notInGrid=""> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleCalendarPick(this) tabIndex=-1 class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Calendar.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlDayEndSelect ) ............-->
+
+<DIV id=pnlDayEndSelect class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveDateEdit( calEndDay ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="End Date" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=calEndDay_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="End Date">End Date</SPAN></TD>
+
+<TD><INPUT onchange=DateEditOnChange(this);HandleOnChange(this); onkeypress=DateEditOnKeyPress(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=calEndDay class="inputField " style="WIDTH: 100%" value=03/28/2020 componentType="WaveDateEdit" notInGrid=""> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleCalendarPick(this) tabIndex=-1 class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Calendar.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlWmyStartSelect ) ............-->
+
+<DIV id=pnlWmyStartSelect class=panelDefault style="WIDTH: 100%; DISPLAY: none" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveLookup not in Grid( cboStartYear ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="Start" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=cboStartYear_label class="fieldLabel&#13;&#10;                       requiredFieldLabel" style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="Start">Start</SPAN> </TD>
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboStartYear class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsYears" lazyLoaded="N" key="2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboStartYear_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveSelect( cboStartMonth ) ............-->
+
+<TABLE style="WIDTH: 100px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleSelectOnChange(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboStartMonth class="inputField " onkeydown=HandleSelectOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=March componentType="WaveSelect" notInGrid="" valueGroup="Month Names" key="3"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleSelectOnClick(this) tabIndex=-1 id=cboStartMonth_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.SelectArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( cboStartWeek ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboStartWeek class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value="3/1/20 - 3/7/20" componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsStartWeeks" lazyLoaded="N" key="03/1/2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboStartWeek_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( luStartPeriod ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=luStartPeriod class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=1/2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsStartPeriods" lazyLoaded="N" nullMsg="ButtonNone" key="12/22/2019"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=luStartPeriod_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><BR style="DISPLAY: none"></DIV><!--........... WavePanel( pnlWmyEndSelect ) ............-->
+
+<DIV id=pnlWmyEndSelect class=panelDefault style="WIDTH: 100%; DISPLAY: none" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveLookup not in Grid( cboEndYear ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="End" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=cboEndYear_label class="fieldLabel&#13;&#10;                       requiredFieldLabel" style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="End">End</SPAN> </TD>
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboEndYear class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsYears" lazyLoaded="N" key="2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboEndYear_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveSelect( cboEndMonth ) ............-->
+
+<TABLE style="WIDTH: 100px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleSelectOnChange(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboEndMonth class="inputField " onkeydown=HandleSelectOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=March componentType="WaveSelect" notInGrid="" valueGroup="Month Names" key="3"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleSelectOnClick(this) tabIndex=-1 id=cboEndMonth_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.SelectArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( cboEndWeek ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboEndWeek class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value="3/1/20 - 3/7/20" componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsEndWeeks" lazyLoaded="N" key="03/1/2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboEndWeek_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( luEndPeriod ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=luEndPeriod class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=1/2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsEndPeriods" lazyLoaded="N" nullMsg="ButtonNone" key="12/22/2019"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=luEndPeriod_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><BR style="DISPLAY: none"></DIV></DIV></DIV></FORM>
+
+<DIV id=developerInfo class=developerInfo style="DISPLAY: none"><INPUT onclick=document.location.reload() type=button value=Refresh></INPUT> <INPUT onclick=__ResetTimer() type=button value="Reset Timer"></INPUT> <A href="https://adqsr.radiantenterprise.com/PE/LastServerTrace.asp" target=_blank>View Server Trace </A>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime XML:</H3>
+
+<DIV id=RuntimeXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime Request XML:</H3>
+
+<DIV id=RuntimeRequestXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime HTML:</H3>
+
+<DIV id=RuntimeHTML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Source Comments:</H3>
+
+<DIV id=SourceComments style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Source Request XML:</H3>
+
+<DIV id=RequestXML style="DISPLAY: none">&lt;RequestDOM nextTicket="0"&gt;<BR>&nbsp;&lt;CurrentPage ModeName="undefined" FormMoniker="Reports.Form.Common.DatesDialog"/&gt;<BR>&nbsp;&lt;FormChanges/&gt;<BR>&lt;/RequestDOM&gt;</DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Report Response XML:</H3>
+
+<DIV id=ReportsXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Workflow XML:</H3>
+
+<DIV id=WorkflowPlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>XSL Output:</H3>
+
+<DIV id=TransFormResultPlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Access Features:</H3>
+
+<DIV id=AccessFeaturePlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV id=traceDiv style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"></DIV></DIV></SPAN></BODY></HTML>
+<HTML xmlns:v = "urn:schemas-microsoft-com:vml"><HEAD>
+
+<META content=IE=EmulateIE9 http-equiv=X-UA-Compatible><!-- client timer header  -->
+
+<SCRIPT language=javascript>
+
+  <!--
+
+    var __startTime = new Date();
+
+    var __lastTime = __startTime;
+
+
+
+    function BeforeUnload()
+
+    {
+
+      if (typeof(HandleOnBeforeUnload)=="function")
+
+      {
+
+        HandleOnBeforeUnload();
+
+      }
+
+    }
+
+  //-->
+
+  </SCRIPT>
+
+
+
+<STYLE>
+
+     v\:* {behavior: url(#default#VML);}
+
+     .storeuserData {behavior:url(#default#userData);}
+
+  </STYLE>
+
+<!-- body bgcolor added to prevent page color flashing during load--></HEAD>
+
+<BODY onclick=HandleOnBodyClick() onselectstart="window.event.cancelBubble = true;" onhelp=OpenHelpWindow() onload=RenderFormMain() bottomMargin=0 onbeforeunload=BeforeUnload() bgColor=#f1f1f1 leftMargin=0 topMargin=0 rightMargin=0><!-- This list of script files should be kept in sync with the list in clientmodal.htm -->
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.CodePad.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientFormat.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientRender.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientWS.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientMenu.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientSQP.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientXMLTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RadHelp.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RadMsgEdit.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RelatedLinks.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RequestDOM.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WavePopups.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WaveDOLookup.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WaveModal.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WSDecompress.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.Workflow.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.MSReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.SortTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ADOIncludes.no_ws"></SCRIPT>
+
+<!-- This list of stylesheets should be kept in sync with the list in clientmodal.htm --><LINK id=PEStyleSheet rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.newstyle.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.RadCal.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveMenu.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.PEStyle.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveDetailCalendar.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveFieldGrid.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveCalendar.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTabbedPanel.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveReports.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveSelect.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveLookup.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTree.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTable.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WavePopup.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveHelp.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveGraph.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveXMLTree.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveContainer.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.Overrides.css">
+
+<SCRIPT id=__XMLEchoStyleSheetDataIsland language=xml src="bin/orf.dll/Platform.PE.XMLEcho.xsl"></SCRIPT>
+
+
+
+<SCRIPT id=__XMLEchoColoredStyleSheetDataIsland language=xml src="bin/orf.dll/Platform.PE.XMLColoredEcho.xsl"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.Form.Common.DatesDialog.htm"></SCRIPT>
+
+<INPUT id=__WaveFormLocation type=hidden value=Reports.Form.Common.DatesDialog.xml><INPUT id=__WaveCompressionTag type=hidden value=on>
+
+<SCRIPT id=__PEExtendedDOMDataIsland language=xml src="bin/orf.dll/Reports.Form.Common.DatesDialog.1.cff"></SCRIPT>
+
+<xml id=__PERecordsetDataIsland><wavesets><ws id="wsStartWeeks" a="N" t="none"><fs><f n="start_date" d="200" l="0" g="00"/><f n="description" d="200" l="0" g="00"/><f n="end_date" d="200" l="0" g="00"/></fs>
+
+		<rs b="0" c="5" p="0" e="0" n="0" s="-1" d="0"><r c1="03/1/2020" c2="3/1/20 - 3/7/20" c3="03/7/2020"/>
+
+			<r c1="03/8/2020" c2="3/8/20 - 3/14/20" c3="03/14/2020"/>
+
+			<r c1="03/15/2020" c2="3/15/20 - 3/21/20" c3="03/21/2020"/>
+
+			<r c1="03/22/2020" c2="3/22/20 - 3/28/20" c3="03/28/2020"/>
+
+			<r c1="03/29/2020" c2="3/29/20 - 4/4/20" c3="04/4/2020"/>
+
+		</rs></ws><ws id="wsEndWeeks" a="N" t="none"><fs><f n="start_date" d="200" l="0" g="00"/><f n="description" d="200" l="0" g="00"/><f n="end_date" d="200" l="0" g="00"/></fs>
+
+		<rs b="0" c="5" p="0" e="0" n="0" s="-1" d="0"><r c1="03/1/2020" c2="3/1/20 - 3/7/20" c3="03/7/2020"/>
+
+			<r c1="03/8/2020" c2="3/8/20 - 3/14/20" c3="03/14/2020"/>
+
+			<r c1="03/15/2020" c2="3/15/20 - 3/21/20" c3="03/21/2020"/>
+
+			<r c1="03/22/2020" c2="3/22/20 - 3/28/20" c3="03/28/2020"/>
+
+			<r c1="03/29/2020" c2="3/29/20 - 4/4/20" c3="04/4/2020"/>
+
+		</rs></ws><ws id="wsYears" a="N" t="none"><fs><f n="year_id" d="3" l="0" g="00"/><f n="year" d="200" l="0" g="00"/></fs>
+
+		<rs b="0" c="9" p="0" e="0" n="0" s="-1" d="0"><r c1="2016" c2="2016"/>
+
+			<r c1="2017" c2="2017"/>
+
+			<r c1="2018" c2="2018"/>
+
+			<r c1="2019" c2="2019"/>
+
+			<r c1="2020" c2="2020"/>
+
+			<r c1="2021" c2="2021"/>
+
+			<r c1="2022" c2="2022"/>
+
+			<r c1="2023" c2="2023"/>
+
+			<r c1="2024" c2="2024"/>
+
+		</rs></ws><ws id="wsStartPeriods" a="N" t="none"><fs><f n="start_timestamp" d="135" l="8" g="01"/><f n="name" d="202" l="50" g="01"/><f n="end_timestamp" d="135" l="8" g="01"/><f n="year_id" d="3" l="4" g="01"/></fs>
+
+		<rs b="0" c="12" p="0" e="11" n="0" s="-1" d="0"><r c1="12/22/2019" c2="1/2020" c3="1/18/2020" c4="2020"/>
+
+			<r c1="1/19/2020" c2="2/2020" c3="2/15/2020" c4="2020"/>
+
+			<r c1="2/16/2020" c2="3/2020" c3="3/21/2020" c4="2020"/>
+
+			<r c1="3/22/2020" c2="4/2020" c3="4/18/2020" c4="2020"/>
+
+			<r c1="4/19/2020" c2="5/2020" c3="5/16/2020" c4="2020"/>
+
+			<r c1="5/17/2020" c2="6/2020" c3="6/20/2020" c4="2020"/>
+
+			<r c1="6/21/2020" c2="7/2020" c3="7/18/2020" c4="2020"/>
+
+			<r c1="7/19/2020" c2="8/2020" c3="8/15/2020" c4="2020"/>
+
+			<r c1="8/16/2020" c2="9/2020" c3="9/19/2020" c4="2020"/>
+
+			<r c1="9/20/2020" c2="10/2020" c3="10/17/2020" c4="2020"/>
+
+			<r c1="10/18/2020" c2="11/2020" c3="11/14/2020" c4="2020"/>
+
+			<r c1="11/15/2020" c2="12/2020" c3="12/19/2020" c4="2020"/>
+
+		</rs></ws><ws id="wsEndPeriods" a="N" t="none"><fs><f n="start_timestamp" d="135" l="8" g="01"/><f n="name" d="202" l="50" g="01"/><f n="end_timestamp" d="135" l="8" g="01"/><f n="year_id" d="3" l="4" g="01"/></fs>
+
+		<rs b="0" c="12" p="0" e="11" n="0" s="-1" d="0"><r c1="12/22/2019" c2="1/2020" c3="1/18/2020" c4="2020"/>
+
+			<r c1="1/19/2020" c2="2/2020" c3="2/15/2020" c4="2020"/>
+
+			<r c1="2/16/2020" c2="3/2020" c3="3/21/2020" c4="2020"/>
+
+			<r c1="3/22/2020" c2="4/2020" c3="4/18/2020" c4="2020"/>
+
+			<r c1="4/19/2020" c2="5/2020" c3="5/16/2020" c4="2020"/>
+
+			<r c1="5/17/2020" c2="6/2020" c3="6/20/2020" c4="2020"/>
+
+			<r c1="6/21/2020" c2="7/2020" c3="7/18/2020" c4="2020"/>
+
+			<r c1="7/19/2020" c2="8/2020" c3="8/15/2020" c4="2020"/>
+
+			<r c1="8/16/2020" c2="9/2020" c3="9/19/2020" c4="2020"/>
+
+			<r c1="9/20/2020" c2="10/2020" c3="10/17/2020" c4="2020"/>
+
+			<r c1="10/18/2020" c2="11/2020" c3="11/14/2020" c4="2020"/>
+
+			<r c1="11/15/2020" c2="12/2020" c3="12/19/2020" c4="2020"/>
+
+		</rs></ws></wavesets>
+
+</xml><xml id=__PERoleOverrideXMLIsland><overrides/>
+
+</xml><xml id=__PEContextDataIsland><Context formmoniker="Reports.Form.Common.DatesDialog" current_hier_id="1006050" current_hier_level="1000101" current_hier_iddisplay="6050 - C Plus Management" current_hier="1006050" current_hierdisplay="6050 - C Plus Management (Franchise) - C Plus Management" user_prefer_report_format="h" logged_in_hier_id="1006050" logged_in_hier_level="1000101" __current_language_id="1" pdfserverplatform=".net" _bodogwavesetpagenum="0" _bodogwavesetpagesize="-1" first_day_of_week="0" cbostartweek="03/1/2020" cbostartweekdisplay="3/1/20 - 3/7/20" cboendweek="03/29/2020" cboendweekdisplay="3/29/20 - 4/4/20"/></xml><xml id=__PERequestDOMDataIsland><RequestDOM nextTicket="0">
+
+	<CurrentPage ModeName="undefined" FormMoniker="Reports.Form.Common.DatesDialog"/>
+
+	<FormChanges/>
+
+</RequestDOM></xml>
+
+<SCRIPT language=javascript>
+
+    var INIT_TIMEOUT_DELAY=1;
+
+    var INIT_TIMEOUT_LOOP=5;
+
+    var g_indx=0;
+
+
+
+    function RenderFormMain()
+
+    {
+
+      //if gzip is used, the browser MAY fire the onLoad event before unzip the data, so give
+
+      //a timeout period to ensure (hopefully) the file is decompressed first
+
+      if (typeof(RenderForm)=="undefined")
+
+      {
+
+        while(g_indx<INIT_TIMEOUT_LOOP)
+
+        {
+
+          g_indx++;
+
+          window.setTimeout("RenderFormMain()", INIT_TIMEOUT_DELAY);
+
+        }
+
+        //check for whether debug or release version first
+
+        var alertMsg="Platform functions have failed to render. ";
+
+        var sUrl="bin/orf.dll/Platform.ClientFunctions.ClientRender.no_ws";
+
+        alert(alertMsg);
+
+        //open other window to browse the file
+
+        window.open(sUrl);
+
+        document.body.onbeforeunload = null;
+
+        document.body.onclick = null;
+
+      }
+
+      else
+
+        RenderForm();
+
+    }
+
+
+
+
+
+    function BeforeUnload()
+
+    {
+
+      if (typeof(HandleOnBeforeUnload)=="function")
+
+      {
+
+        HandleOnBeforeUnload();
+
+      }
+
+    }
+
+
+
+  </SCRIPT>
+
+ <SPAN id=FormPlaceHolder>
+
+<FORM onreset=HandleOnFormReset(this); id=theForm class=formDefault onsubmit=__HandleOnSubmit() style="HEIGHT: 100%; WIDTH: 100%; MARGIN: 0px" method=post action=Default.asp><INPUT tabIndex=-1 id=theRequestDOM type=hidden name=theRequestDOM>
+
+<DIV onclick=HandleBodyOnClick() tabIndex=-1 onmouseover=HandleBodyOnMouseOver() onmouseout=HandleBodyOnMouseOut() id=_main_form_div onkeydown=HandleBodyOnKeyDown(); style="HEIGHT: 100%; WIDTH: 100%" oncontextmenu=HandleBodyOnContextMenu(); onmousewheel=HandleBodyOnMouseWheel();><IMG id=formTitleIconImg src="https://adqsr.radiantenterprise.com/branding/form.gif" align=left>
+
+<TABLE class=topBar cellSpacing=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR onmousedown=Handle_TopBar_MouseDown();>
+
+<TD id=topBarTitle class=topBarTitleLeft oncontextmenu=HandleOnContextMenu(); height=22 noWrap label=""></TD>
+
+<TD class=topBarTitleLeft oncontextmenu=HandleOnContextMenu(); width=90><BUTTON onclick=HandleInstructionButtonClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=__main_help_button class=imgButton style="WIDTH: 100%" label="Platform_Help" needHelp="true"><IMG border=0 src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.helpButton.gif" align=absMiddle> Instructions</BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveActionBar(Expert Mode) ............-->
+
+<DIV class=actBarExpert style="HEIGHT: 20px" oncontextmenu=HandleOnContextMenu(); align=right componentType="WaveActionBar"><!--........... WaveAction ( waSaveClose ) ............-->
+
+<TABLE style="DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onclick=HandleOnClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=waSaveClose class=buttonField onkeydown=HandleButtonOnKeyPress(this); oncontextmenu=HandleOnContextMenu(); type=button value="Save &amp; Close" componentType="WaveAction" label="ButtonSaveClose" needHelp="y" dispWait="N" actionType="UserDefined" halign="center" notInGrid=""> </INPUT></TD></TR></TBODY></TABLE><!--........... WaveAction ( waCancel ) ............-->
+
+<TABLE style="DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onclick=HandleOnClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=waCancel class=buttonField onkeydown=HandleButtonOnKeyPress(this); oncontextmenu=HandleOnContextMenu(); type=button value=Cancel componentType="WaveAction" label="ButtonCancel" needHelp="y" dispWait="N" actionType="UserDefined" halign="center" notInGrid=""> </INPUT></TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlTimePeriod ) ............-->
+
+<DIV id=pnlTimePeriod class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><SPAN class=panelTitle>Time Period </SPAN><BR><!--........... WavePanel( pnlTimeType ) ............-->
+
+<DIV id=pnlTimeType class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left componentType="WavePanel"><!--........... WaveSelect( cboTimePeriod ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="LabelDisplayBy" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=cboTimePeriod_label class="fieldLabel&#13;&#10;                       requiredFieldLabel" style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="LabelDisplayBy">Display By </SPAN></TD>
+
+<TD><INPUT onchange=HandleSelectOnChange(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboTimePeriod class="inputField " onkeydown=HandleSelectOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=Day componentType="WaveSelect" notInGrid="" valueGroup="Time Period Type" key="d"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleSelectOnClick(this) tabIndex=-1 id=cboTimePeriod_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.SelectArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlDayStartSelect ) ............-->
+
+<DIV id=pnlDayStartSelect class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveDateEdit( calStartDay ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="Start Date" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=calStartDay_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="Start Date">Start Date</SPAN></TD>
+
+<TD><INPUT onchange=DateEditOnChange(this);HandleOnChange(this); onkeypress=DateEditOnKeyPress(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=calStartDay class="inputField " style="WIDTH: 100%" value=03/28/2020 componentType="WaveDateEdit" notInGrid=""> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleCalendarPick(this) tabIndex=-1 class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Calendar.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlDayEndSelect ) ............-->
+
+<DIV id=pnlDayEndSelect class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveDateEdit( calEndDay ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="End Date" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=calEndDay_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="End Date">End Date</SPAN></TD>
+
+<TD><INPUT onchange=DateEditOnChange(this);HandleOnChange(this); onkeypress=DateEditOnKeyPress(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=calEndDay class="inputField " style="WIDTH: 100%" value=03/28/2020 componentType="WaveDateEdit" notInGrid=""> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleCalendarPick(this) tabIndex=-1 class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Calendar.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE></DIV><!--........... WavePanel( pnlWmyStartSelect ) ............-->
+
+<DIV id=pnlWmyStartSelect class=panelDefault style="WIDTH: 100%; DISPLAY: none" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveLookup not in Grid( cboStartYear ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="Start" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=cboStartYear_label class="fieldLabel&#13;&#10;                       requiredFieldLabel" style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="Start">Start</SPAN> </TD>
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboStartYear class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsYears" lazyLoaded="N" key="2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboStartYear_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveSelect( cboStartMonth ) ............-->
+
+<TABLE style="WIDTH: 100px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleSelectOnChange(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboStartMonth class="inputField " onkeydown=HandleSelectOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=March componentType="WaveSelect" notInGrid="" valueGroup="Month Names" key="3"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleSelectOnClick(this) tabIndex=-1 id=cboStartMonth_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.SelectArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( cboStartWeek ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboStartWeek class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value="3/1/20 - 3/7/20" componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsStartWeeks" lazyLoaded="N" key="03/1/2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboStartWeek_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( luStartPeriod ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=luStartPeriod class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=1/2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsStartPeriods" lazyLoaded="N" nullMsg="ButtonNone" key="12/22/2019"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=luStartPeriod_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><BR style="DISPLAY: none"></DIV><!--........... WavePanel( pnlWmyEndSelect ) ............-->
+
+<DIV id=pnlWmyEndSelect class=panelDefault style="WIDTH: 100%; DISPLAY: none" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><!--........... WaveLookup not in Grid( cboEndYear ) ............-->
+
+<TABLE style="WIDTH: 250px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="End" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=cboEndYear_label class="fieldLabel&#13;&#10;                       requiredFieldLabel" style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="End">End</SPAN> </TD>
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboEndYear class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsYears" lazyLoaded="N" key="2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboEndYear_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveSelect( cboEndMonth ) ............-->
+
+<TABLE style="WIDTH: 100px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleSelectOnChange(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboEndMonth class="inputField " onkeydown=HandleSelectOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=March componentType="WaveSelect" notInGrid="" valueGroup="Month Names" key="3"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleSelectOnClick(this) tabIndex=-1 id=cboEndMonth_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.SelectArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( cboEndWeek ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=cboEndWeek class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value="3/1/20 - 3/7/20" componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsEndWeeks" lazyLoaded="N" key="03/1/2020"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=cboEndWeek_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookup not in Grid( luEndPeriod ) ............-->
+
+<TABLE style="WIDTH: 175px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onchange=HandleLookupOnChange(this) onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=luEndPeriod class="inputField " onkeydown=HandleLookupInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=1/2020 componentType="WaveLookup" halign="center" notInGrid="" detailForm="N" lookupWS="wsEndPeriods" lazyLoaded="N" nullMsg="ButtonNone" key="12/22/2019"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupOnClick(this) tabIndex=-1 id=luEndPeriod_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.LookupArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><BR style="DISPLAY: none"></DIV></DIV></DIV></FORM>
+
+<DIV id=developerInfo class=developerInfo style="DISPLAY: none"><INPUT onclick=document.location.reload() type=button value=Refresh></INPUT> <INPUT onclick=__ResetTimer() type=button value="Reset Timer"></INPUT> <A href="https://adqsr.radiantenterprise.com/PE/LastServerTrace.asp" target=_blank>View Server Trace </A>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime XML:</H3>
+
+<DIV id=RuntimeXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime Request XML:</H3>
+
+<DIV id=RuntimeRequestXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime HTML:</H3>
+
+<DIV id=RuntimeHTML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Source Comments:</H3>
+
+<DIV id=SourceComments style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Source Request XML:</H3>
+
+<DIV id=RequestXML style="DISPLAY: none">&lt;RequestDOM nextTicket="0"&gt;<BR>&nbsp;&lt;CurrentPage ModeName="undefined" FormMoniker="Reports.Form.Common.DatesDialog"/&gt;<BR>&nbsp;&lt;FormChanges/&gt;<BR>&lt;/RequestDOM&gt;</DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Report Response XML:</H3>
+
+<DIV id=ReportsXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Workflow XML:</H3>
+
+<DIV id=WorkflowPlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>XSL Output:</H3>
+
+<DIV id=TransFormResultPlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Access Features:</H3>
+
+<DIV id=AccessFeaturePlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV id=traceDiv style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"></DIV></DIV></SPAN></BODY></HTML>

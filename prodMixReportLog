@@ -1,0 +1,557 @@
+[Command: python -u 'C:\Users\Hasin Choudhury\Desktop\pythonRoboBrowserTest\main.py']
+<HTML xmlns:v = "urn:schemas-microsoft-com:vml"><HEAD>
+
+<META content=IE=EmulateIE9 http-equiv=X-UA-Compatible><!-- client timer header  -->
+
+<SCRIPT language=javascript>
+
+  <!--
+
+    var __startTime = new Date();
+
+    var __lastTime = __startTime;
+
+
+
+    function BeforeUnload()
+
+    {
+
+      if (typeof(HandleOnBeforeUnload)=="function")
+
+      {
+
+        HandleOnBeforeUnload();
+
+      }
+
+    }
+
+  //-->
+
+  </SCRIPT>
+
+
+
+<STYLE>
+
+     v\:* {behavior: url(#default#VML);}
+
+     .storeuserData {behavior:url(#default#userData);}
+
+  </STYLE>
+
+<!-- body bgcolor added to prevent page color flashing during load--></HEAD>
+
+<BODY onclick=HandleOnBodyClick() onselectstart="window.event.cancelBubble = true;" onhelp=OpenHelpWindow() onload=RenderFormMain() bottomMargin=0 onbeforeunload=BeforeUnload() bgColor=#f1f1f1 leftMargin=0 topMargin=0 rightMargin=0><!-- This list of script files should be kept in sync with the list in clientmodal.htm -->
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.CodePad.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientFormat.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientRender.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientWS.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientMenu.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientSQP.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.ClientXMLTree.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RadHelp.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RadMsgEdit.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RelatedLinks.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.RequestDOM.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WavePopups.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WaveDOLookup.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WaveModal.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.WSDecompress.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ClientFunctions.Workflow.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.MSReportObject.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportFunctions.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.ReportEvents.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Reports.ClientFunctions.SortTable.no_ws"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/Platform.ADOIncludes.no_ws"></SCRIPT>
+
+<!-- This list of stylesheets should be kept in sync with the list in clientmodal.htm --><LINK id=PEStyleSheet rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.newstyle.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.RadCal.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveMenu.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.PEStyle.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveDetailCalendar.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveFieldGrid.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveCalendar.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTabbedPanel.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveReports.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveSelect.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveLookup.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTree.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveTable.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WavePopup.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveHelp.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveGraph.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveXMLTree.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.WaveContainer.css"><LINK rel=STYLESHEET type=text/css href="bin/orf.dll/Platform.StyleSheets.Overrides.css">
+
+<SCRIPT id=__XMLEchoStyleSheetDataIsland language=xml src="bin/orf.dll/Platform.PE.XMLEcho.xsl"></SCRIPT>
+
+
+
+<SCRIPT id=__XMLEchoColoredStyleSheetDataIsland language=xml src="bin/orf.dll/Platform.PE.XMLColoredEcho.xsl"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/orf.dll/ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated.htm"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/ORF.dll/Common.ClientInclude.Reports.htm"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/ORF.dll/Applications.Common.Client.CommonFunctions.htm"></SCRIPT>
+
+
+
+<SCRIPT language=javascript src="bin/ORF.dll/Applications.Common.Client.CommonConstants.htm"></SCRIPT>
+
+<INPUT id=__WaveFormLocation type=hidden value=ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated.xml><INPUT id=__WaveCompressionTag type=hidden value=on>
+
+<SCRIPT id=__PEExtendedDOMDataIsland language=xml src="bin/orf.dll/ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated.1.cff"></SCRIPT>
+
+<xml id=__PERecordsetDataIsland><wavesets/>
+
+</xml>
+
+<OBJECT id=ReportPrinter style="DISPLAY: none" codeBase="Reports/WavePrint.cab#Version=10,16,191,0" classid=clsid:8B5DB12B-65D6-4A05-930B-6FE7ECE153FD width=0 height=0></OBJECT><xml id=__PEReportDataIsland><reportsets><WaveReport id="wrLHSalesMixCon" reportDefinition="ReportGraphDefs.Financial.SalesMix.Definition.LHSalesMixConsolidated" width="100%" scrollHeight="75%" actionBar="Y" type="Report" reportName="LHSalesMixConsolidated" label="RptSalesMixReport" noLabel="1" initMode="filter" dispWait="N" noTitleBar="N" noResetButton="N" noRunReportInBPEButton="N" noAnnotate="N" noHighlight="N" savedQueryParams="y" allowUserSavedSearch="y">
+
+		<FilterPanel id="pnlFilter">
+
+			<WavePanel id="pnlOrganization" noWrap="1" visible="show" label="LabelOrganization" width="100%" align="left">
+
+				<WaveSelect id="__selOrgUnit" valueGroup="SelectUnit" lwidth="125px" cwidth="350px" newLine="1" label="LabelOrgType" tabIndex="1" align="left" isSortable="N" halign="center" visible="show" height="25px">
+
+				</WaveSelect>
+
+				<WaveLookupForm id="__lufOrgUnit" lookupFormPath="portal.operations.orgunit.browse/SelectOrg" lwidth="125px" cwidth="350px" label="LabelOrgUnit" lookupFormHeight="550" lookupFormWidth="600" visible="hide" framed="false" lclass="requiredFieldLabel" tabIndex="2" nullMsg="ButtonNone" align="left" isSortable="N" halign="center" height="25px" detailForm="N">
+
+				</WaveLookupForm>
+
+				<WaveLookupForm id="__lufBusUnit" lookupFormPath="portal.operations.orgunit.browse/SelectSite" lwidth="125px" cwidth="350px" label="LabelBU" lookupFormHeight="450" lookupFormWidth="600" visible="hide" nullMsg="ButtonNone" framed="false" lclass="requiredFieldLabel" tabIndex="2" align="left" isSortable="N" halign="center" height="25px" detailForm="N">
+
+				</WaveLookupForm>
+
+				<WaveLookupForm id="__lufBusUnitGroup" lookupFormPath="Reports.Form.Common.OrgGroupDialog" lwidth="125px" cwidth="350px" label="LabelBusUnitGroup" lookupFormHeight="450" lookupFormWidth="600" visible="hide" nullMsg="ButtonNone" framed="false" lclass="requiredFieldLabel" tabIndex="3" align="left" isSortable="N" halign="center" height="25px" detailForm="N">
+
+				</WaveLookupForm>
+
+				<WavePanel id="wPnlTime" noWrap="1" visible="show" label="LabelTimePeriod" width="100%" align="left">
+
+					<WaveLookupForm id="lkupDates" nullMsg="ButtonNone" label="LabelTimePeriod" lwidth="150px" cwidth="450px" newLine="1" lclass="requiredFieldLabel" lookupFormPath="Reports.Form.Common.DatesDialog" lookupFormHeight="200" lookupFormWidth="550" align="left" isSortable="N" halign="center" visible="show" framed="false" height="25px" detailForm="N">
+
+					</WaveLookupForm>
+
+				</WavePanel>
+
+			</WavePanel>
+
+		</FilterPanel>
+
+		<WaveReportOptionset><CurrentPage FormMoniker="ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated" ModeName="" ReportID="wrLHSalesMixCon" ObjectID="wrLHSalesMixCon" __PDFServerURL="http://AT2PRDUNW14V0/services/PDFGenerator/CreatePDF.aspx" moniker="ReportGraphDefs.Financial.SalesMix.Definition.LHSalesMixConsolidated" ReportTitle="Sales Mix Report" ReportName="Sales Mix Report" type="Report"/><ExceptionColumns><ReportDef name="Sales Mix Report"><Section index="0"><Column id="1" format="Currency" col_name="Price" ReportID="wrLHSalesMixCon"/><Column id="2" format="Number:LowPrecision" col_name="Items Sold" ReportID="wrLHSalesMixCon"/><Column id="gross" format="Currency:MediumPrecision" col_name="Sold Amount" ReportID="wrLHSalesMixCon"/><Column id="5" format="Number:PctMediumPrecision" col_name="% Sales" ReportID="wrLHSalesMixCon"/><Column id="8" format="Currency:MediumPrecision" col_name="Item Reductions" ReportID="wrLHSalesMixCon"/><Column id="9" format="Currency:MediumPrecision" col_name="Item Refunds" ReportID="wrLHSalesMixCon"/><Column id="10" format="Currency:MediumPrecision" col_name="Item Net Sales" ReportID="wrLHSalesMixCon"/></Section><Section index="1"><Column id="12" format="Currency" col_name="12" ReportID="wrLHSalesMixCon"/></Section></ReportDef></ExceptionColumns><ExceptionRule><waveset xmlns:x="ignore"><fields><field name="filter_parameter_id" data_type_id="3" length="4" pk_flag="Y" required_flag="Y"/><field name="sqp_id" data_type_id="3" length="4" pk_flag="N" required_flag="Y"/><field name="parameters" data_type_id="203" length="1073741823" pk_flag="N" required_flag="Y"/><field name="name" data_type_id="202" length="50" pk_flag="N" required_flag="Y"/></fields>
+
+					<recordset beginPos="0" count="1" pos="0" endPos="0" pgNum="0" pgSize="-1" MoreData="0"><x:row sqp_id="1000072" name="__NewRow__"/>
+
+					</recordset></waveset></ExceptionRule><Dimensions><Dimension name="start_date" description="Beginning date of date range for the report." required="y"/><Dimension name="end_date" description="Ending date of date range for the report." required="y"/><Dimension name="BU_ID" context_name="__lufBusUnit" required="n"/><Dimension name="BU_GROUP_ID_LIST" context_name="__lufBusUnitGroup" required="n"/><Dimension name="SITE_HIERARCHY_ID" context_name="__lufOrgUnit" required="n"/><Dimension name="Report Type" context_name="__selorgunit" required="y" description="Report Selected level"/><Dimension name="date interval" context_name="date_interval" required="y" description="Selected Interval"/></Dimensions></WaveReportOptionset></WaveReport>
+
+</reportsets>
+
+</xml><xml id=__PERoleOverrideXMLIsland><overrides/>
+
+</xml><xml id=__SQPDOMDataIsland><sqp_list><sqp_ws id='__SQP_LookupWS_wrLHSalesMixCon'><waveset xmlns:x='ignore' ><fields><field name='sqp_id' data_type_id='3' length='4' pk_flag='N' required_flag='N'/><field name='name' data_type_id='202' length='50' pk_flag='N' required_flag='N'/><field name='parameters' data_type_id='203' length='1073741823' pk_flag='N' required_flag='N'/><field name='filter_parameter_id' data_type_id='3' length='4' pk_flag='N' required_flag='N'/><field name='client_data_flag' data_type_id='200' length='1' pk_flag='N' required_flag='N'/><field name='default_flag' data_type_id='3' length='4' pk_flag='N' required_flag='N'/><field name='system_flag' data_type_id='200' length='1' pk_flag='N' required_flag='N'/></fields>
+<recordset beginPos='0' count='0' pos='0' endPos='0' pgNum='0' pgSize='-1' MoreData='0'></recordset></waveset></sqp_ws></sqp_list></xml><xml id=__PEContextDataIsland><Context form_title_value="Product Mix (Sales Mix) Report" formmoniker="ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated" current_hier_id="1006050" current_hier_level="1000101" current_hier_iddisplay="6050 - C Plus Management" current_hier="1006050" current_hierdisplay="6050 - C Plus Management (Franchise) - C Plus Management" user_prefer_report_format="h" logged_in_hier_id="1006050" logged_in_hier_level="1000101" __current_language_id="1" pdfserverplatform=".net" today_date="3/28/2020" _bodogwavesetpagenum="0" _bodogwavesetpagesize="-1" reporttitle="Sales Mix Report"/></xml><xml id=__PERequestDOMDataIsland><RequestDOM nextTicket="0">
+
+	<CurrentPage ModeName="undefined" FormMoniker="ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated"/>
+
+	<FormChanges/>
+
+</RequestDOM></xml>
+
+<SCRIPT language=javascript>
+
+    var INIT_TIMEOUT_DELAY=1;
+
+    var INIT_TIMEOUT_LOOP=5;
+
+    var g_indx=0;
+
+
+
+    function RenderFormMain()
+
+    {
+
+      //if gzip is used, the browser MAY fire the onLoad event before unzip the data, so give
+
+      //a timeout period to ensure (hopefully) the file is decompressed first
+
+      if (typeof(RenderForm)=="undefined")
+
+      {
+
+        while(g_indx<INIT_TIMEOUT_LOOP)
+
+        {
+
+          g_indx++;
+
+          window.setTimeout("RenderFormMain()", INIT_TIMEOUT_DELAY);
+
+        }
+
+        //check for whether debug or release version first
+
+        var alertMsg="Platform functions have failed to render. ";
+
+        var sUrl="bin/orf.dll/Platform.ClientFunctions.ClientRender.no_ws";
+
+        alert(alertMsg);
+
+        //open other window to browse the file
+
+        window.open(sUrl);
+
+        document.body.onbeforeunload = null;
+
+        document.body.onclick = null;
+
+      }
+
+      else
+
+        RenderForm();
+
+    }
+
+
+
+
+
+    function BeforeUnload()
+
+    {
+
+      if (typeof(HandleOnBeforeUnload)=="function")
+
+      {
+
+        HandleOnBeforeUnload();
+
+      }
+
+    }
+
+
+
+  </SCRIPT>
+
+<SPAN id=FormPlaceHolder>
+
+<FORM onreset=HandleOnFormReset(this); id=theForm class=formDefault onsubmit=__HandleOnSubmit() style="HEIGHT: 100%; WIDTH: 100%; MARGIN: 0px" method=post action=Default.asp><INPUT tabIndex=-1 id=theRequestDOM type=hidden name=theRequestDOM>
+
+<DIV onclick=HandleBodyOnClick() tabIndex=-1 onmouseover=HandleBodyOnMouseOver() onmouseout=HandleBodyOnMouseOut() id=_main_form_div onkeydown=HandleBodyOnKeyDown(); style="HEIGHT: 100%; WIDTH: 100%" oncontextmenu=HandleBodyOnContextMenu(); onmousewheel=HandleBodyOnMouseWheel();><IMG id=formTitleIconImg src="https://adqsr.radiantenterprise.com/branding/form.gif" align=left>
+
+<TABLE class=topBar cellSpacing=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR onmousedown=Handle_TopBar_MouseDown();>
+
+<TD id=topBarTitle class=topBarTitleLeft oncontextmenu=HandleOnContextMenu(); height=22 noWrap label="RptSalesMixReport">Sales Mix Report </TD>
+
+<TD class=topBarTitleLeft oncontextmenu=HandleOnContextMenu(); width=90><BUTTON onclick=HandleInstructionButtonClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=__main_help_button class=imgButton style="WIDTH: 100%" label="Platform_Help" needHelp="true"><IMG border=0 src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.helpButton.gif" align=absMiddle> Instructions</BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveActionBar(Expert Mode) ............-->
+
+<DIV class=actBarExpert style="HEIGHT: 20px" oncontextmenu=HandleOnContextMenu(); align=right componentType="WaveActionBar"><!--........... WaveAction ( waClose ) ............-->
+
+<TABLE style="DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD><INPUT onclick=HandleOnClick(); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=waClose class=buttonField onkeydown=HandleButtonOnKeyPress(this); oncontextmenu=HandleOnContextMenu(); type=button value=Close componentType="WaveAction" label="ButtonClose" needHelp="y" halign="center" notInGrid="" dispWait="N" actionType="UserDefined"> </INPUT></TD></TR></TBODY></TABLE></DIV><!--........... WaveReport( wrLHSalesMixCon ) ............-->
+
+<DIV id=wrLHSalesMixCon_header class=gridDivHeadBar style="HEIGHT: 16px; WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); componentType="WaveReportHeader">
+
+<TABLE class=gridBarTable style="WIDTH: 100%; TABLE-LAYOUT: fixed" cellSpacing=0 cellPadding=0>
+
+<TBODY>
+
+<TR>
+
+<TD class=roundCornerCell style="WIDTH: 19px">
+
+<DIV align=left><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.ltCurve.gif"> </DIV></TD>
+
+<TD class=gridBarCell noWrap>
+
+<TD class=gridBarCell style="WIDTH: 100px" noWrap align=right>
+
+<DIV id=wrLHSalesMixCon__SavedSearchBar style="Z-INDEX: 20; DISPLAY: inline">
+
+<DIV onclick=CancelEvent(); id=wrLHSalesMixCon_SQP_div class=sqpDiv style="VISIBILITY: hidden">
+
+<TABLE id=wrLHSalesMixCon_SQP_tbl style="TABLE-LAYOUT: fixed" cellSpacing=0 cellPadding=0 width="100%" border=0>
+
+<TBODY>
+
+<TR style="DISPLAY: none" height=20 gridID="wrLHSalesMixCon">
+
+<TD width=20><IMG onclick=HandleSetDefaultSQP(this) class=sqpButton src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.CheckmarkEmpty.gif"> </TD>
+
+<TD class=sqpRow vAlign=middle width="100%" noWrap><SPAN onclick=HandleSQPNameOnClick(this) onmouseover=HandleMouseOverSQPName(this) onmouseout=HandleMouseOutSQPName(this) id="sqpRow sqpNameCell" style="WIDTH: 100%; VERTICAL-ALIGN: middle; OVERFLOW-X: hidden">Saved Search</SPAN> </TD>
+
+<TD width=30><IMG onclick=HandleDeleteSQP(this) class=sqpButton alt="" src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.DeleteButton.gif"> </TD></TR></TBODY></TABLE>
+
+<DIV id=wrLHSalesMixCon_SQP_info align=left><SPAN class=sqpInfoDiv>[No Saved Searches] </SPAN></DIV>
+
+<DIV align=left><BUTTON onclick=HandleSaveSQP(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon_SQP_btnSave class="platformButton helpButton" gridID="wrLHSalesMixCon">Save Search</BUTTON><BUTTON onclick=HandlePublishSQP(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon_SQP_btnPublish class="platformButton helpButton" gridID="wrLHSalesMixCon">Publish Search</BUTTON> </DIV></DIV><BUTTON onclick=HandleSQPButtonOnClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon_SQP_button class=searchButton style="HEIGHT: 20px; WIDTH: 100px" label="Platform_SQP_Lookup" needHelp="true" gridID="wrLHSalesMixCon">My Searches <IMG class=dropDownMenuImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.triangledown.gif" width=8 align=center></BUTTON> </DIV></TD>
+
+<TD class=gridBarCell width=250 noWrap align=right>
+
+<TABLE class=gridPagingBar cellSpacing=0 cellPadding=0 align=right>
+
+<TBODY>
+
+<TR>
+
+<TD>
+
+<DIV id=wrLHSalesMixCon__GridActionBar class=gridDivActionBar style="DISPLAY: none" align=right><BUTTON onclick=HandleReportAnnotate_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Annotate class=searchButton label="Platform_RFGAnnotate" needHelp="true" gridID="wrLHSalesMixCon">Add Comment</BUTTON> </DIV>
+
+<DIV id=wrLHSalesMixCon__FilterActionBar class=gridDivActionBar align=right><BUTTON onclick=HandleReportReset_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=pnlFilter__Reset class=searchButton label="Platform_RFGReset" needHelp="true" reportId="wrLHSalesMixCon">Reset</BUTTON><BUTTON onclick=HandleReportRunInBPE_onClick(this) onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__RunInBPE class=searchButton label="Platform_RFGRunInBPE" needHelp="true" filterID="pnlFilter">Run Report In Background</BUTTON> </DIV></TD></TR></TBODY></TABLE></TD>
+
+<TD class=gridBarCell width=200 noWrap align=left>
+
+<DIV id=wrLHSalesMixCon_HeaderImage class=gridDivActionBar align=right>
+
+<TABLE class=gridPagingBar cellSpacing=0 cellPadding=0 align=left>
+
+<TBODY>
+
+<TR>
+
+<TD><BUTTON onclick=HandleReportCreatePDF_onClick(this) onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__CreatePDF class="searchButton searchOnButton" style="DISPLAY: none" label="Platform_RFGCreatePDF" needHelp="true" dispWait="N" gridID="wrLHSalesMixCon" filterID="pnlFilter">PDF Report</BUTTON> </TD>
+
+<TD><BUTTON onclick=HandleReportRunReport_onClick(this) onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__RunReport class="searchButton searchOnButton" style="DISPLAY: none" label="Platform_RFGCreateHTML" needHelp="true" dispWait="N" gridID="wrLHSalesMixCon" filterID="pnlFilter">HTML Report</BUTTON><BUTTON onclick=HandleAutoRunReport_onClick(this) onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__AutoRunReport class="searchButton searchOnButton" label="Platform_RFGRunReport" needHelp="true" dispWait="N" gridID="wrLHSalesMixCon" filterID="pnlFilter">Run Report</BUTTON> </TD>
+
+<TD><BUTTON onclick=HandleReportOptions_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Options class=searchButton style="DISPLAY: none" label="Platform_RFGOptions" needHelp="true" gridID="wrLHSalesMixCon">Options</BUTTON> </TD></TR></TBODY></TABLE></DIV></TD>
+
+<TD class=roundCornerCell style="WIDTH: 19px">
+
+<DIV align=right><IMG src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.rtCurve.gif"> </DIV></TD></TR></TBODY></TABLE></DIV>
+
+<DIV class=gridDivContainerScroll style="HEIGHT: 75%; WIDTH: 100%">
+
+<DIV onresize="__RecalcReportGrid('wrLHSalesMixCon')" id=wrLHSalesMixCon__ReportGrid style="OVERFLOW: hidden; HEIGHT: 100%; WIDTH: 100%; DISPLAY: none; align: left" gridID="wrLHSalesMixCon">
+
+<DIV id=wrLHSalesMixCon__FrozenHeader class=gridDivTableScroll style="HEIGHT: 25px; WIDTH: 100%; OVERFLOW-X: hidden; OVERFLOW-Y: visible; DISPLAY: none; align: left" gridID="wrLHSalesMixCon" media="screen">Header </DIV>
+
+<DIV id=wrLHSalesMixCon__ReportView class=gridDivTableScroll style="HEIGHT: 90%; WIDTH: 100%; OVERFLOW-X: auto; OVERFLOW-Y: scroll; DISPLAY: block; align: left" type="Report" gridID="wrLHSalesMixCon" reportDefinition="ReportGraphDefs.Financial.SalesMix.Definition.LHSalesMixConsolidated" oid="wrLHSalesMixConObj"><SPAN style="VISIBILITY: hidden">No data is available.</SPAN> </DIV>
+
+<DIV onscroll="__ScrollReportViewer('wrLHSalesMixCon')" id=wrLHSalesMixCon__HScrollBar class=gridDivTableScroll style="HEIGHT: 25px; OVERFLOW-X: scroll; OVERFLOW-Y: hidden; POSITION: absolute; Z-INDEX: -1; DISPLAY: none; align: left" noWrap gridID="wrLHSalesMixCon" media="screen">scrollbar </DIV></DIV>
+
+<DIV id=wrLHSalesMixCon__FilterPanel class=filterPanel style="HEIGHT: 100%; WIDTH: 100%; OVERFLOW-Y: scroll" reportID="wrLHSalesMixCon"><!--........... FilterPanel( pnlFilter ) ............-->
+
+<DIV id=pnlFilter onkeydown=HandleOnKeyDownForSearch(this); style="HEIGHT: 100%" componentType="FilterPanel" filterState="changed">
+
+<DIV class=filterBody style="WIDTH: 100%; DISPLAY: inline"><!--........... WavePanel( pnlOrganization ) ............-->
+
+<DIV id=pnlOrganization class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><SPAN class=panelTitle>Organization </SPAN><BR><!--........... WaveSelect( __selOrgUnit ) ............-->
+
+<TABLE style="WIDTH: 350px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="LabelOrgType" needHelp="y">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=__selOrgUnit_label class="fieldLabel&#13;&#10;                       requiredFieldLabel" style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="LabelOrgType">Org Type </SPAN></TD>
+
+<TD><INPUT onchange=HandleSelectOnChange(this); tabIndex=1 onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=__selOrgUnit class="inputField " onkeydown=HandleSelectOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value="Organizational Unit" componentType="WaveSelect" notInGrid="" key="2" valueGroup="SelectUnit3"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleSelectOnClick(this) tabIndex=-1 id=__selOrgUnit_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.SelectArrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><BR><!--........... WaveLookupForm not in Grid( __lufOrgUnit ) ............-->
+
+<TABLE style="WIDTH: 350px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="LabelOrgUnit" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=__lufOrgUnit_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="LabelOrgUnit">Org Unit </SPAN></TD>
+
+<TD><INPUT onchange=HandleLookupFormOnChange(this); tabIndex=2 onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=__lufOrgUnit class="inputField " onkeydown=HandleLookupFormInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=[None] componentType="WaveLookupForm" detailForm="N" halign="center" notInGrid="" nullMsg="ButtonNone" key lookupFormWidth="600" lookupFormHeight="550" lookupFormPath="portal.operations.orgunit.browse/SelectOrg"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupFormOnClick(this) tabIndex=-1 id=__lufOrgUnit_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Lookupformarrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookupForm not in Grid( __lufBusUnit ) ............-->
+
+<TABLE style="WIDTH: 350px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="LabelBU" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=__lufBusUnit_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="LabelBU">Business Unit </SPAN></TD>
+
+<TD><INPUT onchange=HandleLookupFormOnChange(this); tabIndex=2 onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=__lufBusUnit class="inputField " onkeydown=HandleLookupFormInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=[None] componentType="WaveLookupForm" detailForm="N" halign="center" notInGrid="" nullMsg="ButtonNone" key lookupFormWidth="600" lookupFormHeight="450" lookupFormPath="portal.operations.orgunit.browse/SelectSite"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupFormOnClick(this) tabIndex=-1 id=__lufBusUnit_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Lookupformarrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WaveLookupForm not in Grid( __lufBusUnitGroup ) ............-->
+
+<TABLE style="WIDTH: 350px; TABLE-LAYOUT: fixed; DISPLAY: none" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="LabelBusUnitGroup" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 125px"><SPAN id=__lufBusUnitGroup_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="LabelBusUnitGroup">Business Unit Group </SPAN></TD>
+
+<TD><INPUT onchange=HandleLookupFormOnChange(this); tabIndex=3 onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=__lufBusUnitGroup class="inputField " onkeydown=HandleLookupFormInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=[None] componentType="WaveLookupForm" detailForm="N" halign="center" notInGrid="" nullMsg="ButtonNone" key lookupFormWidth="600" lookupFormHeight="450" lookupFormPath="Reports.Form.Common.OrgGroupDialog"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupFormOnClick(this) tabIndex=-1 id=__lufBusUnitGroup_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Lookupformarrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><!--........... WavePanel( wPnlTime ) ............-->
+
+<DIV id=wPnlTime class=panelDefault style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(); align=left noWrap componentType="WavePanel"><SPAN class=panelTitle>Time Period </SPAN><BR><!--........... WaveLookupForm not in Grid( lkupDates ) ............-->
+
+<TABLE style="WIDTH: 450px; TABLE-LAYOUT: fixed; DISPLAY: inline" cellSpacing=0 cellPadding=0 componentType="WaveFieldContainer" label="LabelTimePeriod" needHelp="true">
+
+<TBODY>
+
+<TR style="HEIGHT: 25px">
+
+<TD style="WIDTH: 150px"><SPAN id=lkupDates_label class=requiredFieldLabel style="WIDTH: 100%" oncontextmenu=HandleOnContextMenu(this); label="LabelTimePeriod">Time Period </SPAN></TD>
+
+<TD><INPUT onchange=HandleLookupFormOnChange(this); onfocus=HandleControlOnFocus(this); onblur=HandleControlOnBlur(this); id=lkupDates class="inputField " onkeydown=HandleLookupFormInputOnKeyDown(this); style="WIDTH: 100%; TEXT-ALIGN: left" value=[None] componentType="WaveLookupForm" detailForm="N" halign="center" notInGrid="" nullMsg="ButtonNone" key lookupFormWidth="550" lookupFormHeight="200" lookupFormPath="Reports.Form.Common.DatesDialog"> </INPUT></TD>
+
+<TD style="WIDTH: 25px; PADDING-BOTTOM: 1px"><BUTTON onclick=HandleLookupFormOnClick(this) tabIndex=-1 id=lkupDates_image class=dropDownButton><IMG class=dropDownImage src="https://adqsr.radiantenterprise.com/bin/orf.dll/Platform.Images.Lookupformarrow.gif" align=center></BUTTON> </TD></TR></TBODY></TABLE><BR></DIV></DIV></DIV></DIV></DIV>
+
+<DIV id=wrLHSalesMixCon__PDFView style="HEIGHT: 100%; WIDTH: 100%; DISPLAY: none" gridID="wrLHSalesMixCon" reportID="wrLHSalesMixCon"><INPUT id=wrLHSalesMixCon__filterdom type=hidden name=wrLHSalesMixCon__filterdom> <IFRAME id=wrLHSalesMixCon__PDFFrame style="BACKGROUND-COLOR: #dee4c6" height="100%" border=0 src="reports/Blank.htm" frameBorder=0 width="100%" name=wrLHSalesMixCon__PDFFrame></IFRAME></DIV></DIV>
+
+<DIV id=wrLHSalesMixCon__ViewActionBar class=actBarPanel style="HEIGHT: 20px; WIDTH: 100%; DISPLAY: none; align: left" oncontextmenu=HandleOnContextMenu();>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+
+<TBODY>
+
+<TR style="HEIGHT: 24px">
+
+<TD><BUTTON onclick=HandleReportPrevious_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Previous class=ButtonPanel label="Platform_RFGPrevious" needHelp="true" gridID="wrLHSalesMixCon">Previous</BUTTON><BUTTON onclick=HandleReportPrint_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Print class=ButtonPanel label="Platform_RFGPrint" needHelp="true" gridID="wrLHSalesMixCon">Print</BUTTON><BUTTON onclick=HandleReportPrintDirect_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__PrintDirect class=ButtonPanel label="Platform_RFGPrintDirect" needHelp="true" accessFeature="DirectPrint" gridID="wrLHSalesMixCon">Direct Print</BUTTON><BUTTON onclick=HandleReportSetupHighlight_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Setup_Highlight class=ButtonPanel label="Platform_RFGHighlightSetup" needHelp="true" gridID="wrLHSalesMixCon">Highlight Setup</BUTTON><BUTTON onclick=HandleReportExport_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Export class=ButtonPanel label="Platform_RFGExport" needHelp="true" accessFeature="CanSendReports" gridID="wrLHSalesMixCon">Export</BUTTON><BUTTON onclick=HandleReportSave_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Save class=ButtonPanel label="Platform_RFGSave" needHelp="true" accessFeature="CanSendReports" gridID="wrLHSalesMixCon">Save</BUTTON><BUTTON onclick=HandleReportForward_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__Forward class=ButtonPanel label="Platform_RFGForward" needHelp="true" accessFeature="CanSendReports" gridID="wrLHSalesMixCon">Forward</BUTTON><BUTTON onclick=HandleReportExpandAll_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__ExpandAll class=ButtonPanel label="Platform_RFGExpandAll" needHelp="true" gridID="wrLHSalesMixCon">Expand All</BUTTON><BUTTON onclick=HandleReportExpandNext_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__ExpandNext class=ButtonPanel label="Platform_RFGExpandNext" needHelp="true" gridID="wrLHSalesMixCon">Expand Next</BUTTON><BUTTON onclick=HandleReportCollapseAll_onClick(this); onmouseover=HandleButtonOnMouseOver(this); onfocus=HandleControlOnFocus(this); onmouseout=HandleButtonOnMouseOut(this); onblur=HandleControlOnBlur(this); id=wrLHSalesMixCon__CollapseAll class=ButtonPanel label="Platform_RFGCollapseAll" needHelp="true" gridID="wrLHSalesMixCon">Collapse All</BUTTON> </TD></TR></TBODY></TABLE></DIV></DIV></FORM>
+
+<DIV id=developerInfo class=developerInfo style="DISPLAY: none"><INPUT onclick=document.location.reload() type=button value=Refresh></INPUT> <INPUT onclick=__ResetTimer() type=button value="Reset Timer"></INPUT> <A href="https://adqsr.radiantenterprise.com/PE/LastServerTrace.asp" target=_blank>View Server Trace </A>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime XML:</H3>
+
+<DIV id=RuntimeXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime Request XML:</H3>
+
+<DIV id=RuntimeRequestXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Runtime HTML:</H3>
+
+<DIV id=RuntimeHTML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Source Comments:</H3>
+
+<DIV id=SourceComments style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Source Request XML:</H3>
+
+<DIV id=RequestXML style="DISPLAY: none">&lt;RequestDOM nextTicket="0"&gt;<BR>&nbsp;&lt;CurrentPage ModeName="undefined" FormMoniker="ReportGraphDefs.Financial.SalesMix.Form.LHSalesMixConsolidated"/&gt;<BR>&nbsp;&lt;FormChanges/&gt;<BR>&lt;/RequestDOM&gt;</DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Report Response XML:</H3>
+
+<DIV id=ReportsXML style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Workflow XML:</H3>
+
+<DIV id=WorkflowPlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>XSL Output:</H3>
+
+<DIV id=TransFormResultPlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV ondblclick="(this.children[1].style.display == 'none') ? this.children[1].style.display = 'block' : this.children[1].style.display = 'none';event.cancelBubble = true;" style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+
+<H3>Access Features:</H3>
+
+<DIV id=AccessFeaturePlaceHolder style="DISPLAY: none"></DIV></DIV>
+
+<DIV id=traceDiv style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"></DIV></DIV></SPAN></BODY></HTML>
