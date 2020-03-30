@@ -17,6 +17,28 @@ def switchHandle(currentDriver):
     currentDriver.switch_to.window(popup_window_handle)
     return main_page
 
+def backToReportOptions(currentDriver, switchFrameID, closeID, main, waitingTime=10,):
+        wait = WebDriverWait(currentDriver, waitingTime)
+        frame = wait.until(EC.presence_of_element_located((By.ID, switchFrameID))) #frame inside the modal box
+        currentDriver.switch_to.frame(frame)
+
+        #click on save and close
+        wait = WebDriverWait(currentDriver,waitingTime)
+        saveANDclose = wait.until(EC.presence_of_element_located((By.ID, closeID)))
+        saveANDclose.send_keys(Keys.ENTER)
+
+        #go back to previous screen/frame
+        currentDriver.switch_to.window(main_page)
+        currentDriver.switch_to.default_content()
+
+        wait = WebDriverWait(currentDriver,waitingTime)
+        frame = wait.until(EC.presence_of_element_located((By.ID, "fraContent"))) #stays the same in report options screen
+        currentDriver.switch_to.frame(frame)
+
+        wait = WebDriverWait(currentDriver,waitingTime)
+        frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2"))) #stays the same in report options screen
+        currentDriver.switch_to.frame(frame)
+
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -25,10 +47,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
-
 import config
+
+waitTime = 10 #seconds
+
+
 driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
-wait = WebDriverWait(driver,5)
+wait = WebDriverWait(driver,waitTime)
 
 driver.get('https://adqsr.radiantenterprise.com/bin/orf.dll/PE.platformForms.login.select.1.ghtm')
 
@@ -48,17 +73,17 @@ continueBtn.send_keys(Keys.ENTER)
 frame = wait.until(EC.presence_of_element_located((By.ID, "MenuFrame")))
 driver.switch_to.frame(frame)
 
-wait = WebDriverWait(driver,30)
+wait = WebDriverWait(driver,waitTime)
 productMixReport = wait.until(EC.element_to_be_clickable((By.ID, "Node_1018703_0")))
 ActionChains(driver).move_to_element(productMixReport).click(productMixReport).perform()
 
 driver.switch_to.default_content()
 
-wait = WebDriverWait(driver,30)
+wait = WebDriverWait(driver,waitTime)
 frame = wait.until(EC.presence_of_element_located((By.ID, "fraContent")))
 driver.switch_to.frame(frame)
 
-wait = WebDriverWait(driver,30)
+wait = WebDriverWait(driver,waitTime)
 frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2")))
 driver.switch_to.frame(frame)
 
@@ -78,9 +103,8 @@ orgUnit.send_keys(Keys.ENTER)
 busUnit = wait.until(EC.presence_of_element_located((By.ID, "__lufBusUnit")))
 busUnit.clear()
 time.sleep(1)
-busUnit.send_keys('text to prompt modal box') #temporary, needs to grab list
+busUnit.send_keys('text to prompt modal business unit box')
 busUnit.send_keys(Keys.ENTER)
-time.sleep(1)
 
 #HTML parse and PC#-count-grab
 #pcBtn = driver.find_element_by_id('__lufOrgUnit_image')
@@ -89,9 +113,9 @@ time.sleep(1)
 #main_page = switchHandle(driver)
 #print(driver.page_source)
 
-dateUnit = driver.find_element_by_id('lkupDates')
+dateUnit = wait.until(EC.presence_of_element_located((By.ID, "lkupDates")))
 dateUnit.clear()
-dateUnit.send_keys('text to prompt modal box')
+dateUnit.send_keys('text to prompt modal date box')
 time.sleep(1)
 dateUnit.send_keys(Keys.ENTER)
 time.sleep(3)
@@ -101,31 +125,10 @@ time.sleep(3)
 main_page = switchHandle(driver)
 
 
+backToReportOptions(driver, 'renderFrame', 'waSaveClose', main_page)
 
 
-#frame switch to date frame
-wait = WebDriverWait(driver,10)
-frame = wait.until(EC.presence_of_element_located((By.ID, "renderFrame")))
-driver.switch_to.frame(frame)
-
-#click on save and close
-wait = WebDriverWait(driver,10)
-saveANDclose = wait.until(EC.presence_of_element_located((By.ID, 'waSaveClose')))
-saveANDclose.send_keys(Keys.ENTER)
-
-#go back to previous screen/frame
-driver.switch_to.window(main_page)
-driver.switch_to.default_content()
-
-wait = WebDriverWait(driver,30)
-frame = wait.until(EC.presence_of_element_located((By.ID, "fraContent")))
-driver.switch_to.frame(frame)
-
-wait = WebDriverWait(driver,30)
-frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2")))
-driver.switch_to.frame(frame)
-
-wait = WebDriverWait(driver,10)
+wait = WebDriverWait(driver,waitTime)
 submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
 submit.send_keys(Keys.ENTER)
 
