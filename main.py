@@ -1,3 +1,4 @@
+
 def switchHandle(currentDriver):
     main_page = currentDriver.current_window_handle
 
@@ -17,18 +18,14 @@ def switchHandle(currentDriver):
     currentDriver.switch_to.window(popup_window_handle)
     return main_page
 
-def backToReportOptions(currentDriver, switchFrameID, closeID, main, waitingTime=10,):
-        wait = WebDriverWait(currentDriver, waitingTime)
-        frame = wait.until(EC.presence_of_element_located((By.ID, switchFrameID))) #frame inside the modal box
-        currentDriver.switch_to.frame(frame)
-
+def backToReportOptions(currentDriver, closeID, main, waitingTime=10):
         #click on save and close
         wait = WebDriverWait(currentDriver,waitingTime)
         saveANDclose = wait.until(EC.presence_of_element_located((By.ID, closeID)))
         saveANDclose.send_keys(Keys.ENTER)
 
         #go back to previous screen/frame
-        currentDriver.switch_to.window(main_page)
+        currentDriver.switch_to.window(main)
         currentDriver.switch_to.default_content()
 
         wait = WebDriverWait(currentDriver,waitingTime)
@@ -105,6 +102,18 @@ busUnit.clear()
 time.sleep(1)
 busUnit.send_keys('text to prompt modal business unit box')
 busUnit.send_keys(Keys.ENTER)
+time.sleep(3)
+
+main_page = switchHandle(driver)
+
+wait = WebDriverWait(driver, waitTime)
+frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
+driver.switch_to.frame(frame)
+time.sleep(2)
+
+print(driver.page_source)
+time.sleep(3)
+driver.quit()
 
 #HTML parse and PC#-count-grab
 #pcBtn = driver.find_element_by_id('__lufOrgUnit_image')
@@ -120,12 +129,13 @@ time.sleep(1)
 dateUnit.send_keys(Keys.ENTER)
 time.sleep(3)
 
-
-
 main_page = switchHandle(driver)
 
+wait = WebDriverWait(driver, waitTime)
+frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
+driver.switch_to.frame(frame)
 
-backToReportOptions(driver, 'renderFrame', 'waSaveClose', main_page)
+backToReportOptions(driver,'waSaveClose', main_page)
 
 
 wait = WebDriverWait(driver,waitTime)
