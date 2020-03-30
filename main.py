@@ -1,3 +1,22 @@
+def switchHandle(currentDriver):
+    main_page = currentDriver.current_window_handle
+
+    handles = currentDriver.window_handles
+
+    # print the window_handle length
+    print(len(handles))
+
+    popup_window_handle = None
+    # loop through the window handles and find the popup window.
+    for handle in currentDriver.window_handles:
+        if handle != main_page:
+            print(handle)
+            popup_window_handle = handle
+            break
+    # switch to the popup window.
+    currentDriver.switch_to.window(popup_window_handle)
+    return main_page
+
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -30,7 +49,7 @@ frame = wait.until(EC.presence_of_element_located((By.ID, "MenuFrame")))
 driver.switch_to.frame(frame)
 
 wait = WebDriverWait(driver,30)
-productMixReport = wait.until(EC.presence_of_element_located((By.ID, "Node_1018703_0")))
+productMixReport = wait.until(EC.element_to_be_clickable((By.ID, "Node_1018703_0")))
 ActionChains(driver).move_to_element(productMixReport).click(productMixReport).perform()
 
 driver.switch_to.default_content()
@@ -54,38 +73,35 @@ orgUnit.send_keys(Keys.DOWN)
 time.sleep(1)
 orgUnit.send_keys(Keys.ENTER)
 time.sleep(1)
+orgUnit.send_keys(Keys.ENTER)
 
-busUnit = driver.find_element_by_id('__lufBusUnit')
+busUnit = wait.until(EC.presence_of_element_located((By.ID, "__lufBusUnit")))
 busUnit.clear()
 time.sleep(1)
-busUnit.send_keys('347884')
+busUnit.send_keys('text to prompt modal box') #temporary, needs to grab list
 busUnit.send_keys(Keys.ENTER)
+time.sleep(1)
+
+#HTML parse and PC#-count-grab
+#pcBtn = driver.find_element_by_id('__lufOrgUnit_image')
+#pcBtn.send_keys(Keys.ENTER)
+#time.sleep(3)
+#main_page = switchHandle(driver)
+#print(driver.page_source)
 
 dateUnit = driver.find_element_by_id('lkupDates')
 dateUnit.clear()
-dateUnit.send_keys('text to prompt dialog box')
+dateUnit.send_keys('text to prompt modal box')
 time.sleep(1)
 dateUnit.send_keys(Keys.ENTER)
 time.sleep(3)
 
 
 
-main_page = driver.current_window_handle
+main_page = switchHandle(driver)
 
-handles = driver.window_handles
 
-# print the window_handle length
-print(len(handles))
 
-popup_window_handle = None
-# loop through the window handles and find the popup window.
-for handle in driver.window_handles:
-    if handle != main_page:
-        print(handle)
-        popup_window_handle = handle
-        break
-# switch to the popup window.
-driver.switch_to.window(popup_window_handle)
 
 #frame switch to date frame
 wait = WebDriverWait(driver,10)
