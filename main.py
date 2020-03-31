@@ -5,13 +5,13 @@ def switchHandle(currentDriver):
     handles = currentDriver.window_handles
 
     # print the window_handle length
-    print(len(handles))
+    print(f'{len(handles)}' + ' handles located')
 
     popup_window_handle = None
     # loop through the window handles and find the popup window.
     for handle in currentDriver.window_handles:
         if handle != main_page:
-            print(handle)
+            print(handle + 'handle is not the main page')
             popup_window_handle = handle
             break
     # switch to the popup window.
@@ -38,6 +38,7 @@ def backToReportOptions(currentDriver, closeID, main, waitingTime=10):
 
 
 from selenium import webdriver
+from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
@@ -111,7 +112,24 @@ frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #fram
 driver.switch_to.frame(frame)
 time.sleep(2)
 
-print(driver.page_source)
+#BeautifulSoup parse
+soup = BeautifulSoup(driver.page_source,'html.parser')
+table = soup.find(id="grdHierarchy")
+
+rows = table.findAll(True, {'class':['gridRowOdd', 'gridRowEven']})
+
+pcNumbers = []
+
+for index in range(len(rows)):
+    dataCell = rows[index].find(class_='gridCell')
+    pcNumbers.insert(index, dataCell.text.strip())
+
+if len(rows) == len(pcNumbers):
+    print('PC numbers parsed and scraped')
+    time.sleep(1)
+
+
+
 time.sleep(3)
 driver.quit()
 
