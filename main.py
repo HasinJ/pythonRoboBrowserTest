@@ -121,25 +121,3 @@ driver.quit()
 #time.sleep(3)
 #main_page = switchHandle(driver)
 #print(driver.page_source)
-
-dateUnit = wait.until(EC.presence_of_element_located((By.ID, "lkupDates")))
-dateUnit.clear()
-dateUnit.send_keys('text to prompt modal date box')
-time.sleep(1)
-dateUnit.send_keys(Keys.ENTER)
-time.sleep(3)
-
-main_page = switchHandle(driver)
-
-wait = WebDriverWait(driver, waitTime)
-frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
-driver.switch_to.frame(frame)
-
-backToReportOptions(driver,'waSaveClose', main_page)
-
-
-wait = WebDriverWait(driver,waitTime)
-submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
-submit.send_keys(Keys.ENTER)
-
-print(driver.page_source)
