@@ -132,20 +132,21 @@ if len(rows) == len(pcNumbers):
 even = driver.find_elements_by_class_name('gridRowEven')
 odd = driver.find_elements_by_class_name('gridRowOdd')
 webElements = even + odd
+webElementsCopy = webElements
 #test = wait.until(EC.element_to_be_clickable((By.ID, f"{even[0]}")))
 #print(even[0])
 
 time.sleep(2)
-print(even[0].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML"))
 
 orderedWebElements = []
 for pcNumbersIndex in range(len(pcNumbers)):
-    for webElementsIndex in range(len(webElements)):
-        somePCNumber = webElements[webElementsIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")
+    for webElementsIndex in range(len(webElementsCopy)):
+        somePCNumber = webElementsCopy[webElementsIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")
         if somePCNumber != pcNumbers[pcNumbersIndex]:
             continue
         elif somePCNumber == pcNumbers[pcNumbersIndex]:
             orderedWebElements.insert(pcNumbersIndex, webElements[webElementsIndex])
+            del webElementsCopy[webElementsIndex]
             print(pcNumbers[pcNumbersIndex])
             break
 
