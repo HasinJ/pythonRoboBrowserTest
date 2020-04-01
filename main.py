@@ -18,11 +18,12 @@ def switchHandle(currentDriver):
     currentDriver.switch_to.window(popup_window_handle)
     return main_page
 
-def backToReportOptions(currentDriver, closeID, main, waitingTime=10):
+def backToReportOptions(currentDriver, main, closeID='nothing', waitingTime=10):
         #click on save and close
-        wait = WebDriverWait(currentDriver,waitingTime)
-        saveANDclose = wait.until(EC.presence_of_element_located((By.ID, closeID)))
-        saveANDclose.send_keys(Keys.ENTER)
+        if closeID != 'nothing':
+            wait = WebDriverWait(currentDriver,waitingTime)
+            saveANDclose = wait.until(EC.presence_of_element_located((By.ID, closeID)))
+            saveANDclose.send_keys(Keys.ENTER)
 
         #go back to previous screen/frame
         currentDriver.switch_to.window(main)
@@ -106,6 +107,7 @@ busUnit.send_keys('text to prompt modal business unit box')
 busUnit.send_keys(Keys.ENTER)
 time.sleep(3)
 
+#pcNumber selection
 main_page = switchHandle(driver)
 
 wait = WebDriverWait(driver, waitTime)
@@ -152,6 +154,29 @@ for pcNumbersIndex in range(len(pcNumbers)):
 print('Elements ordered!')
 
 ActionChains(driver).move_to_element(orderedWebElements[0]).click(orderedWebElements[0]).perform()
+backToReportOptions(driver, main_page)
+
+
+#date selection
+dateUnit = wait.until(EC.presence_of_element_located((By.ID, "lkupDates")))
+dateUnit.clear()
+dateUnit.send_keys('text to prompt modal date box')
+time.sleep(1)
+dateUnit.send_keys(Keys.ENTER)
+time.sleep(3)
+
+main_page = switchHandle(driver)
+
+wait = WebDriverWait(driver, waitTime)
+frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
+driver.switch_to.frame(frame)
+
+backToReportOptions(driver, main_page, 'waSaveClose')
+
+
+wait = WebDriverWait(driver,waitTime)
+submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
+submit.send_keys(Keys.ENTER)
 
 
 
