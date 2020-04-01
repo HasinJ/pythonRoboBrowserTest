@@ -11,7 +11,7 @@ def switchHandle(currentDriver):
     # loop through the window handles and find the popup window.
     for handle in currentDriver.window_handles:
         if handle != main_page:
-            print(handle + 'handle is not the main page')
+            print(handle + " - handle that isn't the main page")
             popup_window_handle = handle
             break
     # switch to the popup window.
@@ -132,29 +132,30 @@ if len(rows) == len(pcNumbers):
 even = driver.find_elements_by_class_name('gridRowEven')
 odd = driver.find_elements_by_class_name('gridRowOdd')
 webElements = even + odd
-webElementsCopy = webElements
+
 #test = wait.until(EC.element_to_be_clickable((By.ID, f"{even[0]}")))
 #print(even[0])
 
-time.sleep(2)
+time.sleep(1)
 
 orderedWebElements = []
 for pcNumbersIndex in range(len(pcNumbers)):
-    for webElementsIndex in range(len(webElementsCopy)):
-        somePCNumber = webElementsCopy[webElementsIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")
+    for webElementsIndex in range(len(webElements)):
+        somePCNumber = webElements[webElementsIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")
         if somePCNumber != pcNumbers[pcNumbersIndex]:
             continue
         elif somePCNumber == pcNumbers[pcNumbersIndex]:
             orderedWebElements.insert(pcNumbersIndex, webElements[webElementsIndex])
-            del webElementsCopy[webElementsIndex]
-            print(pcNumbers[pcNumbersIndex])
+            del webElements[webElementsIndex] #makes the nested for loop shorter whenever a value IS found
+            print(orderedWebElements[pcNumbersIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML"))
             break
+print('Elements ordered!')
+
+ActionChains(driver).move_to_element(orderedWebElements[0]).click(orderedWebElements[0]).perform()
 
 
 
-#ActionChains(driver).move_to_element(even[2]).click(even[2]).perform()
-
-time.sleep(3)
+time.sleep(1)
 driver.quit()
 
 #HTML parse and PC#-count-grab
