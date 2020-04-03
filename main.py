@@ -113,53 +113,7 @@ busUnit.send_keys(Keys.ENTER)
 time.sleep(3)
 
 #pcNumber selection
-main_page = switchHandle(driver)
 
-wait = WebDriverWait(driver, waitTime)
-frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
-driver.switch_to.frame(frame)
-time.sleep(2)
-
-#BeautifulSoup parse
-soup = BeautifulSoup(driver.page_source,'html.parser')
-table = soup.find(id="grdHierarchy")
-
-rows = table.findAll(True, {'class':['gridRowOdd', 'gridRowEven']})
-
-pcNumbers = []
-
-for index in range(len(rows)):
-    dataCell = rows[index].find(class_='gridCell')
-    pcNumbers.insert(index, dataCell.text.strip())
-
-if len(rows) == len(pcNumbers):
-    print('PC numbers parsed and scraped')
-    time.sleep(1)
-
-even = driver.find_elements_by_class_name('gridRowEven')
-odd = driver.find_elements_by_class_name('gridRowOdd')
-webElements = even + odd
-
-#test = wait.until(EC.element_to_be_clickable((By.ID, f"{even[0]}")))
-#print(even[0])
-
-time.sleep(1)
-
-orderedWebElements = []
-for pcNumbersIndex in range(len(pcNumbers)):
-    for webElementsIndex in range(len(webElements)):
-        somePCNumber = webElements[webElementsIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")
-        if somePCNumber != pcNumbers[pcNumbersIndex]:
-            continue
-        elif somePCNumber == pcNumbers[pcNumbersIndex]:
-            orderedWebElements.insert(pcNumbersIndex, webElements[webElementsIndex])
-            del webElements[webElementsIndex] #makes the nested for loop shorter whenever a value IS found
-            print(orderedWebElements[pcNumbersIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML"))
-            break
-print('Elements ordered!')
-
-ActionChains(driver).move_to_element(orderedWebElements[0]).click(orderedWebElements[0]).perform()
-backToReportOptions(driver, main_page)
 
 
 #date selection
@@ -176,8 +130,12 @@ wait = WebDriverWait(driver, waitTime)
 frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
 driver.switch_to.frame(frame)
 
-backToReportOptions(driver, main_page, 'waSaveClose')
+print(driver.page_source)
+wait = WebDriverWait(driver, waitTime)
+start = wait.until(EC.presence_of_element_located((By.ID, 'wsStartWeeks')))
+start.send_keys(dateToday)
 
+backToReportOptions(driver, main_page, 'waSaveClose')
 
 wait = WebDriverWait(driver,waitTime)
 submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
