@@ -144,20 +144,17 @@ webElements = even + odd
 
 time.sleep(1)
 
-orderedWebElements = []
-for pcNumbersIndex in range(len(pcNumbers)):
-    for webElementsIndex in range(len(webElements)):
-        somePCNumber = webElements[webElementsIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")
-        if somePCNumber != pcNumbers[pcNumbersIndex]:
-            continue
-        elif somePCNumber == pcNumbers[pcNumbersIndex]:
-            orderedWebElements.insert(pcNumbersIndex, webElements[webElementsIndex])
-            del webElements[webElementsIndex] #makes the nested for loop shorter whenever a value IS found
-            print(orderedWebElements[pcNumbersIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML"))
-            break
-print('Elements ordered!')
+for webElementsIndex in range(len(webElements)):
+    somePCNumber = webElements[webElementsIndex].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")
+    if somePCNumber != pcNumbers[0]:
+        continue
+    elif somePCNumber == pcNumbers[0]:
+        firstPCNumber = webElements[webElementsIndex]
+        print(somePCNumber + 'is the first PC number AKA Business Unit')
+        break
 
-ActionChains(driver).move_to_element(orderedWebElements[0]).click(orderedWebElements[0]).perform()
+ActionChains(driver).move_to_element(firstPCNumber).click(firstPCNumber).perform()
+pcNumberCount = 0 + 1 #0 being the first
 backToReportOptions(driver, main_page)
 
 
