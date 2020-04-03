@@ -54,6 +54,7 @@ waitTime = 10 #seconds
 dateToday = datetime.datetime.now().strftime('%x') #local version of date
 year = datetime.datetime.now().strftime('%Y')
 dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
+dateToday = '04/02/2020' #temp
 print(dateToday)
 
 driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
@@ -124,10 +125,13 @@ frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #fram
 driver.switch_to.frame(frame)
 time.sleep(1)
 
-print(driver.page_source)
-wait = WebDriverWait(driver, waitTime)
-start = wait.until(EC.presence_of_element_located((By.ID, 'wsStartWeeks')))
-start.send_keys(dateToday)
+#5 tabs, 3 from close
+for i in range(5):
+    ActionChains(driver).send_keys(Keys.TAB).perform()
+    time.sleep(0.7)
+
+ActionChains(driver).send_keys(Keys.DELETE).perform()
+ActionChains(driver).send_keys(dateToday).perform()
 
 backToReportOptions(driver, main_page, 'waSaveClose')
 
