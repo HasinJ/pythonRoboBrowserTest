@@ -47,9 +47,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import config
+import datetime
 
 waitTime = 10 #seconds
 
+dateToday = datetime.datetime.now().strftime('%x') #local version of date
+year = datetime.datetime.now().strftime('%Y')
+dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
+print(dateToday)
 
 driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
 wait = WebDriverWait(driver,waitTime)
