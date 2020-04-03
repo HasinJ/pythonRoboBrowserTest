@@ -105,13 +105,6 @@ orgUnit.send_keys(Keys.ENTER)
 time.sleep(1)
 orgUnit.send_keys(Keys.ENTER)
 
-busUnit = wait.until(EC.presence_of_element_located((By.ID, "__lufBusUnit")))
-busUnit.clear()
-time.sleep(1)
-busUnit.send_keys('text to prompt modal business unit box')
-busUnit.send_keys(Keys.ENTER)
-time.sleep(3)
-
 #pcNumber selection
 
 
@@ -129,6 +122,7 @@ main_page = switchHandle(driver)
 wait = WebDriverWait(driver, waitTime)
 frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
 driver.switch_to.frame(frame)
+time.sleep(1)
 
 print(driver.page_source)
 wait = WebDriverWait(driver, waitTime)
