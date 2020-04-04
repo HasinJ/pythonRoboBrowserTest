@@ -55,6 +55,7 @@ dateToday = datetime.datetime.now().strftime('%x') #local version of date
 year = datetime.datetime.now().strftime('%Y')
 dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
 dateToday = '04/02/2020' #temp
+dateDotNotation = dateToday.replace('/', '.')
 print(dateToday)
 
 driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
@@ -150,7 +151,7 @@ for webElementsIndex in range(len(webElements)):
         continue
     elif somePCNumber == pcNumbers[0]:
         firstPCNumber = webElements[webElementsIndex]
-        print(somePCNumber + 'is the first PC number AKA Business Unit')
+        print(somePCNumber + ' is the first PC number AKA Business Unit')
         break
 
 ActionChains(driver).move_to_element(firstPCNumber).click(firstPCNumber).perform()
@@ -185,20 +186,17 @@ ActionChains(driver).send_keys(Keys.TAB).perform()
 ActionChains(driver).send_keys(Keys.DELETE).perform()
 ActionChains(driver).send_keys(dateToday).perform()
 
-
-
 backToReportOptions(driver, main_page, 'waSaveClose')
 
 wait = WebDriverWait(driver,waitTime)
 submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
 submit.send_keys(Keys.ENTER)
 
+#parse table HTML into a file
+f = open(fr'Reports\{dateDotNotation}Report.html','w')
+f.write(driver.page_source)
+f.close()
+
 time.sleep(1)
 driver.quit()
-
-#HTML parse and PC#-count-grab
-#pcBtn = driver.find_element_by_id('__lufOrgUnit_image')
-#pcBtn.send_keys(Keys.ENTER)
-#time.sleep(3)
-#main_page = switchHandle(driver)
-#print(driver.page_source)
+#time.sleep(5)
