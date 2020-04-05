@@ -48,8 +48,11 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 import config
 import datetime
+import os
+import os.path as path
 
 waitTime = 10 #seconds
+dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant'
 
 dateToday = datetime.datetime.now().strftime('%x') #local version of date
 year = datetime.datetime.now().strftime('%Y')
@@ -152,10 +155,10 @@ for webElementsIndex in range(len(webElements)):
     elif somePCNumber == pcNumbers[0]:
         firstPCNumber = webElements[webElementsIndex]
         print(somePCNumber + ' is the first PC number AKA Business Unit')
+        pcNumbers.remove(somePCNumber)
         break
 
 ActionChains(driver).move_to_element(firstPCNumber).click(firstPCNumber).perform()
-pcNumberCount = 0 + 1 #0 being the first
 backToReportOptions(driver, main_page)
 
 
@@ -188,14 +191,35 @@ ActionChains(driver).send_keys(dateToday).perform()
 
 backToReportOptions(driver, main_page, 'waSaveClose')
 
+#remember we want to try to put them all in at once!
 wait = WebDriverWait(driver,waitTime)
 submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
-submit.send_keys(Keys.ENTER)
+ActionChains(driver).move_to_element(submit).click(submit).perform()
 
 #parse table HTML into a file
-f = open(fr'Reports\{dateDotNotation}Report.html','w')
-f.write(driver.page_source)
-f.close()
+if path.isdir(dir + fr'\Reports\{somePCNumber}')==False:
+    os.mkdir(dir + fr'\Reports\{somePCNumber}')
+
+with open(dir + fr'\Reports\{somePCNumber}\{dateDotNotation}Report.html','w') as f:
+    f.write(driver.page_source)
+
+for index in range(len(pcNumbers)):
+    wait = WebDriverWait(driver,waitTime)
+    options = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__Options')))
+    ActionChains(driver).move_to_element(options).click(options).perform()
+    ActionChains(driver).move_to_element(busUnit).click(busUnit).send_keys(Keys.DELETE).perform()
+    busUnit.send_keys(pcNumbers[index])
+    busUnit.send_keys(Keys.ENTER)
+    submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
+    ActionChains(driver).move_to_element(submit).click(submit).perform()
+    time.sleep(3)
+
+    if path.isdir(dir + fr'\Reports\{pcNumbers[index]}')==False:
+        os.mkdir(dir + fr'\Reports\{pcNumbers[index]}')
+    with open(dir + fr'\Reports\{pcNumbers[index]}\{dateDotNotation}Report.html','w') as f:
+        f.write(driver.page_source)
+
+
 
 time.sleep(1)
 driver.quit()
