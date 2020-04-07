@@ -5,13 +5,12 @@ def switchHandle(currentDriver):
     handles = currentDriver.window_handles
 
     # print the window_handle length
-    print(f'{len(handles)}' + ' handles located')
+    print(f'{len(handles)}' + ' handles located... switching windows...')
 
     popup_window_handle = None
     # loop through the window handles and find the popup window.
     for handle in currentDriver.window_handles:
         if handle != main_page:
-            print(handle + " - handle that isn't the main page")
             popup_window_handle = handle
             break
     # switch to the popup window.
@@ -19,23 +18,24 @@ def switchHandle(currentDriver):
     return main_page
 
 def backToReportOptions(currentDriver, main, closeID='nothing', waitingTime=10):
-        #click on save and close
-        if closeID != 'nothing':
-            wait = WebDriverWait(currentDriver,waitingTime)
-            saveANDclose = wait.until(EC.presence_of_element_located((By.ID, closeID)))
-            saveANDclose.send_keys(Keys.ENTER)
-
-        #go back to previous screen/frame
-        currentDriver.switch_to.window(main)
-        currentDriver.switch_to.default_content()
-
+    print('Switching driver focus back to report options...')
+    #click on save and close
+    if closeID != 'nothing':
         wait = WebDriverWait(currentDriver,waitingTime)
-        frame = wait.until(EC.presence_of_element_located((By.ID, "fraContent"))) #stays the same in report options screen
-        currentDriver.switch_to.frame(frame)
+        saveANDclose = wait.until(EC.presence_of_element_located((By.ID, closeID)))
+        saveANDclose.send_keys(Keys.ENTER)
 
-        wait = WebDriverWait(currentDriver,waitingTime)
-        frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2"))) #stays the same in report options screen
-        currentDriver.switch_to.frame(frame)
+    #go back to previous screen/frame
+    currentDriver.switch_to.window(main)
+    currentDriver.switch_to.default_content()
+
+    wait = WebDriverWait(currentDriver,waitingTime)
+    frame = wait.until(EC.presence_of_element_located((By.ID, "fraContent"))) #stays the same in report options screen
+    currentDriver.switch_to.frame(frame)
+
+    wait = WebDriverWait(currentDriver,waitingTime)
+    frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2"))) #stays the same in report options screen
+    currentDriver.switch_to.frame(frame)
 
 
 from selenium import webdriver
@@ -50,6 +50,7 @@ import config
 import datetime
 import os
 import os.path as path
+import math
 
 waitTime = 10 #seconds
 dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant'
@@ -139,8 +140,10 @@ for index in range(len(rows)):
 if len(rows) == len(pcNumbers):
     time.sleep(1)
 
-even = driver.find_elements_by_class_name('gridRowEven')
 odd = driver.find_elements_by_class_name('gridRowOdd')
+even = driver.find_elements_by_class_name('gridRowEven')
+oddCount = 1
+evenCount = 0
 webElements = even + odd
 
 #test = wait.until(EC.element_to_be_clickable((By.ID, f"{even[0]}")))
@@ -203,6 +206,7 @@ if path.isdir(dir + fr'\Reports\{somePCNumber}')==False:
 with open(dir + fr'\Reports\{somePCNumber}\{dateDotNotation}Report.html','w') as f:
     f.write(driver.page_source)
 
+
 for index in range(len(pcNumbers)):
     wait = WebDriverWait(driver,waitTime)
     options = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__Options')))
@@ -213,27 +217,45 @@ for index in range(len(pcNumbers)):
     busUnit.send_keys(pcNumbers[index])
     busUnit.send_keys(Keys.ENTER)
 
+    #goes to frame
     time.sleep(2)
     main_page = switchHandle(driver)
     wait = WebDriverWait(driver, waitTime)
     frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
     driver.switch_to.frame(frame)
+
+
+    #stuff done while in frame
     time.sleep(1)
+    even = driver.find_elements_by_class_name('gridRowEven')
+    odd = driver.find_elements_by_class_name('gridRowOdd')
+    if len(even)+len(odd) == len(pcNumbers):
+        print('row count matches!')
 
-    cancel = wait.until(EC.presence_of_element_located((By.ID, 'waCancel')))
-    cancel.click()
+    if index/2 == math.floor(index/2):
+        print('even...')
+        ActionChains(driver).move_to_element(even[evenCount]).click(even[evenCount]).perform()
+        evenCount += 1
+
+    elif index/2 != math.floor(index/2):
+        print('odd...')
+        ActionChains(driver).move_to_element(odd[oddCount]).click(odd[oddCount]).perform()
+        oddCount += 1
+
+
+    #goes back after clicking on correct pcNumber
     backToReportOptions(driver, main_page)
-
     wait = WebDriverWait(driver,waitTime)
     submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
     ActionChains(driver).move_to_element(submit).click(submit).perform()
 
-    time.sleep(10)
+    time.sleep(5)
 
     if path.isdir(dir + fr'\Reports\{pcNumbers[index]}')==False:
         os.mkdir(dir + fr'\Reports\{pcNumbers[index]}')
     with open(dir + fr'\Reports\{pcNumbers[index]}\{dateDotNotation}Report.html','w') as f:
         f.write(driver.page_source)
+    print(f'{pcNumbers[index]}' + ' HTML recorded.')
 
 
 
