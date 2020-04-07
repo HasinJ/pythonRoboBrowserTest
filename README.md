@@ -9,5 +9,4 @@ Goals:
 - needs JS interaction
 - needs proper time management
 
-- parse HTML for loops before PC # selection
-- execute JavaScript div activation (for the panel)
+- fix the first for loop - could make it shorter or don't even need it to begin with
