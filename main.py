@@ -207,12 +207,22 @@ for index in range(len(pcNumbers)):
     wait = WebDriverWait(driver,waitTime)
     options = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__Options')))
     ActionChains(driver).move_to_element(options).click(options).perform()
-    ActionChains(driver).move_to_element(busUnit).click(busUnit).send_keys(Keys.DELETE).perform()
+    time.sleep(1)
+    busUnit.click()
+    busUnit.send_keys(Keys.DELETE)
     busUnit.send_keys(pcNumbers[index])
     busUnit.send_keys(Keys.ENTER)
-    submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
-    ActionChains(driver).move_to_element(submit).click(submit).perform()
-    time.sleep(3)
+
+    time.sleep(2)
+    main_page = switchHandle(driver)
+    wait = WebDriverWait(driver, waitTime)
+    frame = wait.until(EC.presence_of_element_located((By.ID, 'renderFrame'))) #frame inside the modal box
+    driver.switch_to.frame(frame)
+    time.sleep(1)
+
+    cancel = wait.until(EC.presence_of_element_located((By.ID, 'waCancel')))
+    cancel.click()
+    time.sleep(10)
 
     if path.isdir(dir + fr'\Reports\{pcNumbers[index]}')==False:
         os.mkdir(dir + fr'\Reports\{pcNumbers[index]}')
