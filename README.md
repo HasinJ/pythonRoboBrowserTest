@@ -10,3 +10,4 @@ Goals:
 - needs proper time management
 
 - fix the first for loop - could make it shorter or don't even need it to begin with
+- delete all files in the "Reports" directory to test adding unfamiliar PC numbers
