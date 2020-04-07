@@ -222,6 +222,12 @@ for index in range(len(pcNumbers)):
 
     cancel = wait.until(EC.presence_of_element_located((By.ID, 'waCancel')))
     cancel.click()
+    backToReportOptions(driver, main_page)
+
+    wait = WebDriverWait(driver,waitTime)
+    submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
+    ActionChains(driver).move_to_element(submit).click(submit).perform()
+
     time.sleep(10)
 
     if path.isdir(dir + fr'\Reports\{pcNumbers[index]}')==False:
