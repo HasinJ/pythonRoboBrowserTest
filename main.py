@@ -47,20 +47,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import config
-import datetime
 import os
 import os.path as path
 import math
 
 waitTime = 10 #seconds
 dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant'
-
-dateToday = datetime.datetime.now().strftime('%x') #local version of date
-year = datetime.datetime.now().strftime('%Y')
-dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
-dateToday = '04/02/2020' #temp
-dateDotNotation = dateToday.replace('/', '.')
-print(dateToday)
 
 driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
 wait = WebDriverWait(driver,waitTime)
@@ -142,7 +134,7 @@ if len(rows) == len(pcNumbers):
 
 odd = driver.find_elements_by_class_name('gridRowOdd')
 even = driver.find_elements_by_class_name('gridRowEven')
-oddCount = 1
+oddCount = 0
 evenCount = 0
 webElements = even + odd
 
@@ -159,6 +151,7 @@ for webElementsIndex in range(len(webElements)):
         firstPCNumber = webElements[webElementsIndex]
         print(somePCNumber + ' is the first PC number AKA Business Unit')
         pcNumbers.remove(somePCNumber)
+        oddCount = 1
         break
 
 ActionChains(driver).move_to_element(firstPCNumber).click(firstPCNumber).perform()
@@ -206,7 +199,7 @@ if path.isdir(dir + fr'\Reports\{somePCNumber}')==False:
 with open(dir + fr'\Reports\{somePCNumber}\{dateDotNotation}Report.html','w') as f:
     f.write(driver.page_source)
 
-
+#the loop after the first one is parsed
 for index in range(len(pcNumbers)):
     wait = WebDriverWait(driver,waitTime)
     options = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__Options')))
