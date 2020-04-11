@@ -1,0 +1,64 @@
+PC Number,Date,Item,Price,Items Sold,Sold Amount,% Sales,Item Reductions,Item Refunds,Item Net Sales
+356170,2020-04-11,"Bagel w/CC, Item Only",2.49,3,7.47,1.6,0.98,0,6.49
+356170,2020-04-11,"Coca-Cola Cooler Beverages, Bottled Water",1.59,1,1.59,0.34,0.0,0,1.59
+356170,2020-04-11,"Coca-Cola Cooler Beverages, Coca-Cola",1.89,1,1.89,0.4,0.0,0,1.89
+356170,2020-04-11,"Coca-Cola Cooler Beverages, Diet Coke",1.89,4,7.56,1.62,0.0,0,7.56
+356170,2020-04-11,"Coca-Cola Cooler Beverages, Seagrams Ginger Ale",1.89,2,3.78,0.81,0.0,0,3.78
+356170,2020-04-11,"Coca-Cola Cooler Beverages, Simply Orange Juice",1.99,1,1.99,0.43,0.0,0,1.99
+356170,2020-04-11,"Iced Coffee, Large, Original Blend",3.19,8,25.52,5.46,0.0,0,25.52
+356170,2020-04-11,"Iced Coffee, Medium, Original Blend",2.69,7,18.83,4.03,0.52,0,18.31
+356170,2020-04-11,"Iced Coffee, Small, Original Blend",2.19,1,2.19,0.47,0.0,0,2.19
+356170,2020-04-11,Add Espresso Shot,0.99,3,2.97,0.64,0.15,0,2.82
+356170,2020-04-11,"Americano, Large, Original",2.79,1,2.79,0.6,0.0,0,2.79
+356170,2020-04-11,"Americano, Medium, Original",2.59,1,2.59,0.55,0.0,0,2.59
+356170,2020-04-11,"Cappuccino, Small, Original",2.69,1,2.69,0.58,0.0,0,2.69
+356170,2020-04-11,"Iced Americano, Large, Original",3.29,1,3.29,0.7,0.0,0,3.29
+356170,2020-04-11,"Iced Latte, Large, Original",4.09,3,12.27,2.63,0.0,0,12.27
+356170,2020-04-11,"Iced Latte, Medium, Original",2.0,2,4.0,0.86,0.0,0,4.0
+356170,2020-04-11,"Iced Macchiato, Large, Original",4.39,1,4.39,0.94,4.39,0,0.0
+356170,2020-04-11,"Iced Signature Latte, Large, Original, Caramel Craze",3.89,2,7.78,1.67,0.0,0,7.78
+356170,2020-04-11,"Iced Signature Latte, Medium, Original, Caramel Craze",3.59,2,7.18,1.54,0.0,0,7.18
+356170,2020-04-11,"Iced Signature Latte, Small, Original, Caramel Craze",3.09,1,3.09,0.66,0.0,0,3.09
+356170,2020-04-11,"Latte, Medium, Original",2.0,1,2.0,0.43,0.0,0,2.0
+356170,2020-04-11,"Latte, Medium, Original",3.19,4,12.76,2.73,0.0,0,12.76
+356170,2020-04-11,"Hot Coffee, Large, Original Blend",2.35,8,18.8,4.02,0.11,0,18.69
+356170,2020-04-11,"Hot Coffee, Medium, Decaf",2.05,2,4.1,0.88,0.0,0,4.1
+356170,2020-04-11,"Hot Coffee, Medium, Original Blend",2.05,6,12.3,2.63,0.1,0,12.2
+356170,2020-04-11,"Hot Coffee, Small, Original Blend",1.75,1,1.75,0.37,0.0,0,1.75
+356170,2020-04-11,"Hot Coffee, X-Large, Original Blend",2.65,2,5.3,1.13,0.0,0,5.3
+356170,2020-04-11,"Iced Tea, Large, Unsweet Iced Tea",1.59,5,7.95,1.7,0.0,0,7.95
+356170,2020-04-11,"Frozen Coffee, Medium, Original",3.99,5,19.95,4.27,0.4,0,19.55
+356170,2020-04-11,"Frozen Coffee, Small, Original",2.99,1,2.99,0.64,0.0,0,2.99
+356170,2020-04-11,"Frozen Hot Winter Beverages, Medium, Chocolate",3.99,3,11.97,2.56,0.0,0,11.97
+356170,2020-04-11,1 Donut,1.19,35,41.65,8.91,0.0,0,41.65
+356170,2020-04-11,"12 Donuts, Item Only",9.99,9,89.91,19.24,0.0,0,89.91
+356170,2020-04-11,"6 Donuts, Item Only",5.99,3,17.97,3.85,0.0,0,17.97
+356170,2020-04-11,10 Munchkins,2.0,4,8.0,1.71,0.0,0,8.0
+356170,2020-04-11,2 Munchkins,0.5,1,0.5,0.11,0.0,0,0.5
+356170,2020-04-11,50 Munchkins,9.99,1,9.99,2.14,0.0,0,9.99
+356170,2020-04-11,6 Munchkins,1.5,1,1.5,0.32,0.0,0,1.5
+356170,2020-04-11,Caramel Swirl,0.15,15,2.25,0.48,0.16,0,2.09
+356170,2020-04-11,French Vanilla Swirl,0.15,10,1.5,0.32,0.03,0,1.47
+356170,2020-04-11,Hazelnut Swirl,0.15,3,0.45,0.1,0.0,0,0.45
+356170,2020-04-11,Mocha Swirl (D),0.15,4,0.6,0.13,0.0,0,0.6
+356170,2020-04-11,Red Velvet Swirl,0.0,1,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Almond Milk - Coffee, 1",0.5,2,1.0,0.21,0.5,0,0.5
+356170,2020-04-11,"Almond Milk - Latte, 1",0.6,3,1.8,0.39,0.0,0,1.8
+356170,2020-04-11,"Black, Item Only",0.0,7,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Cream, Item Only",0.0,58,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Cream, On Side",0.0,2,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Equal, Item Only",0.0,20,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Liquid Cane Sugar, Item Only",0.0,3,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Skim Milk, Item Only",0.0,6,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Splenda, Item Only",0.0,8,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Sugar, Item Only",0.0,6,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,Toasted (D),0.0,3,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,"Whole Milk, Item Only",0.0,7,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,z-No Price Extra Cream and Sugar,0.0,1,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,z-No Price Less Swirl,0.0,1,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,z-No Price Regular,0.0,8,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,Coconut Shot (D),0.0,1,0.0,0.0,0.0,0,0.0
+356170,2020-04-11,6 Piece Hash Brown,0.99,1,0.99,0.21,0.0,0,0.99
+356170,2020-04-11,"Wrap, Item BYO, No Meat, Fried Egg, American Cheese",1.39,8,11.12,2.38,3.41,0,7.71
+356170,2020-04-11,"Egg & Chz, Item BYO, Fried Egg, American, English Muffin",2.89,6,17.34,3.71,8.34,0,9.0
+356170,2020-04-11,"Egg Bcn & Chz, Item BYO, Fried Egg, American, Croissant",3.69,10,36.9,7.9,11.9,0,25.0

@@ -1,0 +1,109 @@
+PC Number,Date,Item,Price,Items Sold,Sold Amount,% Sales,Item Reductions,Item Refunds,Item Net Sales
+349941,2020-04-11,"Bagel w/CC, Item Only",2.49,8,19.92,2.17,1.96,0,17.96
+349941,2020-04-11,"Croissant, Plain Croissant",1.59,1,1.59,0.17,0.0,0,1.59
+349941,2020-04-11,"Coca-Cola Cooler Beverages, Coca-Cola",1.89,3,5.67,0.62,0.0,0,5.67
+349941,2020-04-11,"Coca-Cola Cooler Beverages, Diet Coke",1.89,3,5.67,0.62,0.0,0,5.67
+349941,2020-04-11,"Coca-Cola Cooler Beverages, Simply Orange Juice",2.29,3,6.87,0.75,0.0,0,6.87
+349941,2020-04-11,"Coca-Cola Cooler Beverages, Sprite Lemon-Lime",1.89,1,1.89,0.21,0.0,0,1.89
+349941,2020-04-11,"Dairy Cooler Beverages, Nesquik Choc LowFat",1.99,1,1.99,0.22,0.0,0,1.99
+349941,2020-04-11,"Cold Brew Coffee, Medium",3.29,1,3.29,0.36,0.0,0,3.29
+349941,2020-04-11,"Iced Coffee, Large, Original Blend",3.29,28,92.12,10.05,3.77,0,88.35
+349941,2020-04-11,"Iced Coffee, Medium, Decaf",2.79,1,2.79,0.3,0.14,0,2.65
+349941,2020-04-11,"Iced Coffee, Medium, Original Blend",2.79,27,75.33,8.22,0.42,0,74.91
+349941,2020-04-11,"Iced Coffee, Small, Original Blend",2.29,7,16.03,1.75,0.0,0,16.03
+349941,2020-04-11,Add Espresso Shot,0.99,6,5.94,0.65,0.0,0,5.94
+349941,2020-04-11,"Cappuccino, Medium, Original",2.0,1,2.0,0.22,0.0,0,2.0
+349941,2020-04-11,"Iced Latte, Large, Original",4.49,1,4.49,0.49,0.0,0,4.49
+349941,2020-04-11,"Iced Latte, Medium, Original",2.0,1,2.0,0.22,0.0,0,2.0
+349941,2020-04-11,"Iced Latte, Medium, Original",4.09,2,8.18,0.89,0.0,0,8.18
+349941,2020-04-11,"Iced Latte, Small, Original",3.59,2,7.18,0.78,0.0,0,7.18
+349941,2020-04-11,"Iced Macchiato, Large, Original",4.79,1,4.79,0.52,0.0,0,4.79
+349941,2020-04-11,"Iced Macchiato, Medium, Original",4.39,5,21.95,2.39,0.0,0,21.95
+349941,2020-04-11,"Iced Signature Latte, Medium, Original, Caramel Craze",4.39,1,4.39,0.48,0.0,0,4.39
+349941,2020-04-11,"Latte, Large, Original",3.99,4,15.96,1.74,0.0,0,15.96
+349941,2020-04-11,"Latte, Medium, Original",2.0,3,6.0,0.65,0.0,0,6.0
+349941,2020-04-11,"Latte, Medium, Original",3.59,1,3.59,0.39,0.0,0,3.59
+349941,2020-04-11,"Latte, Small, Original",3.09,1,3.09,0.34,0.0,0,3.09
+349941,2020-04-11,"Macchiato, Medium, Decaf",3.89,1,3.89,0.42,0.0,0,3.89
+349941,2020-04-11,"Macchiato, Small, Original",3.39,1,3.39,0.37,0.0,0,3.39
+349941,2020-04-11,"Hot Coffee, Large, Original Blend",2.39,17,40.63,4.43,2.39,0,38.24
+349941,2020-04-11,"Hot Coffee, Medium, Dark Roast",2.09,2,4.18,0.46,0.0,0,4.18
+349941,2020-04-11,"Hot Coffee, Medium, Original Blend",2.09,30,62.7,6.84,2.49,0,60.21
+349941,2020-04-11,"Hot Coffee, Small, Original Blend",1.79,14,25.06,2.73,0.36,0,24.7
+349941,2020-04-11,"Hot Coffee, X-Large, Original Blend",2.69,7,18.83,2.05,0.0,0,18.83
+349941,2020-04-11,"Mug Refill, 14 Oz., Hot Coffee Original",1.69,1,1.69,0.18,0.0,0,1.69
+349941,2020-04-11,"Iced Tea, Large, Sweetened Tea",1.59,8,12.72,1.39,0.08,0,12.64
+349941,2020-04-11,"Iced Tea, Large, Unsweet Iced Tea",1.59,5,7.95,0.87,0.0,0,7.95
+349941,2020-04-11,"Iced Tea, Medium, Sweetened Tea",1.29,7,9.03,0.98,0.0,0,9.03
+349941,2020-04-11,"Iced Tea, Small, Sweetened Tea",0.99,2,1.98,0.22,0.0,0,1.98
+349941,2020-04-11,"Frozen Coffee, Large, Original",4.99,1,4.99,0.54,0.0,0,4.99
+349941,2020-04-11,"Frozen Coffee, Medium, Original",3.99,3,11.97,1.31,0.0,0,11.97
+349941,2020-04-11,"Frozen Coffee, Small, Original",2.99,1,2.99,0.33,0.0,0,2.99
+349941,2020-04-11,"Frozen Hot Winter Beverages, Large, Frozen Vanilla Chai",4.99,1,4.99,0.54,0.0,0,4.99
+349941,2020-04-11,"Frozen Hot Winter Beverages, Medium, Chocolate",3.99,1,3.99,0.44,0.0,0,3.99
+349941,2020-04-11,"Hot Chocolate, Medium, Original Hot Chocolate",2.39,1,2.39,0.26,0.0,0,2.39
+349941,2020-04-11,"Hot Chocolate, Small, Original Hot Chocolate",2.09,4,8.36,0.91,0.0,0,8.36
+349941,2020-04-11,"Hot Tea, Large, Black",2.39,1,2.39,0.26,0.0,0,2.39
+349941,2020-04-11,"Hot Tea, Large, Green",2.39,1,2.39,0.26,0.0,0,2.39
+349941,2020-04-11,"Hot Tea, Medium, Black",2.09,1,2.09,0.23,0.0,0,2.09
+349941,2020-04-11,1 Donut,1.19,74,88.06,9.6,0.24,0,87.82
+349941,2020-04-11,"12 Donuts, Item Only",10.49,4,41.96,4.58,0.0,0,41.96
+349941,2020-04-11,"6 Donuts, Item Only",5.99,15,89.85,9.8,0.0,0,89.85
+349941,2020-04-11,Specialty Upcharge,0.5,2,1.0,0.11,0.0,0,1.0
+349941,2020-04-11,"Apple Fritter, Item Only",1.79,1,1.79,0.2,0.0,0,1.79
+349941,2020-04-11,10 Munchkins,2.5,2,5.0,0.55,0.0,0,5.0
+349941,2020-04-11,12 Munchkins,3.0,2,6.0,0.65,0.0,0,6.0
+349941,2020-04-11,25 Munchkins,5.99,1,5.99,0.65,0.0,0,5.99
+349941,2020-04-11,5 Munchkins,1.25,1,1.25,0.14,0.0,0,1.25
+349941,2020-04-11,6 Munchkins,1.5,1,1.5,0.16,0.0,0,1.5
+349941,2020-04-11,8 Munchkins,2.0,1,2.0,0.22,0.0,0,2.0
+349941,2020-04-11,z-No Price Everything Bagel,0.0,3,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price Plain Bagel,0.0,4,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price Sesame Bagel,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Caramel Swirl,0.0,58,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,French Vanilla Swirl,0.0,35,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Hazelnut Swirl,0.0,13,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Mocha Swirl (D),0.0,6,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Red Velvet Swirl,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,1 Sugar,0.0,2,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Almond Milk - Coffee, 1",0.6,5,3.0,0.33,0.0,0,3.0
+349941,2020-04-11,"Black, Item Only",0.0,11,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Cream, Item Only",0.0,117,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Equal, Item Only",0.0,10,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Half Sweet Half Unsweet, Item Only",0.0,3,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Liquid Cane Sugar, Item Only",0.0,2,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Skim Milk, Item Only",0.0,6,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Splenda, Item Only",0.0,13,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Sugar, Item Only",0.0,166,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Whip Cream,0.0,8,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Whole Milk, Item Only",0.0,9,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price Extra Ice,0.0,2,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price Extra Sugar,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price Less Ice,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price Less Sugar,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price No Lemon,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,z-No Price Regular,0.0,44,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Chocolate Frosted Sprinkles,0.0,4,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Z-No Price Chocolate Glazed.,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Z-No Price Glazed.,0.0,7,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Z-No Price Jelly Filled.,0.0,2,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Z-No Price Old Fashioned.,0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Blueberry Shot (D),0.0,3,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Coconut Shot (D),0.0,3,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,French Vanilla Shot (D),0.0,2,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Hazelnut Shot (D),0.0,1,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,Toasted Almond Shot (D),0.0,2,0.0,0.0,0.0,0,0.0
+349941,2020-04-11,"Muffin, Item Only, No Flavor",1.69,1,1.69,0.18,0.0,0,1.69
+349941,2020-04-11,6 Piece Hash Brown,0.99,7,6.93,0.76,0.05,0,6.88
+349941,2020-04-11,"Wrap, Item BYO, No Meat, Fried Egg, American Cheese",1.79,2,3.58,0.39,1.58,0,2.0
+349941,2020-04-11,"Wrap, Item BYO, Sausage, Fried Egg, American Cheese",1.99,13,25.87,2.82,4.9,0,20.97
+349941,2020-04-11,"Beyond Sausage Breakfast Sandwich, Fried Egg, White Cheddar, English Muffin",4.99,1,4.99,0.54,0.0,0,4.99
+349941,2020-04-11,"Big N Toasted, Item BYO, 2FrdEggs, Bacon Amr, Texas Toast",4.49,1,4.49,0.49,0.0,0,4.49
+349941,2020-04-11,"Double Sausage Breakfast Sandwich, Fried Egg, American, Croissant",4.79,1,4.79,0.52,0.0,0,4.79
+349941,2020-04-11,"Egg Bcn & Chz, Item BYO, Fried Egg, American, Bagel",3.99,2,7.98,0.87,1.49,0,6.49
+349941,2020-04-11,"Egg Bcn & Chz, Item BYO, Fried Egg, American, Croissant",3.99,4,15.96,1.74,2.98,0,12.98
+349941,2020-04-11,"Egg Bcn & Chz, Item BYO, Fried Egg, NoCheese, Bagel",3.99,1,3.99,0.44,1.49,0,2.5
+349941,2020-04-11,"Egg Bcn & Chz, Item BYO, Fried Egg, NoCheese, Croissant",3.99,2,7.98,0.87,2.98,0,5.0
+349941,2020-04-11,"Egg Ham & Chz, Item BYO, Fried Egg, American, English Muffin",3.99,1,3.99,0.44,0.0,0,3.99
+349941,2020-04-11,"Egg Ssg & Chz, Item BYO, Fried Egg, American, Croissant",3.99,3,11.97,1.31,0.2,0,11.77
+349941,2020-04-11,"Egg Ssg & Chz, Item BYO, Fried Egg, NoCheese, Croissant",3.99,1,3.99,0.44,0.0,0,3.99

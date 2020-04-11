@@ -1,0 +1,194 @@
+PC Number,Date,Item,Price,Items Sold,Sold Amount,% Sales,Item Reductions,Item Refunds,Item Net Sales
+348454,2020-04-11,Bagel w/ Other Spread,1.74,2,3.48,0.19,0.0,0,3.48
+348454,2020-04-11,"Bagel w/CC, Item Only",2.49,12,29.88,1.65,0.12,0,29.76
+348454,2020-04-11,z-No Price 1.5oz Plain CC,0.0,4,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price 1.5oz Strawberry CC,0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,3 Bagels,3.87,1,3.87,0.21,0.0,0,3.87
+348454,2020-04-11,Cinnamon Raisin Bagel,1.39,1,1.39,0.08,0.0,0,1.39
+348454,2020-04-11,Multigrain Bagel,1.39,2,2.78,0.15,0.0,0,2.78
+348454,2020-04-11,Plain Bagel,1.39,6,8.34,0.46,0.21,0,8.13
+348454,2020-04-11,Sesame Bagel,1.39,1,1.39,0.08,0.0,0,1.39
+348454,2020-04-11,"Croissant, Plain Croissant",1.59,8,12.72,0.7,0.0,0,12.72
+348454,2020-04-11,"Coca-Cola Cooler Beverages, Apple Juice",1.99,1,1.99,0.11,0.0,0,1.99
+348454,2020-04-11,"Coca-Cola Cooler Beverages, Bottled Water",1.89,4,7.56,0.42,0.0,0,7.56
+348454,2020-04-11,"Coca-Cola Cooler Beverages, Powerade Orange",2.69,1,2.69,0.15,0.0,0,2.69
+348454,2020-04-11,"Coca-Cola Cooler Beverages, Simply Orange Juice",2.29,2,4.58,0.25,0.0,0,4.58
+348454,2020-04-11,"Dairy Cooler Beverages, Nesquik Strawberry",1.99,1,1.99,0.11,0.0,0,1.99
+348454,2020-04-11,"Cold Brew Coffee, Large",3.79,3,11.37,0.63,3.79,0,7.58
+348454,2020-04-11,"Cold Brew Coffee, Medium",3.29,2,6.58,0.36,0.0,0,6.58
+348454,2020-04-11,"Energy Cold Brew, Large",4.69,1,4.69,0.26,0.0,0,4.69
+348454,2020-04-11,"Energy Cold Brew, Medium",4.49,3,13.47,0.74,0.0,0,13.47
+348454,2020-04-11,"Iced Coffee, Large, Original Blend",3.29,14,46.06,2.54,0.16,0,45.9
+348454,2020-04-11,"Iced Coffee, Medium, Dark Roast",2.79,2,5.58,0.31,0.0,0,5.58
+348454,2020-04-11,"Iced Coffee, Medium, Original Blend",2.79,35,97.65,5.39,0.0,0,97.65
+348454,2020-04-11,"Iced Coffee, Small, Dark Roast",2.29,2,4.58,0.25,0.0,0,4.58
+348454,2020-04-11,"Iced Coffee, Small, Decaf",2.29,1,2.29,0.13,2.29,0,0.0
+348454,2020-04-11,"Iced Coffee, Small, Original Blend",2.29,10,22.9,1.27,2.29,0,20.61
+348454,2020-04-11,"Coolatta, Large, Strawberry",4.29,1,4.29,0.24,0.0,0,4.29
+348454,2020-04-11,"Coolatta, Small, Strawberry",2.99,2,5.98,0.33,0.0,0,5.98
+348454,2020-04-11,"Coolatta, Small, Vanilla Bean",2.99,1,2.99,0.17,0.0,0,2.99
+348454,2020-04-11,Add Espresso Shot,0.99,5,4.95,0.27,0.0,0,4.95
+348454,2020-04-11,"Add Espresso Shot - Espresso, Regular",0.99,5,4.95,0.27,0.0,0,4.95
+348454,2020-04-11,"Americano, Large, Original",3.99,2,7.98,0.44,3.99,0,3.99
+348454,2020-04-11,"Americano, Medium, Original",3.59,3,10.77,0.59,0.0,0,10.77
+348454,2020-04-11,"Cappuccino, Large, Original",3.99,2,7.98,0.44,0.0,0,7.98
+348454,2020-04-11,"Cappuccino, Medium, Original",2.0,4,8.0,0.44,0.1,0,7.9
+348454,2020-04-11,"Cappuccino, Medium, Original",3.59,5,17.95,0.99,0.0,0,17.95
+348454,2020-04-11,"Iced Americano, Large, Original",4.49,1,4.49,0.25,0.0,0,4.49
+348454,2020-04-11,"Iced Cappuccino, Medium, Original",2.0,3,6.0,0.33,0.0,0,6.0
+348454,2020-04-11,"Iced Cappuccino, Medium, Original",4.09,1,4.09,0.23,0.0,0,4.09
+348454,2020-04-11,"Iced Latte, Large, Original",4.49,4,17.96,0.99,4.49,0,13.47
+348454,2020-04-11,"Iced Latte, Medium, Original",2.0,11,22.0,1.22,0.0,0,22.0
+348454,2020-04-11,"Iced Latte, Medium, Original",4.09,16,65.44,3.62,0.2,0,65.24
+348454,2020-04-11,"Iced Macchiato, Medium, Original",4.39,5,21.95,1.21,0.0,0,21.95
+348454,2020-04-11,"Iced Macchiato, Small, Original",3.89,1,3.89,0.21,0.0,0,3.89
+348454,2020-04-11,"Iced Matcha Latte, Large",4.79,1,4.79,0.26,0.0,0,4.79
+348454,2020-04-11,"Iced Matcha Latte, Medium",4.29,5,21.45,1.18,0.0,0,21.45
+348454,2020-04-11,"Iced Matcha Latte, Small",3.79,2,7.58,0.42,0.0,0,7.58
+348454,2020-04-11,"Iced Signature Latte, Large, Original, Caramel Craze",4.79,1,4.79,0.26,0.0,0,4.79
+348454,2020-04-11,"Iced Signature Latte, Medium, Original, Caramel Craze",4.39,1,4.39,0.24,0.0,0,4.39
+348454,2020-04-11,"Iced Signature Latte, Medium, Original, Cocoa Mocha",4.39,2,8.78,0.49,0.0,0,8.78
+348454,2020-04-11,"Iced Signature Latte, Small, Original, Caramel Craze",3.89,2,7.78,0.43,0.0,0,7.78
+348454,2020-04-11,"Latte, Large, Original",3.99,8,31.92,1.76,7.98,0,23.94
+348454,2020-04-11,"Latte, Medium, Original",2.0,9,18.0,0.99,0.0,0,18.0
+348454,2020-04-11,"Latte, Medium, Original",3.59,6,21.54,1.19,0.18,0,21.36
+348454,2020-04-11,"Macchiato, Large, Original",4.29,1,4.29,0.24,0.0,0,4.29
+348454,2020-04-11,"Macchiato, Medium, Original",3.89,2,7.78,0.43,0.0,0,7.78
+348454,2020-04-11,"Matcha Latte, Large",4.29,1,4.29,0.24,0.0,0,4.29
+348454,2020-04-11,"Signature Latte, Large, Original, Caramel Craze",4.29,1,4.29,0.24,0.0,0,4.29
+348454,2020-04-11,"Box of Joe, Original Blend",15.99,1,15.99,0.88,0.0,0,15.99
+348454,2020-04-11,"Hot Coffee, Large, Dark Roast",2.39,2,4.78,0.26,0.0,0,4.78
+348454,2020-04-11,"Hot Coffee, Large, Original Blend",2.39,20,47.8,2.64,2.39,0,45.41
+348454,2020-04-11,"Hot Coffee, Medium, Decaf",2.09,3,6.27,0.35,0.11,0,6.16
+348454,2020-04-11,"Hot Coffee, Medium, Original Blend",2.09,47,98.23,5.43,0.2,0,98.03
+348454,2020-04-11,"Hot Coffee, Small, Dark Roast",1.79,1,1.79,0.1,0.0,0,1.79
+348454,2020-04-11,"Hot Coffee, Small, Decaf",1.79,2,3.58,0.2,0.18,0,3.4
+348454,2020-04-11,"Hot Coffee, Small, Original Blend",1.79,17,30.43,1.68,0.09,0,30.34
+348454,2020-04-11,"Hot Coffee, X-Large, Decaf",2.69,1,2.69,0.15,0.0,0,2.69
+348454,2020-04-11,"Hot Coffee, X-Large, Original Blend",2.69,5,13.45,0.74,0.0,0,13.45
+348454,2020-04-11,"Iced Tea, Large, Unsweet Iced Tea",1.59,7,11.13,0.61,0.0,0,11.13
+348454,2020-04-11,"Iced Tea, Medium, Sweetened Tea",1.29,1,1.29,0.07,0.0,0,1.29
+348454,2020-04-11,"Frozen Coffee, Large, Original",4.99,1,4.99,0.28,4.99,0,0.0
+348454,2020-04-11,"Frozen Coffee, Medium, Original",3.99,3,11.97,0.66,0.0,0,11.97
+348454,2020-04-11,"Frozen Coffee, Small, Original",2.99,4,11.96,0.66,0.0,0,11.96
+348454,2020-04-11,"Frozen Hot Winter Beverages, Large, Chocolate",4.99,1,4.99,0.28,0.0,0,4.99
+348454,2020-04-11,"Frozen Hot Winter Beverages, Medium, Chocolate",3.99,3,11.97,0.66,0.0,0,11.97
+348454,2020-04-11,"Frozen Hot Winter Beverages, Small, Chocolate",2.99,1,2.99,0.17,0.0,0,2.99
+348454,2020-04-11,"Frozen Matcha Latte, Large",4.99,1,4.99,0.28,0.0,0,4.99
+348454,2020-04-11,"Dunkaccino, Large, Original",2.69,1,2.69,0.15,0.0,0,2.69
+348454,2020-04-11,"Hot Chocolate, Medium, Original Hot Chocolate",2.39,1,2.39,0.13,0.0,0,2.39
+348454,2020-04-11,"Hot Tea, Medium, Black",2.09,1,2.09,0.12,0.0,0,2.09
+348454,2020-04-11,"Vanilla Chai, Large",3.59,1,3.59,0.2,3.59,0,0.0
+348454,2020-04-11,"Vanilla Chai, Medium",3.09,3,9.27,0.51,0.0,0,9.27
+348454,2020-04-11,1 Donut,1.19,107,127.33,7.03,0.24,0,127.09
+348454,2020-04-11,"12 Donuts, Item Only",10.49,12,125.88,6.95,0.0,0,125.88
+348454,2020-04-11,"6 Donuts, Item Only",5.99,16,95.84,5.29,0.0,0,95.84
+348454,2020-04-11,"Apple Fritter, Item Only",1.79,1,1.79,0.1,0.0,0,1.79
+348454,2020-04-11,"Coffee Roll, Item Only",1.79,3,5.37,0.3,0.0,0,5.37
+348454,2020-04-11,10 Munchkins,2.5,6,15.0,0.83,0.12,0,14.88
+348454,2020-04-11,12 Munchkins,3.0,1,3.0,0.17,0.0,0,3.0
+348454,2020-04-11,2 Munchkins,0.5,1,0.5,0.03,0.0,0,0.5
+348454,2020-04-11,25 Munchkins,5.99,2,11.98,0.66,0.0,0,11.98
+348454,2020-04-11,3 Munchkins,0.75,2,1.5,0.08,0.0,0,1.5
+348454,2020-04-11,5 Munchkins,1.25,2,2.5,0.14,0.0,0,2.5
+348454,2020-04-11,6 Munchkins,1.5,3,4.5,0.25,0.0,0,4.5
+348454,2020-04-11,z-No Price Cinnamon Raisin Bagel,0.0,5,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Everything Bagel,0.0,6,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Multigrain Bagel,0.0,3,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Plain Bagel,0.0,10,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Sesame Bagel,0.0,3,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Caramel Swirl,0.0,104,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Coconut Caramel Swirl,0.0,25,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,French Vanilla Swirl,0.0,38,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Hazelnut Swirl,0.0,15,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Irish Creme Swirl,0.0,3,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Mocha Swirl (D),0.0,20,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Red Velvet Swirl,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Thin Mint Swirl,0.0,7,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,1 Cream,0.0,5,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,1 Liquid Cane Sugar,0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,1 Splenda,0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,1 Sugar,0.0,4,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,1 Whole Milk,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Almond Milk - Coffee, 1",0.6,12,7.2,0.4,0.6,0,6.6
+348454,2020-04-11,"Almond Milk - Latte, 1",1.0,7,7.0,0.39,1.0,0,6.0
+348454,2020-04-11,"American Cheese, Extra",0.25,1,0.25,0.01,0.0,0,0.25
+348454,2020-04-11,"Black, Item Only",0.0,17,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Butter Spread with Canola Oil,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Cream & Sugar, Item Only",0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Cream, Item Only",0.0,164,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Cream, On Side",0.0,5,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Equal, Item Only",0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Half Sweet Half Unsweet, Item Only",0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Half, Item Only, Decaf",0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Ham, Extra",0.7,2,1.4,0.08,0.0,0,1.4
+348454,2020-04-11,"Liquid Cane Sugar, Item Only",0.0,12,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Not Toasted (D),0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Skim Milk, Item Only",0.0,14,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Sliced,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Splenda, Item Only",0.0,17,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Sugar, Item Only",0.0,119,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Sugar, On Side",0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Sweet N Low, Item Only",0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Toast Dark,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Toasted (D),0.0,19,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Whip Cream,0.0,5,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Whipped Cream, Item Only",0.0,5,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Whole Milk, Item Only",0.0,38,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price American Cheese,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Butter,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Z-No Price Butter Spread with Canola Oil,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Extra Cream,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Extra Cream and Sugar,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Extra Skim Milk,0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Extra Sugar,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Less Ice,0.0,6,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price No Lemon,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,z-No Price Regular,0.0,73,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Chocolate Frosted Sprinkles,0.0,5,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Lucky Shamrock,0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Z-No Price Assorted.,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Z-No Price Boston Kreme.,0.0,4,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Z-No Price Chocolate Glazed.,0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Z-No Price Glazed.,0.0,9,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Z-No Price Old Fashioned.,0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Blueberry Shot (D),0.0,2,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Coconut Shot (D),0.0,3,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,French Vanilla Shot (D),0.0,6,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Hazelnut Shot (D),0.0,3,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,Raspberry Shot (D),0.0,1,0.0,0.0,0.0,0,0.0
+348454,2020-04-11,"Muffin, Item Only, No Flavor",1.69,6,10.14,0.56,0.0,0,10.14
+348454,2020-04-11,Protein Muffin,1.99,1,1.99,0.11,0.0,0,1.99
+348454,2020-04-11,"1 Lb. Coffee - Ground, Original Blnd Grnd",8.99,1,8.99,0.5,0.0,0,8.99
+348454,2020-04-11,6 Piece Hash Brown,0.99,37,36.63,2.02,0.0,0,36.63
+348454,2020-04-11,"Wrap, Item BYO, Bacon, Fried Egg, American Cheese",1.99,3,5.97,0.33,0.0,0,5.97
+348454,2020-04-11,"Wrap, Item BYO, Ham, Fried Egg, American Cheese",1.99,1,1.99,0.11,0.0,0,1.99
+348454,2020-04-11,"Wrap, Item BYO, No Meat, Fried Egg, American Cheese",1.79,10,17.9,0.99,7.9,0,10.0
+348454,2020-04-11,"Wrap, Item BYO, Sausage, Fried Egg, American Cheese",1.99,8,15.92,0.88,2.94,0,12.98
+348454,2020-04-11,"Wrap, Item BYO, Turkey Sausage , Fried Egg, American Cheese",1.99,1,1.99,0.11,0.0,0,1.99
+348454,2020-04-11,"Beyond Sausage Breakfast Sandwich, Fried Egg, NoCheese, English Muffin",4.99,1,4.99,0.28,0.0,0,4.99
+348454,2020-04-11,"Beyond Sausage Breakfast Sandwich, Fried Egg, White Cheddar, Bagel",4.99,1,4.99,0.28,0.0,0,4.99
+348454,2020-04-11,"Beyond Sausage Breakfast Sandwich, Fried Egg, White Cheddar, English Muffin",4.99,5,24.95,1.38,0.0,0,24.95
+348454,2020-04-11,"Beyond Sausage Breakfast Sandwich, NoEgg, NoCheese, English Muffin",4.99,1,4.99,0.28,0.0,0,4.99
+348454,2020-04-11,"Egg & Chz, Item BYO, Fried Egg, American, Bagel",3.29,1,3.29,0.18,0.0,0,3.29
+348454,2020-04-11,"Egg & Chz, Item BYO, Fried Egg, American, Croissant",3.29,1,3.29,0.18,0.0,0,3.29
+348454,2020-04-11,"Egg & Chz, Item BYO, Fried Egg, American, English Muffin",3.29,5,16.45,0.91,0.0,0,16.45
+348454,2020-04-11,"Egg & Chz, Item BYO, Fried Egg, White Cheddar, Bagel",3.29,1,3.29,0.18,0.0,0,3.29
+348454,2020-04-11,"Big N Toasted, Item BYO, 2FrdEggs, Bacon Amr, English Muffin",4.49,1,4.49,0.25,0.0,0,4.49
+348454,2020-04-11,"Double Sausage Breakfast Sandwich, Fried Egg, American, Bagel",4.79,1,4.79,0.26,0.0,0,4.79
+348454,2020-04-11,"Egg Bcn & Chz, Item BYO, Fried Egg, American, Bagel",3.99,7,27.93,1.54,2.98,0,24.95
+348454,2020-04-11,"Egg Bcn & Chz, Item BYO, Fried Egg, American, Croissant",3.99,15,59.85,3.31,18.08,0,41.77
+348454,2020-04-11,"Egg Ham & Chz, Item BYO, Fried Egg, American, Bagel",3.99,1,3.99,0.22,0.0,0,3.99
+348454,2020-04-11,"Egg Ham & Chz, Item BYO, Fried Egg, American, Croissant",3.99,3,11.97,0.66,0.0,0,11.97
+348454,2020-04-11,"Egg Ham & Chz, Item BYO, Fried Egg, American, English Muffin",3.99,1,3.99,0.22,0.0,0,3.99
+348454,2020-04-11,"Egg Ham & Chz, Item BYO, NoEgg, American, Croissant",3.69,1,3.69,0.2,0.0,0,3.69
+348454,2020-04-11,"Egg Ham & Chz, Item BYO, NoEgg, White Cheddar, English Muffin",3.69,1,3.69,0.2,0.0,0,3.69
+348454,2020-04-11,"Egg Ssg & Chz, Item BYO, Fried Egg, American, Croissant",3.99,13,51.87,2.87,0.2,0,51.67
+348454,2020-04-11,"Egg Ssg & Chz, Item BYO, Fried Egg, American, Multigrain Thin",3.49,1,3.49,0.19,0.0,0,3.49
+348454,2020-04-11,"Egg Ssg & Chz, Item BYO, Fried Egg, NoCheese, Croissant",3.99,1,3.99,0.22,0.0,0,3.99
+348454,2020-04-11,"Sweet Black Pepper Bacon Sandwich, Fried Egg, White Cheddar, Croissant",4.29,6,25.74,1.42,0.0,0,25.74
+348454,2020-04-11,"Turkey Ssg Sand, EWOmlVeggie, White Cheddar, Multigrain Thin",4.29,2,8.58,0.47,0.0,0,8.58
+348454,2020-04-11,"Turkey Ssg Sand, Fried Egg, American, Bagel",3.99,1,3.99,0.22,0.0,0,3.99
+348454,2020-04-11,"Turkey Ssg Sand, Fried Egg, American, English Muffin",3.99,3,11.97,0.66,0.0,0,11.97
+348454,2020-04-11,"Turkey Ssg Sand, NoEgg, White Cheddar, Croissant",3.69,1,3.69,0.2,0.0,0,3.69
+348454,2020-04-11,Snacking Bacon,2.79,4,11.16,0.62,0.0,0,11.16
