@@ -50,8 +50,18 @@ import config
 import os
 import os.path as path
 import math
+from scrapeHTML import scrape
+import datetime
+
+dateToday = datetime.datetime.now().strftime('%x') #local version of date
+year = datetime.datetime.now().strftime('%Y')
+dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
+dateDotNotation = dateToday.replace('/', '.')
+print(dateToday)
+
 
 waitTime = 10 #seconds
+totalIDs = 0
 dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant'
 
 driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
@@ -199,12 +209,16 @@ if path.isdir(dir + fr'\Reports\{somePCNumber}')==False:
 with open(dir + fr'\Reports\{somePCNumber}\{dateDotNotation}Report.html','w') as f:
     f.write(driver.page_source)
 
+totalIDs += scrape(dateDotNotation,somePCNumber,dir)
+print(f'{somePCNumber}' + ' HTML recorded.')
+
 #the loop after the first one is parsed
 for index in range(len(pcNumbers)):
     wait = WebDriverWait(driver,waitTime)
     options = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__Options')))
     ActionChains(driver).move_to_element(options).click(options).perform()
     time.sleep(1)
+    busUnit = wait.until(EC.presence_of_element_located((By.ID, "__lufBusUnit")))
     busUnit.click()
     busUnit.send_keys(Keys.DELETE)
     busUnit.send_keys(pcNumbers[index])
@@ -222,7 +236,7 @@ for index in range(len(pcNumbers)):
     time.sleep(1)
     even = driver.find_elements_by_class_name('gridRowEven')
     odd = driver.find_elements_by_class_name('gridRowOdd')
-    if len(even)+len(odd) == len(pcNumbers):
+    if len(even)+len(odd) == len(pcNumbers)-1:
         print('row count matches!')
 
     if index/2 == math.floor(index/2):
@@ -249,9 +263,9 @@ for index in range(len(pcNumbers)):
     with open(dir + fr'\Reports\{pcNumbers[index]}\{dateDotNotation}Report.html','w') as f:
         f.write(driver.page_source)
     print(f'{pcNumbers[index]}' + ' HTML recorded.')
+    totalIDs += scrape(dateDotNotation,pcNumbers[index],dir)
 
-
-
+print('last ID should be: ' + f'{totalIDs}')
 time.sleep(1)
 driver.quit()
 #time.sleep(5)
