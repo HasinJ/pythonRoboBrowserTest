@@ -55,10 +55,22 @@ import datetime
 
 dateToday = datetime.datetime.now().strftime('%x') #local version of date
 year = datetime.datetime.now().strftime('%Y')
+hour = datetime.datetime.now().strftime('%H')
+hour = int(hour)
 dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
+
+if hour >= 11: #the half of the day
+    with open(r'Reports\report.txt', 'w') as f:
+        f.write(dateToday)
+        print('before 12 hour')
+
+elif hour < 11: #the other half of the day
+    with open(r'Reports\report.txt', 'r') as f:
+        dateToday = f.readline()
+        print('after 12')
+
 dateDotNotation = dateToday.replace('/', '.')
 print(dateToday)
-
 
 waitTime = 10 #seconds
 totalIDs = 0
