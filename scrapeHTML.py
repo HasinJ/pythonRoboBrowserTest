@@ -116,6 +116,16 @@ def scrape(dateDotNotation='04.02.2020', pcNumber='347884', dir = fr'C:\Users\Ha
     cursor.close()
     return len(data)
 
+#to test the 7 PC numbers for a specific date
+#total = 0
+#total += scrape('04.11.2020','347884',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
+#total += scrape('04.11.2020','348454',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
+#total += scrape('04.11.2020','349941',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
+#total += scrape('04.11.2020','354651',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
+#total += scrape('04.11.2020','355342',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
+#total += scrape('04.11.2020','355673',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
+#total += scrape('04.11.2020','356170',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
+#print (total)
 
 #These are some checks to have (there are a lot to check, but these are the crucial ones):
 
