@@ -37,6 +37,39 @@ def backToReportOptions(currentDriver, main, closeID='nothing', waitingTime=10):
     frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2"))) #stays the same in report options screen
     currentDriver.switch_to.frame(frame)
 
+def dateConversions(self):
+    global dateToday, dateDotNotation, sqlDates
+
+    dateToday = self.now().strftime('%x') #local version of date
+    DOW = self.now().strftime('%a')
+    day = self.now().strftime('%d')
+    month = self.now().strftime('%m')
+    monthShort = self.now().strftime('%b')
+    year = self.now().strftime('%Y')
+
+    hour = self.now().strftime('%H')
+    hour = int(hour)
+
+    dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
+
+    if hour >= 11: #the half of the day
+        with open(r'Reports\date.txt', 'w') as f:
+            f.write(dateToday)
+            print('before 12 hour')
+
+    elif hour < 11: #the other half of the day
+        with open(r'Reports\date.txt', 'r') as f:
+            dateToday = f.readline()
+            print('after 12')
+
+
+    dateDotNotation = dateToday.replace('/', '.')
+    print(dateToday)
+
+    #Datesql, DOW, TOD, Month, Day, Year
+    sqlDate = year + '-' + month + '-' + day
+    sqlDates = [sqlDate,DOW,'',monthShort,day,year]
+
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
@@ -45,39 +78,27 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from scrapeHTML import scrape
+from dateTBL import insertDatePK
 import time
 import config
 import os
 import os.path as path
 import math
-from scrapeHTML import scrape
 import datetime
 
-dateToday = datetime.datetime.now().strftime('%x') #local version of date
-year = datetime.datetime.now().strftime('%Y')
-hour = datetime.datetime.now().strftime('%H')
-hour = int(hour)
-dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
+dateConversions(datetime.datetime)
+insertDatePK(sqlDates)
 
-if hour >= 11: #the half of the day
-    with open(r'Reports\report.txt', 'w') as f:
-        f.write(dateToday)
-        print('before 12 hour')
-
-elif hour < 11: #the other half of the day
-    with open(r'Reports\report.txt', 'r') as f:
-        dateToday = f.readline()
-        print('after 12')
-
-dateDotNotation = dateToday.replace('/', '.')
-print(dateToday)
-
+#important variables
 waitTime = 10 #seconds
 totalIDs = 0
 dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant'
-
 driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
 wait = WebDriverWait(driver,waitTime)
+oddCount = 0
+evenCount = 0
+
 
 driver.get('https://adqsr.radiantenterprise.com/bin/orf.dll/PE.platformForms.login.select.1.ghtm')
 
@@ -156,8 +177,6 @@ if len(rows) == len(pcNumbers):
 
 odd = driver.find_elements_by_class_name('gridRowOdd')
 even = driver.find_elements_by_class_name('gridRowEven')
-oddCount = 0
-evenCount = 0
 webElements = even + odd
 
 #test = wait.until(EC.element_to_be_clickable((By.ID, f"{even[0]}")))
