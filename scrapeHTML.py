@@ -7,22 +7,18 @@ def sliceString(string,beginStr,endStr='nothing'):
     return output
 
 import json
-import RDSconfig
 import pandas as pd
 import os.path
 import csv
 import MySQLdb
 from os import path
 from bs4 import BeautifulSoup
+import dateTBL
 
-def scrape(dateDotNotation='04.02.2020', pcNumber='347884', dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape'): #no driver.page_source because just in case we want to be able to run the code without selenium
+def scrape(dateDotNotation='04.02.2020',  pcNumber='347884', dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape'): #no driver.page_source because just in case we want to be able to run the code without selenium
 
-    mydb = MySQLdb.connect(host = RDSconfig.RDS_HOSTNAME,
-        user = RDSconfig.RDS_USER,
-        passwd = RDSconfig.RDS_PASSWORD,
-        db = RDSconfig.RDS_DBNAME)
+    mydb = dateTBL.connectDB()
     cursor = mydb.cursor()
-
 
     f = open(dir + fr'\Reports\{pcNumber}\{dateDotNotation}Report.html','rb') # 'rb' stands for read-binary, write-binary needs chmoding, this also needs to be changed for Selenium (needs to have date)
     content = f.read()
@@ -32,11 +28,12 @@ def scrape(dateDotNotation='04.02.2020', pcNumber='347884', dir = fr'C:\Users\Ha
     data = []
     columnNames = []
     dbTable = 'TempTable' #dont add spaces
-    insert = f'INSERT INTO {dbTable} (`PC Number`,`Date`,'
-    values = ' VALUES (%s,%s,'
+    insert = f'INSERT INTO {dbTable} (`PC Number`,`Date`,' #one half
+    values = ' VALUES (%s,%s,' #another half
     sql = ''
     date = ''
     pcNumber = ''
+
 
     #grabs first table since there are two tables and CSS
     table = soup.find(class_='TableStyle')
@@ -91,8 +88,6 @@ def scrape(dateDotNotation='04.02.2020', pcNumber='347884', dir = fr'C:\Users\Ha
     columnNames.insert(0,'PC Number')
     f.close()
 
-    #cleaning date string of slashes
-    date = date.replace('/','.')
 
     #checks for .json existence
     if path.exists(dir + fr'\Reports\{pcNumber}\{dateDotNotation}Output.json')==False: #f-string to differentiate files, r-string to change the use of backslashes (for absolute path)
@@ -106,10 +101,12 @@ def scrape(dateDotNotation='04.02.2020', pcNumber='347884', dir = fr'C:\Users\Ha
         #print(df)
         df.to_csv(dir + fr'\Reports\{pcNumber}\{dateDotNotation}dataframe.csv', index=False, header=True)
 
+
     csv_data = csv.reader(open(dir + fr'\Reports\{pcNumber}\{dateDotNotation}dataframe.csv'))
     next(csv_data) #to ignore header
     for row in csv_data:
        cursor.execute(sql, row) #if the script runs more than one time, the data will be duplicated, needs to check whether or not data exists for the date
+
 
     mydb.commit()
     print(date,pcNumber,f'{len(data)}','sql committed')
@@ -118,14 +115,14 @@ def scrape(dateDotNotation='04.02.2020', pcNumber='347884', dir = fr'C:\Users\Ha
 
 #to test the 7 PC numbers for a specific date
 #total = 0
-#total += scrape('04.11.2020','347884',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
-#total += scrape('04.11.2020','348454',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
-#total += scrape('04.11.2020','349941',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
-#total += scrape('04.11.2020','354651',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
-#total += scrape('04.11.2020','355342',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
-#total += scrape('04.11.2020','355673',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
-#total += scrape('04.11.2020','356170',fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape')
-#print (total)
+#total += scrape(['2020-04-23', 'Thu', '', '04', '23', '2020'],'04.22.2020','347884',fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant')
+#total += scrape('04.11.2020','348454',fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant')
+#total += scrape('04.11.2020','349941',fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant')
+#total += scrape('04.11.2020','354651',fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant')
+#total += scrape('04.11.2020','355342',fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant')
+#total += scrape('04.11.2020','355673',fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant')
+#total += scrape('04.11.2020','356170',fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant')
+#print(total)
 
 #These are some checks to have (there are a lot to check, but these are the crucial ones):
 
