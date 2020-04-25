@@ -79,16 +79,16 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from scrapeHTML import scrape
-from dateTBL import insertDatePK
 import time
 import config
 import os
 import os.path as path
 import math
 import datetime
+import sqlQueries
 
 dateConversions(datetime.datetime)
-insertDatePK(sqlDates)
+sqlQueries.insertDatePK(sqlDates)
 
 #important variables
 waitTime = 10 #seconds
@@ -299,4 +299,11 @@ for index in range(len(pcNumbers)):
 print('last ID should be: ' + f'{totalIDs}')
 time.sleep(1)
 driver.quit()
+
+sqlQueries.moveOneTempSQL('BagelTBL')
+sqlQueries.moveOneTempSQL('BakeryTBL')
+sqlQueries.moveOneTempSQL('ColdBeverageTBL')
+sqlQueries.moveOneTempSQL('FrozenTBL')
+sqlQueries.moveOneTempSQL('HotBeverageTBL')
+sqlQueries.moveOneTempSQL('SandwichTBL')
 #time.sleep(5)
