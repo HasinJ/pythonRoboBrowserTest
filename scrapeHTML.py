@@ -13,11 +13,12 @@ import csv
 import MySQLdb
 from os import path
 from bs4 import BeautifulSoup
-import dateTBL
+import RDSconfig
+from sqlQueries import connectDB
 
 def scrape(dateDotNotation='04.02.2020',  pcNumber='347884', dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape'): #no driver.page_source because just in case we want to be able to run the code without selenium
 
-    mydb = dateTBL.connectDB()
+    mydb = connectDB()
     cursor = mydb.cursor()
 
     f = open(dir + fr'\Reports\{pcNumber}\{dateDotNotation}Report.html','rb') # 'rb' stands for read-binary, write-binary needs chmoding, this also needs to be changed for Selenium (needs to have date)
