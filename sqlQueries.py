@@ -44,13 +44,13 @@ def moveOneTempSQL(target):
 def moveAllTempSQL():
     mydb = connectDB()
     cursor = mydb.cursor()
-    sql=''
 
     dirList = os.listdir(fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries')
 
 
     #this is pretty specific
     for file in dirList:
+        sql=''
         destination = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries\{file}'
         if path.exists(destination)==True:
             with open(destination) as f:
@@ -60,8 +60,10 @@ def moveAllTempSQL():
                         sql+=line.strip()
                         break
                     sql+=line.strip() + ' '
+                print(sql)
                 cursor.execute(sql)
 
-    print(sql)
     mydb.commit()
     cursor.close()
+
+moveAllTempSQL()
