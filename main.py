@@ -307,6 +307,15 @@ print('last ID should be: ' + f'{totalIDs}')
 time.sleep(1)
 driver.quit()
 
+
+print('moving from temp table in..')
+time.sleep(1)
+print('3')
+time.sleep(1)
+print('2')
+time.sleep(1)
+print('1')
+time.sleep(1)
 sqlQueries.moveAllTempSQL()
 
 #sqlQueries.moveOneTempSQL('BagelTBL')
