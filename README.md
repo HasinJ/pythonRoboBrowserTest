@@ -7,4 +7,5 @@ pip install Werkzeug==0.9.6 if you get the import error, AFTER doing pip install
 
 Goals:
 - error handling/logging
+- storepc primary key, probably needs to be treated like date primary key 
 - maybe swap to object oriented
