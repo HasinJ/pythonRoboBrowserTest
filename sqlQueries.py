@@ -66,4 +66,4 @@ def moveAllTempSQL():
     mydb.commit()
     cursor.close()
 
-moveAllTempSQL()
+#moveAllTempSQL()
