@@ -42,9 +42,9 @@ def get_past_date(str_days_ago):
     splitted = str_days_ago.split()
     if len(splitted) == 1 and splitted[0].lower() == 'today':
         return TODAY
-    if len(splitted) == 1 and splitted[0].lower() == 'yesterday':
+    elif len(splitted) == 1 and splitted[0].lower() == 'yesterday':
         date = TODAY - relativedelta(days=1)
-        return str(date.isoformat())
+        return date
     else:
         return "Wrong Argument format"
 
@@ -54,21 +54,19 @@ def dateConversions(self):
     hour = int(self.datetime.now().strftime('%H'))
 
     if hour >= 11: #the half of the day
-        dateToday = self.now().strftime('%x') #local version of date
-        day = self.datetime.now().strftime('%d')
-        month = self.datetime.now().strftime('%m')
-        year = self.datetime.now().strftime('%Y')
-        monthLong = self.datetime.now().strftime('%B')
-        DOW = self.datetime.now().strftime('%A')
+        selectedDate = get_past_date('today')
+        selectedDate = str(selectedDate.isoformat())
+        dateToday = selectedDate.strftime('%x') #local version of date
+        monthLong = selectedDate.now().strftime('%B')
+        DOW = selectedDate.strftime('%A')
         print('before 12 hour')
 
     elif hour < 11: #the other half of the day
-        dateToday = get_past_date('yesterday')
-        yesterday = dateToday.split('-')
-        day = yesterday.pop()
-        month = yesterday.pop()
-        year = yesterday.pop()
-        monthLong=self.date(int(year),int(month),int(day)).strftime('%B')
+        selectedDate = get_past_date('yesterday')
+        selectedDate = str(selectedDate.isoformat())
+        dateToday = selectedDate.strftime('%x') #local version of date
+        monthLong = selectedDate.strftime('%B')
+        DOW = selectedDate.strftime('%A')
         print('after 12')
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
@@ -76,8 +74,7 @@ def dateConversions(self):
     print(dateToday)
 
     #Datesql, DOW, TOD, Month, Day, Year
-    sqlDate = year + '-' + month + '-' + day
-    sqlDates = [sqlDate,DOW,'',monthLong,day,year]
+    sqlDates = [selectedDate,DOW,'',monthLong,day,year]
 
 
 from selenium import webdriver
