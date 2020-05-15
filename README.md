@@ -1,5 +1,6 @@
 # pythonRoboBrowserTest
-robo browser module
+NOT robo browser module, swapped to selenium
+
 
 https://readthedocs.org/projects/robobrowser/downloads/pdf/latest/
 
