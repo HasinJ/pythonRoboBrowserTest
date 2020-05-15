@@ -60,7 +60,7 @@ def moveAllTempSQL():
                         sql+=line.strip()
                         break
                     sql+=line.strip() + ' '
-                print(sql)
+                #print(sql) #checks sql
                 cursor.execute(sql)
 
     mydb.commit()
