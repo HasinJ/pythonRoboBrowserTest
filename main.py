@@ -41,8 +41,8 @@ def get_past_date(str_days_ago):
     TODAY = datetime.date.today()
     splitted = str_days_ago.split()
     if len(splitted) == 1 and splitted[0].lower() == 'today':
-        return str(TODAY.isoformat())
-    elif len(splitted) == 1 and splitted[0].lower() == 'yesterday':
+        return TODAY
+    if len(splitted) == 1 and splitted[0].lower() == 'yesterday':
         date = TODAY - relativedelta(days=1)
         return str(date.isoformat())
     else:
@@ -51,30 +51,33 @@ def get_past_date(str_days_ago):
 def dateConversions(self):
     global dateToday, dateDotNotation, sqlDates
 
-    hour = int(self.now().strftime('%H'))
+    hour = int(self.datetime.now().strftime('%H'))
 
     if hour >= 11: #the half of the day
-        with open(r'Reports\date.txt', 'w') as f:
-            dateToday = self.now().strftime('%x') #local version of date
-            DOW = self.now().strftime('%A')
-            day = self.now().strftime('%d')
-            month = self.now().strftime('%m')
-            monthShort = self.now().strftime('%b')
-            year = self.now().strftime('%Y')
-            print('before 12 hour')
+        dateToday = self.now().strftime('%x') #local version of date
+        day = self.datetime.now().strftime('%d')
+        month = self.datetime.now().strftime('%m')
+        year = self.datetime.now().strftime('%Y')
+        monthLong = self.datetime.now().strftime('%B')
+        DOW = self.datetime.now().strftime('%A')
+        print('before 12 hour')
 
     elif hour < 11: #the other half of the day
-        with open(r'Reports\date.txt', 'r') as f:
-            dateToday = get_past_date('yesterday')
-            print('after 12')
+        dateToday = get_past_date('yesterday')
+        yesterday = dateToday.split('-')
+        day = yesterday.pop()
+        month = yesterday.pop()
+        year = yesterday.pop()
+        monthLong=self.date(int(year),int(month),int(day)).strftime('%B')
+        print('after 12')
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
-    print(dateToday) #if this isn't the date, check the date file
+    print(dateToday)
 
     #Datesql, DOW, TOD, Month, Day, Year
     sqlDate = year + '-' + month + '-' + day
-    sqlDates = [sqlDate,DOW,'',monthShort,day,year]
+    sqlDates = [sqlDate,DOW,'',monthLong,day,year]
 
 
 from selenium import webdriver
@@ -90,10 +93,11 @@ import config
 import os
 import os.path as path
 import math
-import datetime
 import sqlQueries
+import datetime
+from dateutil.relativedelta import relativedelta
 
-input = datetime.datetime
+input = datetime
 time.sleep(1)
 dateConversions(input)
 sqlQueries.insertDatePK(sqlDates)
