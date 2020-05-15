@@ -53,27 +53,26 @@ def dateConversions(self):
 
     hour = int(self.datetime.now().strftime('%H'))
 
-    if hour >= 11: #the half of the day
+    if hour >= 23: #the half of the day
         selectedDate = get_past_date('today')
-        selectedDate = str(selectedDate.isoformat())
-        dateToday = selectedDate.strftime('%x') #local version of date
-        monthLong = selectedDate.now().strftime('%B')
-        DOW = selectedDate.strftime('%A')
-        print('before 12 hour')
+        print("use today's date")
 
-    elif hour < 11: #the other half of the day
+    elif hour < 23: #the other half of the day
         selectedDate = get_past_date('yesterday')
-        selectedDate = str(selectedDate.isoformat())
-        dateToday = selectedDate.strftime('%x') #local version of date
-        monthLong = selectedDate.strftime('%B')
-        DOW = selectedDate.strftime('%A')
-        print('after 12')
+        print("use yesterday's date")
+
+    dateToday = selectedDate.strftime('%x') #local version of date
+    monthLong = selectedDate.strftime('%B')
+    DOW = selectedDate.strftime('%A')
+    day = selectedDate.strftime('%d')
+    year = selectedDate.strftime('%Y')
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
     print(dateToday)
 
     #Datesql, DOW, TOD, Month, Day, Year
+    selectedDate = str(selectedDate.isoformat())
     sqlDates = [selectedDate,DOW,'',monthLong,day,year]
 
 
@@ -94,9 +93,8 @@ import sqlQueries
 import datetime
 from dateutil.relativedelta import relativedelta
 
-input = datetime
 time.sleep(1)
-dateConversions(input)
+dateConversions(datetime)
 sqlQueries.insertDatePK(sqlDates)
 
 #important variables
