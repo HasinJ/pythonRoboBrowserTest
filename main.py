@@ -37,34 +37,55 @@ def backToReportOptions(currentDriver, main, closeID='nothing', waitingTime=10):
     frame = wait.until(EC.presence_of_element_located((By.ID, "Frame2"))) #stays the same in report options screen
     currentDriver.switch_to.frame(frame)
 
+def get_past_date(str_days_ago):
+    TODAY = datetime.date.today()
+    splitted = str_days_ago.split()
+    if len(splitted) == 1 and splitted[0].lower() == 'today':
+        return str(TODAY.isoformat())
+    elif len(splitted) == 1 and splitted[0].lower() == 'yesterday':
+        date = TODAY - relativedelta(days=1)
+        return str(date.isoformat())
+    elif splitted[1].lower() in ['hour', 'hours', 'hr', 'hrs', 'h']:
+        date = datetime.datetime.now() - relativedelta(hours=int(splitted[0]))
+        return str(date.date().isoformat())
+    elif splitted[1].lower() in ['day', 'days', 'd']:
+        date = TODAY - relativedelta(days=int(splitted[0]))
+        return str(date.isoformat())
+    elif splitted[1].lower() in ['wk', 'wks', 'week', 'weeks', 'w']:
+        date = TODAY - relativedelta(weeks=int(splitted[0]))
+        return str(date.isoformat())
+    elif splitted[1].lower() in ['mon', 'mons', 'month', 'months', 'm']:
+        date = TODAY - relativedelta(months=int(splitted[0]))
+        return str(date.isoformat())
+    elif splitted[1].lower() in ['yrs', 'yr', 'years', 'year', 'y']:
+        date = TODAY - relativedelta(years=int(splitted[0]))
+        return str(date.isoformat())
+    else:
+        return "Wrong Argument format"
+
 def dateConversions(self):
     global dateToday, dateDotNotation, sqlDates
 
-    dateToday = self.now().strftime('%x') #local version of date
-    DOW = self.now().strftime('%a')
-    day = self.now().strftime('%d')
-    month = self.now().strftime('%m')
-    monthShort = self.now().strftime('%b')
-    year = self.now().strftime('%Y')
-
-    hour = self.now().strftime('%H')
-    hour = int(hour)
-
-    dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
+    hour = int(self.now().strftime('%H'))
 
     if hour >= 11: #the half of the day
         with open(r'Reports\date.txt', 'w') as f:
-            f.write(dateToday)
+            dateToday = self.now().strftime('%x') #local version of date
+            DOW = self.now().strftime('%A')
+            day = self.now().strftime('%d')
+            month = self.now().strftime('%m')
+            monthShort = self.now().strftime('%b')
+            year = self.now().strftime('%Y')
             print('before 12 hour')
 
     elif hour < 11: #the other half of the day
         with open(r'Reports\date.txt', 'r') as f:
-            dateToday = f.readline()
+            dateToday = get_past_date('yesterday')
             print('after 12')
 
-
+    dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
-    print(dateToday)
+    print(dateToday) #if this isn't the date, check the date file
 
     #Datesql, DOW, TOD, Month, Day, Year
     sqlDate = year + '-' + month + '-' + day
@@ -87,7 +108,9 @@ import math
 import datetime
 import sqlQueries
 
-dateConversions(datetime.datetime)
+input = datetime.datetime
+time.sleep(1)
+dateConversions(input)
 sqlQueries.insertDatePK(sqlDates)
 
 #important variables
