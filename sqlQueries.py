@@ -27,7 +27,7 @@ def moveOneTempSQL(target):
     sql=''
 
     #this is pretty specific
-    destination = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries\{target} Insert.txt'
+    destination = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries\Insert Queries\{target} Insert.txt'
     if path.exists(destination)==True:
         with open(destination) as f:
             for line in f:
@@ -45,10 +45,10 @@ def moveAllTempSQL():
     mydb = connectDB()
     cursor = mydb.cursor()
 
-    dirList = os.listdir(fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries')
+    dirList = os.listdir(fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries\Insert Queries')
 
 
-    #this is pretty specific
+    #for every file in directory
     for file in dirList:
         sql=''
         destination = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries\{file}'
@@ -66,4 +66,33 @@ def moveAllTempSQL():
     mydb.commit()
     cursor.close()
 
+def oneFile(folder, file):
+    mydb = connectDB()
+    cursor = mydb.cursor()
+
+    destination = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant\Consumption Table Queries\{folder}\{file}'
+
+    with open(destination) as f:
+        sql=''
+        while True:
+            line = f.readline()
+            if not line:
+                sql+=line.strip()
+                break
+            sql+=line.strip() + ' '
+        #print(sql) #checks sql
+        cursor.execute(sql)
+
+    cursor.execute(sql)
+    mydb.commit()
+    cursor.close()
+
 #moveAllTempSQL()
+oneFile('Temp','TempTable Truncate.txt')
+
+##sql query def template: 
+#mydb = connectDB()
+#cursor = mydb.cursor()
+#cursor.execute(sql) #the rest from here (including) are for commiting
+#mydb.commit()
+#cursor.close()
