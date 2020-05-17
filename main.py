@@ -61,18 +61,18 @@ def dateConversions(self):
         selectedDate = get_past_date('yesterday')
         print("use yesterday's date")
 
-    dateToday = selectedDate.strftime('%x') #local version of date
-    monthLong = selectedDate.strftime('%B')
-    DOW = selectedDate.strftime('%A')
-    day = selectedDate.strftime('%d')
-    year = selectedDate.strftime('%Y')
+    dateToday = selectedDate.strftime('%x') #local version of date 12/31/2020
+    monthLong = selectedDate.strftime('%B') #January
+    DOW = selectedDate.strftime('%a') #Wed
+    day = selectedDate.strftime('%d') #31
+    year = selectedDate.strftime('%Y') #2020
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
     print(dateToday)
 
     #Datesql, DOW, TOD, Month, Day, Year
-    selectedDate = str(selectedDate.isoformat())
+    selectedDate = str(selectedDate.isoformat()) #2020-12-31
     sqlDates = [selectedDate,DOW,'',monthLong,day,year]
 
 
@@ -95,7 +95,15 @@ from dateutil.relativedelta import relativedelta
 
 time.sleep(1)
 dateConversions(datetime)
-sqlQueries.insertDatePK(sqlDates)
+
+try:
+    sqlQueries.insertDatePK(sqlDates)
+except sqlQueries.MySQLdb._exceptions.IntegrityError:
+    print('Date already exists in DateTBL.. \n emptying TempTable..')
+    sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+    print('Emptied.')
+    time.sleep(2)
+
 
 #important variables
 waitTime = 10 #seconds
@@ -317,6 +325,11 @@ time.sleep(1)
 print('1')
 time.sleep(1)
 sqlQueries.moveAllTempSQL()
+print('success! \nEmptying TempTable...')
+sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+print("done!")
+time.sleep(1)
+
 
 #sqlQueries.moveOneTempSQL('BagelTBL')
 #sqlQueries.moveOneTempSQL('BakeryTBL')
