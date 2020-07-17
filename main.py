@@ -235,11 +235,11 @@ for i in range(5):
     time.sleep(0.5)
 
 ActionChains(driver).send_keys(Keys.DELETE).perform()
-ActionChains(driver).send_keys(dateToday).perform()
+ActionChains(driver).send_keys(dateToday).perform() #from (dateToday)
 time.sleep(0.5)
 ActionChains(driver).send_keys(Keys.TAB).perform()
 ActionChains(driver).send_keys(Keys.DELETE).perform()
-ActionChains(driver).send_keys(dateToday).perform()
+ActionChains(driver).send_keys(dateToday).perform() #to (dateToday)
 
 backToReportOptions(driver, main_page, 'waSaveClose')
 
