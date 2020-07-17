@@ -13,7 +13,6 @@ import csv
 import MySQLdb
 from os import path
 from bs4 import BeautifulSoup
-import RDSconfig
 from sqlQueries import connectDB
 
 def scrape(dateDotNotation='04.02.2020',  pcNumber='347884', dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonBeautifulSoupScrape'): #no driver.page_source because just in case we want to be able to run the code without selenium
@@ -106,7 +105,7 @@ def scrape(dateDotNotation='04.02.2020',  pcNumber='347884', dir = fr'C:\Users\H
     csv_data = csv.reader(open(dir + fr'\Reports\{pcNumber}\{dateDotNotation}dataframe.csv'))
     next(csv_data) #to ignore header
     for row in csv_data:
-       cursor.execute(sql, row) #if the script runs more than one time, the data will be duplicated, needs to check whether or not data exists for the date
+       cursor.execute(sql, row) 
 
 
     mydb.commit()

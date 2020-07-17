@@ -248,6 +248,7 @@ wait = WebDriverWait(driver,waitTime)
 submit = wait.until(EC.presence_of_element_located((By.ID, 'wrLHSalesMixCon__AutoRunReport')))
 ActionChains(driver).move_to_element(submit).click(submit).perform()
 
+
 #parse table HTML into a file
 if path.isdir(dir + fr'\Reports\{somePCNumber}')==False:
     os.mkdir(dir + fr'\Reports\{somePCNumber}')
@@ -324,8 +325,8 @@ print('2')
 time.sleep(1)
 print('1')
 time.sleep(1)
-sqlQueries.moveAllTempSQL()
-print('success! \nEmptying TempTable...')
+#sqlQueries.moveAllTempSQL()
+print('error! \nEmptying TempTable...')
 sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 print("done!")
 time.sleep(1)

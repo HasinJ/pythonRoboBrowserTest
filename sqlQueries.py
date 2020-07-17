@@ -1,13 +1,13 @@
 import MySQLdb
-import RDSconfig
+import config
 import os
 import os.path as path
 
 def connectDB():
-    mydb = MySQLdb.connect(host = RDSconfig.RDS_HOSTNAME,
-        user = RDSconfig.RDS_USER,
-        passwd = RDSconfig.RDS_PASSWORD,
-        db = RDSconfig.RDS_DBNAME)
+    mydb = MySQLdb.connect(host = config.RDS_HOSTNAME,
+        user = config.RDS_USER,
+        passwd = config.RDS_PASSWORD,
+        db = config.RDS_DBNAME)
     return mydb
 
 def insertDatePK(values):
@@ -87,10 +87,12 @@ def oneFile(folder, file):
     mydb.commit()
     cursor.close()
 
-#moveAllTempSQL()
-oneFile('Temp','TempTable Truncate.txt')
+moveAllTempSQL()
 
-##sql query def template: 
+#run this to empty temp table
+#oneFile('Temp','TempTable Truncate.txt')
+
+##sql query def template:
 #mydb = connectDB()
 #cursor = mydb.cursor()
 #cursor.execute(sql) #the rest from here (including) are for commiting
