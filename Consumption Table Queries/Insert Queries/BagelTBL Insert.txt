@@ -1,6 +1,6 @@
-INSERT INTO hasindatabase.BagelTBL (`PCNumber`, `Date`, `ItemName`, `Price`, `UnitSold`, `SoldAmount`)
+INSERT INTO BagelTBL (`PCNumber`, `Date`, `ItemName`, `Price`, `UnitSold`, `SoldAmount`)
 SELECT `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`
-FROM hasindatabase.TempTable
+FROM TempTable
 Where Item like "%Bagels, Item Only%" OR
 Item like "%Bagel w/%" OR
 Item like "%Bagels & Cream Cheese" OR

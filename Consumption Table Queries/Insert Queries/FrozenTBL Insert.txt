@@ -1,6 +1,6 @@
-INSERT INTO hasindatabase.FrozenTBL (`PCNumber`, `Date`, `ItemName`, `Price`, `UnitSold`, `SoldAmount`)
+INSERT INTO FrozenTBL (`PCNumber`, `Date`, `ItemName`, `Price`, `UnitSold`, `SoldAmount`)
 SELECT `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`
-FROM hasindatabase.TempTable
+FROM TempTable
 Where Item like "%Frozen%" OR
 Item like "%coolatta%"
 Order By Item

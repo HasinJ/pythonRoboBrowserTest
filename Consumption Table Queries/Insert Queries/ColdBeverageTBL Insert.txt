@@ -1,6 +1,6 @@
-INSERT INTO hasindatabase.ColdBeverageTBL (`PCNumber`, `Date`, `ItemName`, `Price`, `UnitSold`, `SoldAmount`)
+INSERT INTO ColdBeverageTBL (`PCNumber`, `Date`, `ItemName`, `Price`, `UnitSold`, `SoldAmount`)
 SELECT `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`
-FROM hasindatabase.TempTable
+FROM TempTable
 Where Item like "%cold brew%" OR
 Item like "%iced coffee%" OR
 Item like "%iced americano%" OR
