@@ -10,6 +10,17 @@ def connectDB():
         db = config.RDS_DBNAME)
     return mydb
 
+def deleteDay(dateSTR):
+    mydb = connectDB()
+    cursor = mydb.cursor()
+
+    cursor.execute(f"DELETE FROM `TempTable` WHERE (`Date` = '{dateSTR}')") #date format should be 'year-month-day' ex. 2020-12-31
+    cursor.execute(f"DELETE FROM `DateTBL` WHERE (`Date` = '{dateSTR}')")
+
+    mydb.commit()
+    cursor.close()
+
+
 def insertDatePK(values):
     mydb = connectDB()
     cursor = mydb.cursor()
@@ -60,7 +71,7 @@ def moveAllTempSQL():
                         sql+=line.strip()
                         break
                     sql+=line.strip() + ' '
-                #print(sql) #checks sql
+                print(sql) #checks sql
                 cursor.execute(sql)
 
     mydb.commit()
@@ -80,16 +91,19 @@ def oneFile(folder, file):
                 sql+=line.strip()
                 break
             sql+=line.strip() + ' '
-        #print(sql) #checks sql
+        print(sql) #checks sql
         cursor.execute(sql)
 
     cursor.execute(sql)
     mydb.commit()
     cursor.close()
 
+#commitSQL("DELETE FROM `DateTBL` WHERE (`Date` = '2020-07-13');") #example
+#deleteDay('2020-07-14')
 
 #run this to empty temp table
 #oneFile('Temp','TempTable Truncate.txt')
+#moveAllTempSQL()
 
 ##sql query def template:
 #mydb = connectDB()
