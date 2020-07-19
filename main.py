@@ -96,59 +96,25 @@ def dateConversions(self,fromDate='empty'):
     selectedDate = str(selectedDate.isoformat()) #2020-12-31
     sqlDates = [selectedDate,DOW,'',monthLong,day,year]
 
+    delete = 0
+
     try:
         sqlQueries.insertDatePK(sqlDates)
     except sqlQueries.MySQLdb._exceptions.IntegrityError:
-        print('Date already exists in DateTBL.. emptying TempTable..')
+        print('Date already exists in DateTBL.. deleting date and truncating TempTable')
         sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-        print('Emptied. \n ')
+        delete=1
 
-def manualDates(start, end):
-    global dateDotNotation
-    #figuring out days in between for, for loop
-    fromDate = datetime.date(start['year'], start['month'], start['day'])
-    toDate = datetime.date(end['year'], end['month'], end['day'])
-    days = toDate - fromDate
-    days = str(days).split(' ')[0]
-    dateDotNotation = f"{fromDate.strftime('%x').replace('/','.')}-{toDate.strftime('%x').replace('/','.')}"
+    if delete==1:
+        sqlQueries.deleteDay(selectedDate)
+        sqlQueries.insertDatePK(sqlDates)
+        print('Done. \n ')
 
-    selectedDate = fromDate
-    for x in range(int(days)):
-        if fromDate==toDate: break
-        selectedDateSTR = str(selectedDate.isoformat())
-        dateToday = selectedDate.strftime('%x') #local version of date 12/31/2020
-        monthLong = selectedDate.strftime('%B') #January
-        DOW = selectedDate.strftime('%a') #Wed
-        day = selectedDate.strftime('%d') #31
-        year = selectedDate.strftime('%Y') #2020
-        print(dateToday)
-
-        sqlDates = [selectedDateSTR,DOW,'',monthLong,day,year]
-
-        try:
-            sqlQueries.insertDatePK(sqlDates)
-        except sqlQueries.MySQLdb._exceptions.IntegrityError:
-            print('Date already exists in DateTBL.. emptying TempTable..')
-            sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-            print('Emptied. \n ')
-
-        selectedDate +=  datetime.timedelta(1) #iteration
-        print('\n ')
-#end functions
 
 
 
 time.sleep(1)
-#dateConversions(datetime) #can also be used for one day format: dateConversions(datetime, {year:number, month:number, day:number})
-#fromDate = dateToday
-#toDate = dateToday
-
-#to manually do dates
-fromDict = {'year':2020,'month':7,'day':12}
-toDict = {'year':2020,'month':7,'day':17}
-manualDates(fromDict,toDict)
-fromDate = f"{fromDict['month']}/{fromDict['day']}/{fromDict['year']}"
-toDate = f"{toDict['month']}/{toDict['day']}/{toDict['year']}"
+dateConversions(datetime,{'year':2020, 'month':7, 'day':18}) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number})
 
 
 #important variables
@@ -374,7 +340,7 @@ time.sleep(1)
 print('1')
 time.sleep(1)
 sqlQueries.moveAllTempSQL()
-print('success! \nEmptying TempTable...')
+print('success! \n \n Emptying TempTable...')
 #sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 print("done!")
 time.sleep(1)

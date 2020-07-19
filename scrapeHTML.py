@@ -109,7 +109,7 @@ def scrape(dateDotNotation='04.02.2020',  pcNumber='347884', dir = fr'C:\Users\H
 
 
     mydb.commit()
-    print(date,pcNumber,f'{len(data)}','sql committed \n ')
+    print(date,pcNumber,f'{len(data)}','sql committed to TempTable \n')
     cursor.close()
     return len(data)
 
