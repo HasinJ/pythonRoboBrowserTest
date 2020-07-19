@@ -1,4 +1,22 @@
+from selenium import webdriver
+from bs4 import BeautifulSoup
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from scrapeHTML import scrape
+import time
+import config
+import os
+import os.path as path
+import math
+import sqlQueries
+import datetime
+from dateutil.relativedelta import relativedelta
 
+
+#functions
 def switchHandle(currentDriver):
     main_page = currentDriver.current_window_handle
 
@@ -48,12 +66,15 @@ def get_past_date(str_days_ago):
     else:
         return "Wrong Argument format"
 
-def dateConversions(self):
-    global dateToday, dateDotNotation, sqlDates
+def dateConversions(self,fromDate='empty'):
+    global dateToday, dateDotNotation
 
     hour = int(self.datetime.now().strftime('%H'))
 
-    if hour >= 23: #the half of the day
+    if fromDate!='empty':
+        selectedDate=self.date(fromDate['year'], fromDate['month'], fromDate['day'])
+
+    elif hour >= 23: #the half of the day
         selectedDate = get_past_date('today')
         print("use today's date")
 
@@ -62,47 +83,72 @@ def dateConversions(self):
         print("use yesterday's date")
 
     dateToday = selectedDate.strftime('%x') #local version of date 12/31/2020
-    monthLong = selectedDate.strftime('%B') #January
+    monthLong = selectedDate.strftime('%B') #December
     DOW = selectedDate.strftime('%a') #Wed
     day = selectedDate.strftime('%d') #31
     year = selectedDate.strftime('%Y') #2020
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
-    print(dateToday)
+    print(dateToday) #12/31/2020
 
     #Datesql, DOW, TOD, Month, Day, Year
     selectedDate = str(selectedDate.isoformat()) #2020-12-31
     sqlDates = [selectedDate,DOW,'',monthLong,day,year]
 
+    try:
+        sqlQueries.insertDatePK(sqlDates)
+    except sqlQueries.MySQLdb._exceptions.IntegrityError:
+        print('Date already exists in DateTBL.. emptying TempTable..')
+        sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+        print('Emptied. \n ')
 
-from selenium import webdriver
-from bs4 import BeautifulSoup
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-from scrapeHTML import scrape
-import time
-import config
-import os
-import os.path as path
-import math
-import sqlQueries
-import datetime
-from dateutil.relativedelta import relativedelta
+def manualDates(start, end):
+    global dateDotNotation
+    #figuring out days in between for, for loop
+    fromDate = datetime.date(start['year'], start['month'], start['day'])
+    toDate = datetime.date(end['year'], end['month'], end['day'])
+    days = toDate - fromDate
+    days = str(days).split(' ')[0]
+    dateDotNotation = f"{fromDate.strftime('%x').replace('/','.')}-{toDate.strftime('%x').replace('/','.')}"
+
+    selectedDate = fromDate
+    for x in range(int(days)):
+        if fromDate==toDate: break
+        selectedDateSTR = str(selectedDate.isoformat())
+        dateToday = selectedDate.strftime('%x') #local version of date 12/31/2020
+        monthLong = selectedDate.strftime('%B') #January
+        DOW = selectedDate.strftime('%a') #Wed
+        day = selectedDate.strftime('%d') #31
+        year = selectedDate.strftime('%Y') #2020
+        print(dateToday)
+
+        sqlDates = [selectedDateSTR,DOW,'',monthLong,day,year]
+
+        try:
+            sqlQueries.insertDatePK(sqlDates)
+        except sqlQueries.MySQLdb._exceptions.IntegrityError:
+            print('Date already exists in DateTBL.. emptying TempTable..')
+            sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+            print('Emptied. \n ')
+
+        selectedDate +=  datetime.timedelta(1) #iteration
+        print('\n ')
+#end functions
+
+
 
 time.sleep(1)
-dateConversions(datetime)
+#dateConversions(datetime) #can also be used for one day format: dateConversions(datetime, {year:number, month:number, day:number})
+#fromDate = dateToday
+#toDate = dateToday
 
-try:
-    sqlQueries.insertDatePK(sqlDates)
-except sqlQueries.MySQLdb._exceptions.IntegrityError:
-    print('Date already exists in DateTBL.. \n emptying TempTable..')
-    sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-    print('Emptied.')
-    time.sleep(2)
+#to manually do dates
+fromDict = {'year':2020,'month':7,'day':12}
+toDict = {'year':2020,'month':7,'day':17}
+manualDates(fromDict,toDict)
+fromDate = f"{fromDict['month']}/{fromDict['day']}/{fromDict['year']}"
+toDate = f"{toDict['month']}/{toDict['day']}/{toDict['year']}"
 
 
 #important variables
@@ -234,11 +280,11 @@ for i in range(5):
     time.sleep(0.5)
 
 ActionChains(driver).send_keys(Keys.DELETE).perform()
-ActionChains(driver).send_keys(dateToday).perform() #from (dateToday)
+ActionChains(driver).send_keys(fromDate).perform() #from (dateToday)
 time.sleep(0.5)
 ActionChains(driver).send_keys(Keys.TAB).perform()
 ActionChains(driver).send_keys(Keys.DELETE).perform()
-ActionChains(driver).send_keys(dateToday).perform() #to (dateToday)
+ActionChains(driver).send_keys(toDate).perform() #to (dateToday)
 
 backToReportOptions(driver, main_page, 'waSaveClose')
 
