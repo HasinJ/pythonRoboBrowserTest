@@ -21,6 +21,16 @@ def insertDatePK(values):
     mydb.commit()
     cursor.close()
 
+def deleteDay(dateSTR):
+    mydb = connectDB()
+    cursor = mydb.cursor()
+
+    sql_Delete_query = """Delete from DateTBL where date = %s"""
+    cursor.execute(sql_Delete_query, (dateSTR,))
+
+    mydb.commit()
+    cursor.close()
+
 def moveOneTempSQL(target):
     mydb = connectDB()
     cursor = mydb.cursor()
@@ -88,6 +98,7 @@ def oneFile(folder, file):
     cursor.close()
 
 
+#deleteDay('2020-07-18')
 #run this to empty temp table
 #oneFile('Temp','TempTable Truncate.txt')
 
