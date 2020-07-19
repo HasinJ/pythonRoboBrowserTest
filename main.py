@@ -83,14 +83,14 @@ def dateConversions(self,fromDate='empty'):
     try:
         sqlQueries.insertDatePK(sqlDates)
     except sqlQueries.MySQLdb._exceptions.IntegrityError:
-        print('Date already exists in DateTBL.. deleting date')
+        print('Date already exists in DateTBL.. deleting date and truncating TempTable')
         sqlQueries.oneFile('Temp','TempTable Truncate.txt')
         delete=1
 
     if delete==1:
         sqlQueries.deleteDay(selectedDate)
         sqlQueries.insertDatePK(sqlDates)
-        print('Emptied. \n ')
+        print('Done. \n ')
 
 
 
