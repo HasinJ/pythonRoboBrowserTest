@@ -108,8 +108,7 @@ except sqlQueries.MySQLdb._exceptions.IntegrityError:
 #important variables
 waitTime = 10 #seconds
 totalIDs = 0
-dir = fr'C:\Users\Hasin Choudhury\Desktop\pythonSeleniumRadiant'
-driver = webdriver.Ie(r"H:\IEDriver\IEDriverServer.exe")
+driver = webdriver.Ie(r"C:\Program Files (x86)\IEDriver\IEDriverServer.exe")
 wait = WebDriverWait(driver,waitTime)
 oddCount = 0
 evenCount = 0
@@ -165,7 +164,7 @@ orgUnit.send_keys(Keys.ENTER)
 busUnit = wait.until(EC.presence_of_element_located((By.ID, "__lufBusUnit")))
 busUnit.clear()
 time.sleep(1)
-busUnit.send_keys('text to prompt modal business unit box')
+busUnit.send_keys('text')
 busUnit.send_keys(Keys.ENTER)
 time.sleep(3)
 main_page = switchHandle(driver)
@@ -217,7 +216,7 @@ backToReportOptions(driver, main_page)
 #date selection
 dateUnit = wait.until(EC.presence_of_element_located((By.ID, "lkupDates")))
 dateUnit.clear()
-dateUnit.send_keys('text to prompt modal date box')
+dateUnit.send_keys('text')
 time.sleep(1)
 dateUnit.send_keys(Keys.ENTER)
 time.sleep(3)
@@ -250,13 +249,13 @@ ActionChains(driver).move_to_element(submit).click(submit).perform()
 
 
 #parse table HTML into a file
-if path.isdir(dir + fr'\Reports\{somePCNumber}')==False:
-    os.mkdir(dir + fr'\Reports\{somePCNumber}')
+if path.isdir(config.dir + fr'\Reports\{somePCNumber}')==False:
+    os.mkdir(config.dir + fr'\Reports\{somePCNumber}')
 
-with open(dir + fr'\Reports\{somePCNumber}\{dateDotNotation}Report.html','w') as f:
+with open(config.dir + fr'\Reports\{somePCNumber}\{dateDotNotation}Report.html','w') as f:
     f.write(driver.page_source)
 
-totalIDs += scrape(dateDotNotation,somePCNumber,dir)
+totalIDs += scrape(dateDotNotation,somePCNumber,config.dir)
 print(f'{somePCNumber}' + ' HTML recorded.')
 
 #the loop after the first one is parsed
@@ -305,12 +304,12 @@ for index in range(len(pcNumbers)):
 
     time.sleep(5)
 
-    if path.isdir(dir + fr'\Reports\{pcNumbers[index]}')==False:
-        os.mkdir(dir + fr'\Reports\{pcNumbers[index]}')
-    with open(dir + fr'\Reports\{pcNumbers[index]}\{dateDotNotation}Report.html','w') as f:
+    if path.isdir(config.dir + fr'\Reports\{pcNumbers[index]}')==False:
+        os.mkdir(config.dir + fr'\Reports\{pcNumbers[index]}')
+    with open(config.dir + fr'\Reports\{pcNumbers[index]}\{dateDotNotation}Report.html','w') as f:
         f.write(driver.page_source)
     print(f'{pcNumbers[index]}' + ' HTML recorded.')
-    totalIDs += scrape(dateDotNotation,pcNumbers[index],dir)
+    totalIDs += scrape(dateDotNotation,pcNumbers[index],config.dir)
 
 print('last ID should be: ' + f'{totalIDs}')
 time.sleep(1)
@@ -325,9 +324,9 @@ print('2')
 time.sleep(1)
 print('1')
 time.sleep(1)
-#sqlQueries.moveAllTempSQL()
-print('error! \nEmptying TempTable...')
-sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+sqlQueries.moveAllTempSQL()
+print('success! \nEmptying TempTable...')
+#sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 print("done!")
 time.sleep(1)
 
