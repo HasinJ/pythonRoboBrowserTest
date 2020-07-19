@@ -51,7 +51,7 @@ def moveAllTempSQL():
     #for every file in directory
     for file in dirList:
         sql=''
-        destination = config.dir + fr'\Consumption Table Queries\{file}'
+        destination = config.dir + fr'\Consumption Table Queries\Insert Queries\{file}'
         if path.exists(destination)==True:
             with open(destination) as f:
                 while True:
@@ -86,7 +86,6 @@ def oneFile(folder, file):
     cursor.execute(sql)
     mydb.commit()
     cursor.close()
-
 
 
 #run this to empty temp table
