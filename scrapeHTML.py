@@ -105,11 +105,11 @@ def scrape(dateDotNotation='04.02.2020',  pcNumber='347884', dir = fr'C:\Users\H
     csv_data = csv.reader(open(dir + fr'\Reports\{pcNumber}\{dateDotNotation}dataframe.csv'))
     next(csv_data) #to ignore header
     for row in csv_data:
-       cursor.execute(sql, row) 
+       cursor.execute(sql, row)
 
 
     mydb.commit()
-    print(date,pcNumber,f'{len(data)}','sql committed')
+    print(date,pcNumber,f'{len(data)}','sql committed \n ')
     cursor.close()
     return len(data)
 
