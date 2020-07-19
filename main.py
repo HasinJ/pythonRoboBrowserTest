@@ -48,12 +48,15 @@ def get_past_date(str_days_ago):
     else:
         return "Wrong Argument format"
 
-def dateConversions(self):
-    global dateToday, dateDotNotation, sqlDates
+def dateConversions(self,fromDate='empty'):
+    global dateToday, dateDotNotation
 
     hour = int(self.datetime.now().strftime('%H'))
 
-    if hour >= 23: #the half of the day
+    if fromDate!='empty':
+        selectedDate=self.date(fromDate['year'], fromDate['month'], fromDate['day'])
+
+    elif hour >= 23: #the half of the day
         selectedDate = get_past_date('today')
         print("use today's date")
 
@@ -62,18 +65,33 @@ def dateConversions(self):
         print("use yesterday's date")
 
     dateToday = selectedDate.strftime('%x') #local version of date 12/31/2020
-    monthLong = selectedDate.strftime('%B') #January
+    monthLong = selectedDate.strftime('%B') #December
     DOW = selectedDate.strftime('%a') #Wed
     day = selectedDate.strftime('%d') #31
     year = selectedDate.strftime('%Y') #2020
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
-    print(dateToday)
+    print(dateToday) #12/31/2020
 
     #Datesql, DOW, TOD, Month, Day, Year
     selectedDate = str(selectedDate.isoformat()) #2020-12-31
     sqlDates = [selectedDate,DOW,'',monthLong,day,year]
+
+    delete = 0
+
+    try:
+        sqlQueries.insertDatePK(sqlDates)
+    except sqlQueries.MySQLdb._exceptions.IntegrityError:
+        print('Date already exists in DateTBL.. deleting date')
+        sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+        delete=1
+
+    if delete==1:
+        sqlQueries.deleteDay(selectedDate)
+        sqlQueries.insertDatePK(sqlDates)
+        print('Emptied. \n ')
+
 
 
 from selenium import webdriver
@@ -94,15 +112,7 @@ import datetime
 from dateutil.relativedelta import relativedelta
 
 time.sleep(1)
-dateConversions(datetime)
-
-try:
-    sqlQueries.insertDatePK(sqlDates)
-except sqlQueries.MySQLdb._exceptions.IntegrityError:
-    print('Date already exists in DateTBL.. \n emptying TempTable..')
-    sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-    print('Emptied.')
-    time.sleep(2)
+dateConversions(datetime,{'year':2020, 'month':7, 'day':18}) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number})
 
 
 #important variables
