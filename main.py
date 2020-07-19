@@ -249,6 +249,9 @@ ActionChains(driver).move_to_element(submit).click(submit).perform()
 
 
 #parse table HTML into a file
+if path.isdir(config.dir + fr'\Reports')==False:
+    os.mkdir(config.dir + fr'\Reports')
+
 if path.isdir(config.dir + fr'\Reports\{somePCNumber}')==False:
     os.mkdir(config.dir + fr'\Reports\{somePCNumber}')
 
