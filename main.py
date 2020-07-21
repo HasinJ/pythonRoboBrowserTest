@@ -109,12 +109,12 @@ def dateConversions(self,fromDate='empty'):
         sqlQueries.deleteDay(selectedDate)
         sqlQueries.insertDatePK(sqlDates)
         print('Done. \n ')
-
+#end
 
 
 
 time.sleep(1)
-dateConversions(datetime,{'year':2020, 'month':7, 'day':18}) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number})
+dateConversions(datetime,{'year':2020, 'month':7, 'day':20}) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number}) day shouldnt have zero
 
 
 #important variables
@@ -246,11 +246,11 @@ for i in range(5):
     time.sleep(0.5)
 
 ActionChains(driver).send_keys(Keys.DELETE).perform()
-ActionChains(driver).send_keys(fromDate).perform() #from (dateToday)
+ActionChains(driver).send_keys(dateToday).perform() #from (dateToday)
 time.sleep(0.5)
 ActionChains(driver).send_keys(Keys.TAB).perform()
 ActionChains(driver).send_keys(Keys.DELETE).perform()
-ActionChains(driver).send_keys(toDate).perform() #to (dateToday)
+ActionChains(driver).send_keys(dateToday).perform() #to (dateToday)
 
 backToReportOptions(driver, main_page, 'waSaveClose')
 
@@ -341,7 +341,7 @@ print('1')
 time.sleep(1)
 sqlQueries.moveAllTempSQL()
 print('success! \n \n Emptying TempTable...')
-#sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 print("done!")
 time.sleep(1)
 
