@@ -101,7 +101,7 @@ def oneFile(folder, file):
                 sql+=line.strip()
                 break
             sql+=line.strip() + ' '
-        print(sql) #checks sql
+        #print(sql) #checks sql
         cursor.execute(sql)
 
     cursor.execute(sql)
