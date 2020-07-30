@@ -111,10 +111,12 @@ def dateConversions(self,fromDate='empty'):
         print('Done. \n ')
 #end
 
+sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 
 
 time.sleep(1)
-dateConversions(datetime,{'year':2020, 'month':7, 'day':20}) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number}) day shouldnt have zero
+dateConversions(datetime) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number}) day shouldnt have zero
+sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 
 
 #important variables
