@@ -87,7 +87,7 @@ def dateConversions(self,fromDate='empty'):
     DOW = selectedDate.strftime('%a') #Wed
     day = selectedDate.strftime('%d') #31
     year = selectedDate.strftime('%Y') #2020
-    dayofyear = selectedDate.strftime('%j') #356
+    dayofyear=int(selectedDate.strftime('%j'))
 
     #leap year
     try:
@@ -96,7 +96,7 @@ def dateConversions(self,fromDate='empty'):
         if (selectedDate==leapday):
             dayofyear=29.1
         elif(selectedDate>leapday):
-            dayofyear-1
+            dayofyear-=1
     except ValueError:
         print("Leap year = no")
 
