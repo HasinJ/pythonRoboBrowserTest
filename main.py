@@ -89,6 +89,17 @@ def dateConversions(self,fromDate='empty'):
     year = selectedDate.strftime('%Y') #2020
     dayofyear = selectedDate.strftime('%j') #356
 
+    #leap year
+    try:
+        leapday = datetime.date(int(year),2,29)
+        print("Leap year = yes")
+        if (selectedDate==leapday):
+            dayofyear=29.1
+        elif(selectedDate>leapday):
+            dayofyear-1
+    except ValueError:
+        print("Leap year = no")
+
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
     print(dateToday) #12/31/2020
