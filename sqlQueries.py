@@ -25,7 +25,7 @@ def insertDatePK(values):
     mydb = connectDB()
     cursor = mydb.cursor()
 
-    sql = 'INSERT INTO DateTBL (`Date`,`DOW`,`TOD`,`Month`,`Day`,`Year`) VALUES (%s,%s,%s,%s,%s,%s)'
+    sql = 'INSERT INTO DateTBL (`Date`,`DOW`,`TOD`,`Month`,`Day`,`Year`,`Day of Year`) VALUES (%s,%s,%s,%s,%s,%s,%s)'
     val = values
     cursor.execute(sql,val)
 

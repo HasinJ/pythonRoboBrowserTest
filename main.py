@@ -87,6 +87,7 @@ def dateConversions(self,fromDate='empty'):
     DOW = selectedDate.strftime('%a') #Wed
     day = selectedDate.strftime('%d') #31
     year = selectedDate.strftime('%Y') #2020
+    dayofyear = selectedDate.strftime('%j') #356
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
@@ -94,7 +95,7 @@ def dateConversions(self,fromDate='empty'):
 
     #Datesql, DOW, TOD, Month, Day, Year
     selectedDate = str(selectedDate.isoformat()) #2020-12-31
-    sqlDates = [selectedDate,DOW,'',monthLong,day,year]
+    sqlDates = [selectedDate,DOW,'',monthLong,day,year,dayofyear]
 
     delete = 0
 
