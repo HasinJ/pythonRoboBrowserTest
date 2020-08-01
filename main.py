@@ -87,7 +87,7 @@ def dateConversions(self,fromDate='empty'):
     DOW = selectedDate.strftime('%a') #Wed
     day = selectedDate.strftime('%d') #31
     year = selectedDate.strftime('%Y') #2020
-    dayofyear=int(selectedDate.strftime('%j'))
+    dayofyear=int(selectedDate.strftime('%j')) #356
 
     #leap year
     try:
