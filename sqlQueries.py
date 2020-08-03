@@ -99,7 +99,7 @@ def moveAllTempSQL():
                 mydb.commit()
                 time.sleep(1)
 
-    sql = "INSERT INTO LeftoversTBL (`id`, `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`, `Percent Sales`, `Item Reductions`, `Item Refunds`, `Item Net Sales`) SELECT * FROM hasindatabase.TempTable;"
+    sql = "INSERT INTO LeftoversTBL (`id`, `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`, `Percent Sales`, `Item Reductions`, `Item Refunds`, `Item Net Sales`) SELECT * FROM TempTable;"
     print(f"\n \n{sql}")
     cursor.execute(sql)
     mydb.commit()
