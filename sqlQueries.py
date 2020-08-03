@@ -2,6 +2,7 @@ import MySQLdb
 import config
 import os
 import os.path as path
+import time
 
 def connectDB():
     mydb = MySQLdb.connect(host = config.RDS_HOSTNAME,
@@ -37,7 +38,7 @@ def deleteDay(dateSTR):
     cursor = mydb.cursor()
 
     sql_Delete_query = """Delete from DateTBL where date = %s"""
-    cursor.execute(sql_Delete_query, (dateSTR,))
+    cursor.execute(sql_Delete_query, (dateSTR))
 
     mydb.commit()
     cursor.close()
@@ -71,19 +72,36 @@ def moveAllTempSQL():
 
     #for every file in directory
     for file in dirList:
-        sql=''
+        tableName = file.split(' ')[0]
+        sqlInsert=fr'INSERT INTO {tableName} (`PCNumber`, `Date`, `ItemName`, `Price`, `UnitSold`, `SoldAmount`) SELECT `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount` FROM TempTable '
+        sqlDelete=fr'DELETE FROM TempTable '
         destination = config.dir + fr'\Consumption Table Queries\Insert Queries\{file}'
         if path.exists(destination)==True:
             with open(destination) as f:
                 while True:
                     line = f.readline()
                     if not line:
-                        sql+=line.strip()
+                        sqlInsert+=line.strip()
+                        sqlDelete+=line.strip()
                         break
-                    sql+=line.strip() + ' '
+                    sqlInsert+=line.strip() + ' '
+                    sqlDelete+=line.strip() + ' '
+
+                sql = fr"{sqlInsert};"
                 print(sql) #checks sql
                 cursor.execute(sql)
+                mydb.commit()
+                time.sleep(1)
 
+                sql = fr"{sqlDelete};"
+                print(sql) #checks sql
+                cursor.execute(sql)
+                mydb.commit()
+                time.sleep(1)
+
+    sql = "INSERT INTO LeftoversTBL (`id`, `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`, `Percent Sales`, `Item Reductions`, `Item Refunds`, `Item Net Sales`) SELECT * FROM hasindatabase.TempTable;"
+    print(f"\n \n{sql}")
+    cursor.execute(sql)
     mydb.commit()
     cursor.close()
 
@@ -104,7 +122,6 @@ def oneFile(folder, file):
         #print(sql) #checks sql
         cursor.execute(sql)
 
-    cursor.execute(sql)
     mydb.commit()
     cursor.close()
 
@@ -114,7 +131,8 @@ def oneFile(folder, file):
 #deleteDay('2020-07-18')
 #run this to empty temp table
 #oneFile('Temp','TempTable Truncate.txt')
-#moveAllTempSQL()
+moveAllTempSQL()
+print('\n \n THIS SHOULDNT SHOW \n \n') #put this on when uncommenting something down here
 
 ##sql query def template:
 #mydb = connectDB()
