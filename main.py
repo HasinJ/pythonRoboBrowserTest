@@ -13,6 +13,7 @@ import os.path as path
 import math
 import sqlQueries
 import datetime
+import sys
 from dateutil.relativedelta import relativedelta
 
 
@@ -81,6 +82,10 @@ def dateConversions(self,fromDate='empty'):
     elif hour < 23: #the other half of the day
         selectedDate = get_past_date('yesterday')
         print("use yesterday's date")
+
+    if selectedDate>get_past_date('today'):
+        sys.exit('Incorrect date argument')
+        exit()
 
     dateToday = selectedDate.strftime('%x') #local version of date 12/31/2020
     monthLong = selectedDate.strftime('%B') #December
