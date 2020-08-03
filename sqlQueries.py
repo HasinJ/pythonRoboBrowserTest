@@ -130,8 +130,8 @@ def oneFile(folder, file):
 
 #deleteDay('2020-07-18')
 #run this to empty temp table
-#oneFile('Temp','TempTable Truncate.txt')
 #moveAllTempSQL()
+#oneFile('Temp','TempTable Truncate.txt')
 #print('\n \n THIS SHOULDNT SHOW \n \n') #put this on when uncommenting something down here
 
 ##sql query def template:
