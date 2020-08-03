@@ -38,7 +38,7 @@ def deleteDay(dateSTR):
     cursor = mydb.cursor()
 
     sql_Delete_query = """Delete from DateTBL where date = %s"""
-    cursor.execute(sql_Delete_query, (dateSTR))
+    cursor.execute(sql_Delete_query, (dateSTR,)) #leave lonely comma as is
 
     mydb.commit()
     cursor.close()
