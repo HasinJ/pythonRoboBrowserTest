@@ -88,16 +88,15 @@ def moveAllTempSQL():
                     sqlDelete+=line.strip() + ' '
 
                 sql = fr"{sqlInsert};"
-                print(sql) #checks sql
+                #print(sql) #checks sql
                 cursor.execute(sql)
                 mydb.commit()
                 time.sleep(1)
 
                 sql = fr"{sqlDelete};"
-                print(sql) #checks sql
+                #print(sql) #checks sql
                 cursor.execute(sql)
                 mydb.commit()
-                time.sleep(1)
 
     sql = "INSERT INTO LeftoversTBL (`id`, `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`, `Percent Sales`, `Item Reductions`, `Item Refunds`, `Item Net Sales`) SELECT * FROM TempTable;"
     print(f"\n \n{sql}")
