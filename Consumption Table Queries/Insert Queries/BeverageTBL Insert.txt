@@ -1,0 +1,29 @@
+Where Item like "%cold brew%" OR
+Item like "%iced coffee%" OR
+Item like "%iced americano%" OR
+Item like "%iced Cappuccino%" OR
+Item like "%iced chai%" OR
+Item like "%iced latte%" OR
+Item like "%Iced Macchiato%" OR
+Item like "%Iced Matcha%" OR
+Item like "%Iced Pink%" OR
+Item like "%Iced Tea%" OR
+Item like "%Iced Signature%" OR 
+Item like "%Cup of Water%" OR
+Item like "%Refreshers%" OR
+Item like "Add Espresso%" OR
+Item like "Americano%" OR
+Item like "Cappuccino%" OR
+Item like "D-Espresso%" OR
+Item like "Latte%" OR
+Item like "Macchiato%" OR
+Item like "Matcha Latte%" OR
+Item like "Pink Velvet%" OR
+Item like "Signature Latte%" OR
+Item like "Box of Joe%" OR
+Item like "%Hot Coffee%" OR
+Item like "Dunkaccino%" OR
+Item like "Hot Chocolate%" OR
+Item like "Hot Tea%" OR
+Item like "Vanilla Chai%"
+Order By Item
