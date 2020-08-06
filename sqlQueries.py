@@ -124,6 +124,17 @@ def oneFile(folder, file):
     mydb.commit()
     cursor.close()
 
+def insertpcNumber(pcNumber):
+    mydb = connectDB()
+    cursor = mydb.cursor()
+
+    sql=f'INSERT INTO storeTBL (`PCNumber`) VALUES ({pcNumber})'
+    #print(sql)
+
+    cursor.execute(sql)
+    mydb.commit()
+    cursor.close()
+
 #commitSQL("DELETE FROM `DateTBL` WHERE (`Date` = '2020-07-13');") #example
 #deleteDay('2020-07-14')
 

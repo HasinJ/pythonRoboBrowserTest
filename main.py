@@ -126,6 +126,15 @@ def dateConversions(self,fromDate='empty'):
         sqlQueries.deleteDay(selectedDate)
         sqlQueries.insertDatePK(sqlDates)
         print('Done. \n ')
+
+def storeTBL(PCs):
+    for PC in PCs:
+        try:
+            sqlQueries.insertpcNumber(PC)
+        except sqlQueries.MySQLdb._exceptions.IntegrityError:
+            print(f'PC Number: {PC} exists in database.')
+            continue
+
 #end
 
 sqlQueries.oneFile('Temp','TempTable Truncate.txt')
@@ -220,9 +229,12 @@ for index in range(len(rows)):
 if len(rows) == len(pcNumbers):
     time.sleep(1)
 
+
+storeTBL(pcNumbers)
+
 odd = driver.find_elements_by_class_name('gridRowOdd')
 even = driver.find_elements_by_class_name('gridRowEven')
-webElements = even + odd
+webElements = even + odd #selenium version of pcNumbers (the array)
 
 #test = wait.until(EC.element_to_be_clickable((By.ID, f"{even[0]}")))
 #print(even[0])
