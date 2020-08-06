@@ -131,6 +131,8 @@ def storeTBL(PCs):
     for PC in PCs:
         try:
             sqlQueries.insertpcNumber(PC)
+            print(f'PC Number: {PC} inserted.')
+
         except sqlQueries.MySQLdb._exceptions.IntegrityError:
             print(f'PC Number: {PC} exists in database.')
             continue
