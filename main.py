@@ -124,7 +124,6 @@ def dateConversions(self,fromDate='empty'):
 
     if delete==1:
         sqlQueries.deleteDay(selectedDate)
-        sqlQueries.insertDatePK(sqlDates)
         print('Done. \n ')
 
 def storeTBL(PCs):

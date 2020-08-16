@@ -11,17 +11,6 @@ def connectDB():
         db = config.RDS_DBNAME)
     return mydb
 
-def deleteDay(dateSTR):
-    mydb = connectDB()
-    cursor = mydb.cursor()
-
-    cursor.execute(f"DELETE FROM `TempTable` WHERE (`Date` = '{dateSTR}')") #date format should be 'year-month-day' ex. 2020-12-31
-    cursor.execute(f"DELETE FROM `DateTBL` WHERE (`Date` = '{dateSTR}')")
-
-    mydb.commit()
-    cursor.close()
-
-
 def insertDatePK(values):
     mydb = connectDB()
     cursor = mydb.cursor()
@@ -34,13 +23,33 @@ def insertDatePK(values):
     cursor.close()
 
 def deleteDay(dateSTR):
+
     mydb = connectDB()
     cursor = mydb.cursor()
+    dirList = os.listdir(config.dir + fr'\Consumption Table Queries\Insert Queries')
 
-    sql_Delete_query = """Delete from DateTBL where date = %s"""
-    cursor.execute(sql_Delete_query, (dateSTR,)) #leave lonely comma as is
+    #for every file in directory
+    for file in dirList:
+        tableName = file.split(' ')[0]
+        sql=fr'DELETE FROM {tableName} '
+        destination = config.dir + fr'\Consumption Table Queries\Insert Queries\{file}'
+        if path.exists(destination)==True:
+            with open(destination) as f:
+                while True:
+                    line = f.readline()
+                    if not line:
+                        sql+=line.strip()
+                        break
+                    sql+=line.strip() + ' '
 
-    mydb.commit()
+                sql=f"{sql} AND `Date` = '{dateSTR}'"
+                sql=sql.replace('Item','ItemName')
+                #print(sql) #checks sql
+                cursor.execute(sql)
+                mydb.commit()
+    sql=f"DELETE FROM LeftoversTBL WHERE `Date` = '{dateSTR}'"
+    cursor.execute(sql)
+    my.dbcommit()
     cursor.close()
 
 def moveOneTempSQL(target):

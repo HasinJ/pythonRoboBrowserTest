@@ -1,4 +1,4 @@
-Where Item like "Add Espresso%" OR
+Where (Item like "Add Espresso%" OR
 Item like "Americano%" OR
 Item like "Cappuccino%" OR
 Item like "D-Espresso%" OR
@@ -12,4 +12,4 @@ Item like "%Hot Coffee%" OR
 Item like "Dunkaccino%" OR
 Item like "Hot Chocolate%" OR
 Item like "Hot Tea%" OR
-Item like "Vanilla Chai%"
+Item like "Vanilla Chai%")

@@ -1,4 +1,4 @@
-Where Item like "Wrap%" OR
+Where (Item like "Wrap%" OR
 Item like "Beyond%" OR
 Item like "Egg%" OR
 Item like "Big%" OR
@@ -6,4 +6,4 @@ Item like "Double Sausage%" OR
 Item like "Maple sugar%" OR
 Item like "steak%" OR
 Item like "Sweet black%" OR
-Item like "Turkey%"
+Item like "Turkey%")

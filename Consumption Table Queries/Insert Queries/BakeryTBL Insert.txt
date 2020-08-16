@@ -1,4 +1,4 @@
-Where Item like "%donut%" OR
+Where (Item like "%donut%" OR
 Item like "%upcharge%" OR
 Item like "%fritter%" OR
 Item like "%Coffee Roll%" OR
@@ -6,4 +6,4 @@ Item like "%munchkins%" OR
 Item like "1 muffin%" OR
 Item like "12 muffin%" OR
 Item like "4 muffin%" OR
-Item like "6 muffin%"
+Item like "6 muffin%")

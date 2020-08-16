@@ -1,4 +1,4 @@
-Where Item like "%Bagels, Item Only%" OR
+Where (Item like "%Bagels, Item Only%" OR
 Item like "%Bagel w/%" OR
 Item like "%Bagels & Cream Cheese" OR
 Item like "Cinnamon Raisin Bagel" OR
@@ -9,4 +9,4 @@ Item like "Plain Bagel" OR
 Item like "Sesame Bagel" OR
 Item like "6 Croissants" OR
 Item like "Croissant, Plain Croissant" OR
-Item like "English Muffin, Item Only"
+Item like "English Muffin, Item Only")

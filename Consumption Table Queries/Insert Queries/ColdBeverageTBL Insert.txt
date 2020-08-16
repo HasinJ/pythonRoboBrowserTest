@@ -1,4 +1,4 @@
-Where Item like "%cold brew%" OR
+Where (Item like "%cold brew%" OR
 Item like "%iced coffee%" OR
 Item like "%iced americano%" OR
 Item like "%iced Cappuccino%" OR
@@ -10,4 +10,4 @@ Item like "%Iced Pink%" OR
 Item like "%Iced Tea%" OR
 Item like "%Iced Signature%" OR
 Item like "%Cup of Water%" OR
-Item like "%Refreshers%"
+Item like "%Refreshers%")
