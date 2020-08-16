@@ -73,6 +73,10 @@ def dateConversions(self,fromDate='empty'):
     hour = int(self.datetime.now().strftime('%H'))
 
     if fromDate!='empty':
+        for key, value in fromDate.items():
+            if isinstance(value,int)==False:
+                sys.exit('Date argument should be in numbers not string')
+                exit()
         selectedDate=self.date(fromDate['year'], fromDate['month'], fromDate['day'])
 
     elif hour >= 23: #the half of the day
@@ -142,7 +146,7 @@ sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 
 
 time.sleep(1)
-dateConversions(datetime) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number}) day shouldnt have zero
+dateConversions(datetime) #can also be used for one day format: dateConversions(datetime, {'year':number, 'month':number, 'day':number}) day and month shouldnt have zero
 sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 
 
