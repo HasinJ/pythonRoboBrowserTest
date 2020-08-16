@@ -13,4 +13,3 @@ Item like "Dunkaccino%" OR
 Item like "Hot Chocolate%" OR
 Item like "Hot Tea%" OR
 Item like "Vanilla Chai%"
-Order By Item

@@ -7,4 +7,3 @@ Item like "Maple sugar%" OR
 Item like "steak%" OR
 Item like "Sweet black%" OR
 Item like "Turkey%"
-Order by Item

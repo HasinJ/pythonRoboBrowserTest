@@ -7,4 +7,3 @@ Item like "1 muffin%" OR
 Item like "12 muffin%" OR
 Item like "4 muffin%" OR
 Item like "6 muffin%"
-Order By Item

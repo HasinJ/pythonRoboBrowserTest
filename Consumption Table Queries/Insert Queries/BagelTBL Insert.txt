@@ -10,4 +10,3 @@ Item like "Sesame Bagel" OR
 Item like "6 Croissants" OR
 Item like "Croissant, Plain Croissant" OR
 Item like "English Muffin, Item Only"
-Order by Item
