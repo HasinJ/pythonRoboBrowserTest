@@ -49,7 +49,7 @@ def deleteDay(dateSTR):
                 mydb.commit()
     sql=f"DELETE FROM LeftoversTBL WHERE `Date` = '{dateSTR}'"
     cursor.execute(sql)
-    my.dbcommit()
+    mydb.commit()
     cursor.close()
 
 def moveOneTempSQL(target):
