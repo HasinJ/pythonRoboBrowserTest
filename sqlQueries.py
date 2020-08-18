@@ -151,6 +151,7 @@ def insertpcNumber(pcNumber):
 #run this to empty temp table
 #moveAllTempSQL()
 #oneFile('Temp','TempTable Truncate.txt')
+#deleteDay('2020-08-04') #should delete day from item tables and leftovers table
 #print('\n \n THIS SHOULDNT SHOW \n \n') #put this on when uncommenting something down here
 
 ##sql query def template:
