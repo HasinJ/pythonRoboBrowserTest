@@ -118,7 +118,6 @@ def dateConversions(self,fromDate='empty'):
     sqlDates = [selectedDate,DOW,'',monthLong,day,year,dayofyear]
 
     delete = 0
-
     try:
         sqlQueries.insertDatePK(sqlDates)
     except sqlQueries.MySQLdb._exceptions.IntegrityError:
