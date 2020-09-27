@@ -131,6 +131,8 @@ def dateConversions(self,fromDate='empty'):
 
 def storeTBL(PCs):
     for PC in PCs:
+        if ("Closed" in PC):
+            continue;
         try:
             sqlQueries.insertpcNumber(PC)
             print(f'PC Number: {PC} inserted.')
