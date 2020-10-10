@@ -129,10 +129,10 @@ def dateConversions(self,fromDate='empty'):
         sqlQueries.deleteDay(selectedDate)
         print('Done. \n ')
 
-def storeTBL(PCs):
+def storeTBL(driver,PCs):
     for PC in PCs:
         if ("Closed" in PC):
-            continue;
+            continue
         try:
             sqlQueries.insertpcNumber(PC)
             print(f'PC Number: {PC} inserted.')
@@ -140,6 +140,23 @@ def storeTBL(PCs):
         except sqlQueries.MySQLdb._exceptions.IntegrityError:
             print(f'PC Number: {PC} exists in database.')
             continue
+def end(driver):
+    driver.quit()
+
+    print('moving from temp table in..')
+    time.sleep(1)
+    print('3')
+    time.sleep(1)
+    print('2')
+    time.sleep(1)
+    print('1')
+    time.sleep(1)
+    sqlQueries.moveAllTempSQL()
+    print('success! \n \n Emptying TempTable...')
+    sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+    print("done!")
+    time.sleep(1)
+    exit()
 
 #end
 
@@ -236,7 +253,7 @@ if len(rows) == len(pcNumbers):
     time.sleep(1)
 
 
-storeTBL(pcNumbers)
+storeTBL(driver,pcNumbers)
 
 odd = driver.find_elements_by_class_name('gridRowOdd')
 even = driver.find_elements_by_class_name('gridRowEven')
@@ -260,7 +277,6 @@ for webElementsIndex in range(len(webElements)):
 
 ActionChains(driver).move_to_element(firstPCNumber).click(firstPCNumber).perform()
 backToReportOptions(driver, main_page)
-
 
 #date selection
 dateUnit = wait.until(EC.presence_of_element_located((By.ID, "lkupDates")))
@@ -339,11 +355,19 @@ for index in range(len(pcNumbers)):
 
     if index/2 == math.floor(index/2):
         print('even...')
+        if ("Closed" in even[evenCount].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")):
+            ActionChains(driver).move_to_element(firstPCNumber).click(firstPCNumber).perform()
+            backToReportOptions(driver, main_page)
+            continue
         ActionChains(driver).move_to_element(even[evenCount]).click(even[evenCount]).perform()
         evenCount += 1
 
     elif index/2 != math.floor(index/2):
         print('odd...')
+        if ("Closed" in odd[oddCount].find_element_by_class_name('gridCell').find_element_by_tag_name('span').get_attribute("innerHTML")):
+            ActionChains(driver).move_to_element(firstPCNumber).click(firstPCNumber).perform()
+            backToReportOptions(driver, main_page)
+            continue
         ActionChains(driver).move_to_element(odd[oddCount]).click(odd[oddCount]).perform()
         oddCount += 1
 
@@ -365,23 +389,9 @@ for index in range(len(pcNumbers)):
 
 print('last ID should be: ' + f'{totalIDs}')
 time.sleep(1)
-driver.quit()
 
 
-print('moving from temp table in..')
-time.sleep(1)
-print('3')
-time.sleep(1)
-print('2')
-time.sleep(1)
-print('1')
-time.sleep(1)
-sqlQueries.moveAllTempSQL()
-print('success! \n \n Emptying TempTable...')
-sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-print("done!")
-time.sleep(1)
-
+end(driver)
 
 #sqlQueries.moveOneTempSQL('BagelTBL')
 #sqlQueries.moveOneTempSQL('BakeryTBL')
