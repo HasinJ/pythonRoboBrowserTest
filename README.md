@@ -9,5 +9,7 @@ pip install Werkzeug==0.9.6 if you get the import error, AFTER doing pip install
 
 in order to properly create an RDS database, you must setup MYSQL connection to your pc or just anywhere
 
-Goals:
-- storepc primary key, probably needs to be treated like date primary key
+
+Brief Description:
+
+- Python selenium/automation project that updates an RDS (AWS) database filling consumption tables for Grafana dashboards.
