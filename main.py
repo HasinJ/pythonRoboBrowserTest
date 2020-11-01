@@ -117,6 +117,8 @@ def dateConversions(self,choice):
     selectedDate = str(selectedDate.isoformat()) #2020-12-31
     sqlDates = [selectedDate,DOW,'',monthLong,day,year,dayofyear]
 
+    print(selectedDate)
+
     delete = 0
     try:
         sqlQueries.insertDatePK(sqlDates)
@@ -414,6 +416,12 @@ def runMain(days,dateloop):
     if dateloop['days']-1<0:
         end(driver)
     driver.quit()
+    time.sleep(1)
+    sqlQueries.moveAllTempSQL()
+    print('success! \n \n Emptying TempTable...')
+    sqlQueries.oneFile('Temp','TempTable Truncate.txt')
+    print("done!")
+    time.sleep(1)
 
 
 dateloop = {"start":"empty", "end":"empty", "days":-1}
