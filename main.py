@@ -182,11 +182,9 @@ def findDays(set):
     return set
 
 def sendEmail():
+    from config import sender_email,receiver_email,password
     port = 465  # For SSL
-    smtp_server = ""
-    sender_email = ""  # Enter your address
-    receiver_email = ""  # Enter receiver address
-    password = ""
+    smtp_server = "smtp.gmail.com"
     message = f"""\
     Subject: Error in Application
 
