@@ -199,6 +199,11 @@ def sendEmail():
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, message)
 
+def startingTimer():
+    print('Starting program in...')
+    for i in range(5):
+        print(i+1)
+        time.sleep(1)
 #end
 
 def runMain(days,dateloop):
@@ -220,6 +225,8 @@ def runMain(days,dateloop):
     wait = WebDriverWait(driver,waitTime)
     oddCount = 0
     evenCount = 0
+
+    startingTimer()
 
 
     driver.get('https://adqsr.radiantenterprise.com/bin/orf.dll/PE.platformForms.login.select.1.ghtm')
