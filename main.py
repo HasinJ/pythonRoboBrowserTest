@@ -14,6 +14,8 @@ import math
 import sqlQueries
 import datetime
 import sys
+import traceback
+import smtplib, ssl
 from dateutil.relativedelta import relativedelta
 
 
@@ -177,11 +179,30 @@ def findDays(set):
         set['start'] = datetime.date(set['start']['year'], set['start']['month'], set['start']['day'])
         return set
 
+    return set
+
+def sendEmail():
+    port = 465  # For SSL
+    smtp_server = ""
+    sender_email = ""  # Enter your address
+    receiver_email = ""  # Enter receiver address
+    password = ""
+    message = f"""\
+    Subject: Error in Application
+
+    pythonSeleniumRadiant has thrown an error. Please check logs for {dateloop['start']}.
+
+    DO NOT REPLY."""
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, message)
+
 #end
 
 def runMain(days,dateloop):
     sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-
 
     time.sleep(1)
     if days==0: dateConversions(datetime,dateloop['start'])
@@ -426,9 +447,8 @@ def runMain(days,dateloop):
 
 dateloop = {"start":"empty", "end":"empty", "days":-1}
 
-dateloop['start'] = {'year':2020, 'month':10, 'day':5}
-dateloop["end"] = {'year':2020, 'month':10, 'day':6}
-dateloop['days'] = -1
+#dateloop['start'] = {'year':2020, 'month':10, 'day':5}
+#dateloop["end"] = {'year':2020, 'month':10, 'day':6}
 
 dateloop=findDays(dateloop)
 
@@ -439,7 +459,12 @@ while dateloop['days']>=0:
     print(dateloop['start'])
     dateloop['days']-=1
 
-runMain(dateloop['days'],dateloop)
+try:
+    runMain(dateloop['days'],dateloop)
+except Exception as e:
+    sendEmail()
+    print(e)
+    print(traceback.print_exc())
 
 
 #sqlQueries.moveOneTempSQL('BagelTBL')
