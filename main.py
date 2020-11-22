@@ -206,15 +206,7 @@ def startingTimer():
 
 def runMain(days,dateloop):
     sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-
     time.sleep(1)
-    if days==0: dateConversions(datetime,dateloop['start'])
-    elif days!=0:
-        dateConversions(datetime,dateloop['start'])
-
-
-    sqlQueries.oneFile('Temp','TempTable Truncate.txt')
-
 
     #important variables
     waitTime = 10 #seconds
@@ -225,6 +217,14 @@ def runMain(days,dateloop):
     evenCount = 0
 
     startingTimer()
+
+    #date stuff
+    if days==0: dateConversions(datetime,dateloop['start'])
+    elif days!=0:
+        dateConversions(datetime,dateloop['start'])
+
+
+    sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 
 
     driver.get('https://adqsr.radiantenterprise.com/bin/orf.dll/PE.platformForms.login.select.1.ghtm')
