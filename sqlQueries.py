@@ -6,6 +6,7 @@ import time
 
 def connectDB():
     mydb = MySQLdb.connect(host = config.RDS_HOSTNAME,
+        port=config.PORT,
         user = config.RDS_USER,
         passwd = config.RDS_PASSWORD,
         db = config.RDS_DBNAME)
@@ -157,6 +158,7 @@ def insertpcNumber(pcNumber):
 ##sql query def template:
 #mydb = connectDB()
 #cursor = mydb.cursor()
+#sql = "INSERT INTO `temptable` (`id`, `PC Number`, `Date`, `Item`, `Price`, `Items Sold`, `Sold Amount`, `Percent Sales`, `Item Reductions`, `Item Refunds`, `Item Net Sales`) VALUES ('12', '11', '14', '11', '12', '12', '12', '12', '12', '14', '14') "
 #cursor.execute(sql) #the rest from here (including) are for commiting
 #mydb.commit()
 #cursor.close()

@@ -2,6 +2,7 @@ radUser = ''
 radPass = ''
 
 RDS_HOSTNAME = ''
+PORT = 0
 RDS_USER = ''
 RDS_PASSWORD = ''
 RDS_DBNAME = ''
