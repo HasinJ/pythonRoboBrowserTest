@@ -387,6 +387,7 @@ def runMain(days,dateloop):
     with open(config.dir + fr'\Reports\{somePCNumber}\{dateDotNotation}Report.html','w') as f:
         f.write(driver.page_source)
 
+    time.sleep(2)
     totalIDs += scrape(dateDotNotation,somePCNumber,config.dir)
     print(f'{somePCNumber}' + ' HTML recorded.')
 
