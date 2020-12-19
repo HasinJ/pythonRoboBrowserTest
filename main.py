@@ -16,6 +16,7 @@ import datetime
 import sys
 import traceback
 import smtplib, ssl
+import logging
 from dateutil.relativedelta import relativedelta
 
 
@@ -113,13 +114,13 @@ def dateConversions(self,choice):
 
     dateToday = dateToday[:6] + year #adds the year in full, "2021" instead of "21"
     dateDotNotation = dateToday.replace('/', '.')
-    print(dateToday) #12/31/2020
+    #print(dateToday) #12/31/2020
 
     #Datesql, DOW, TOD, Month, Day, Year
     selectedDate = str(selectedDate.isoformat()) #2020-12-31
     sqlDates = [selectedDate,DOW,'',monthLong,day,year,dayofyear]
 
-    print(selectedDate)
+    #print(selectedDate)
 
     delete = 0
     try:
@@ -188,7 +189,7 @@ def sendEmail():
     message = f"""\
     Subject: Error in Application
 
-    pythonSeleniumRadiant has thrown an error. Please check logs for {dateloop['start']}.
+    pythonSeleniumRadiant has thrown an error. Please check logs for {dateToday}.
 
     DO NOT REPLY."""
 
@@ -202,6 +203,17 @@ def startingTimer():
     for i in range(5):
         print(i+1)
         time.sleep(1)
+
+def setLogger():
+    global print, logger
+    #logger
+    logging.basicConfig(level=logging.INFO, format='%(message)s')
+    logger = logging.getLogger()
+    if os.path.isdir(config.dir + fr'\Logs')==False:
+        os.mkdir(config.dir + fr'\Logs')
+    logger.addHandler(logging.FileHandler(config.dir + fr'\Logs\{dateDotNotation}.txt', 'w'))
+    print = logger.info
+
 #end
 
 def runMain(days,dateloop):
@@ -223,6 +235,8 @@ def runMain(days,dateloop):
     elif days!=0:
         dateConversions(datetime,dateloop['start'])
 
+    setLogger();
+    print(dateToday)
 
     sqlQueries.oneFile('Temp','TempTable Truncate.txt')
 
@@ -457,6 +471,7 @@ dateloop = {"start":"empty", "end":"empty", "days":-1}
 
 dateloop=findDays(dateloop)
 
+#doesnt send email for loop days
 while dateloop['days']>=0:
     print(dateloop['days'])
     dateloop=findDays(dateloop)
@@ -464,12 +479,16 @@ while dateloop['days']>=0:
     print(dateloop['start'])
     dateloop['days']-=1
 
+#daily run
 try:
     runMain(dateloop['days'],dateloop)
 except Exception as e:
     sendEmail()
     print(e)
-    print(traceback.print_exc())
+    traceback_str = traceback.format_tb(e.__traceback__)
+    print("traceback:\n")
+    for str in traceback_str:
+        print(str)
 
 
 #sqlQueries.moveOneTempSQL('BagelTBL')
